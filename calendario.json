@@ -1,0 +1,16 @@
+{
+ "conta_instagram": {"conector": "instagram", "account_id": "17841458418841811", "perfil": "starkservice_cursos"},
+ "regras": {
+  "reels": "share_to_feed = false (so na aba de Reels). Artes/imagens saem com create_image_post.",
+  "autorizacao": "Postar somente itens com aprovado = true. Vídeo novo nunca entra aqui sem o dono aprovar.",
+  "url_do_video": "https://raw.githubusercontent.com/starkserviceeletrica-lgtm/stark-reels-media/<SHA_DO_COMMIT>/videos/<arquivo>  (usar o SHA, o link 'main' demora a atualizar)",
+  "legenda": "Texto exato do arquivo em legendas/<nome>.txt"
+ },
+ "itens": [
+  {"nome": "apresentacao", "arquivo": "videos/apresentacao.mp4", "legenda": "legendas/apresentacao.txt", "aprovado": true, "status": "postado"},
+  {"nome": "tomada", "arquivo": "videos/tomada.mp4", "legenda": "legendas/tomada.txt", "aprovado": true, "status": "postado"},
+  {"nome": "arcondicionado", "arquivo": "videos/arcondicionado.mp4", "legenda": "legendas/arcondicionado.txt", "aprovado": true, "status": "postado"},
+  {"nome": "quadro-2d", "arquivo": "videos/quadro.mp4", "legenda": "legendas/quadro.txt", "aprovado": true, "status": "tentativa em 22/11 12h deu timeout; conferir no perfil antes de repetir"},
+  {"nome": "qdc3d", "arquivo": "videos/qdc3d_leve.mp4", "legenda": "legendas/qdc3d.txt", "aprovado": true, "status": "tentativa em 22/11 deu timeout com a versão pesada; conferir no perfil antes de repetir"}
+ ]
+}
