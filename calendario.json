@@ -45,6 +45,27 @@
    "legenda": "legendas/qdc3d.txt",
    "aprovado": true,
    "status": "postado em 22/11 com a versão pesada (confirmado no perfil): https://www.instagram.com/reel/DgDNWzqjmrK/"
+  },
+  {
+   "nome": "eletrica-1-energia",
+   "arquivo": "videos/energia3d.mp4",
+   "legenda": "legendas/energia3d.txt",
+   "aprovado": true,
+   "status": "agendado: seg 23/11 12h (Recife)"
+  },
+  {
+   "nome": "comandos-1-forca-x-comando",
+   "arquivo": "videos/comandos3d.mp4",
+   "legenda": "legendas/comandos3d.txt",
+   "aprovado": true,
+   "status": "agendado: ter 24/11 12h (Recife); vídeo ainda será produzido (voz amanhã 5h)"
+  },
+  {
+   "nome": "automacao-1-o-que-automatizar",
+   "arquivo": "videos/automacao3d.mp4",
+   "legenda": "legendas/automacao3d.txt",
+   "aprovado": true,
+   "status": "agendado: qua 25/11 12h (Recife); vídeo ainda será produzido (voz amanhã 5h)"
   }
  ]
 }

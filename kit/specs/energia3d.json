@@ -1,0 +1,75 @@
+{
+ "title": "Elétrica Predial #1: de onde vem a energia",
+ "voice": "Puck",
+ "model": "gemini-3.8-flash-tts",
+ "trim_instruction": true,
+ "pause_between_requests": 8,
+ "scene": "energia3d",
+ "pill": "Manda ELÉTRICA no direct",
+ "lines": [
+  {
+   "text": "A energia da sua casa vem de uma usina a centenas de quilômetros. Você sabe como ela é feita?",
+   "style": "Diga com curiosidade e energia, como quem lança uma pergunta intrigante:"
+  },
+  {
+   "text": "A hidrelétrica usa a força da água para girar uma turbina.",
+   "style": "Diga de forma clara e didática:",
+   "events": {
+    "hidro": "hidrelétrica",
+    "agua": "água",
+    "turbina": "turbina"
+   }
+  },
+  {
+   "text": "A eólica usa o vento. A solar transforma luz em eletricidade.",
+   "style": "Diga de forma clara, destacando cada fonte:",
+   "events": {
+    "eolica": "eólica",
+    "vento": "vento",
+    "solar": "solar"
+   }
+  },
+  {
+   "text": "A térmica queima algum combustível para gerar vapor e girar a turbina.",
+   "style": "Diga de forma clara e didática:",
+   "events": {
+    "termica": "térmica",
+    "vapor": "vapor"
+   }
+  },
+  {
+   "text": "Em quase todas, uma turbina gira um gerador, e o gerador produz a energia.",
+   "style": "Diga de forma clara e ritmada:",
+   "events": {
+    "gerador": [
+     "gerador",
+     0
+    ]
+   }
+  },
+  {
+   "text": "Essa energia é enviada por cabos até chegar na sua casa.",
+   "style": "Diga de forma clara e envolvente:",
+   "events": {
+    "cabos": "cabos",
+    "casa": "casa"
+   }
+  },
+  {
+   "text": "E o segredo? A eletricidade que você usa é gerada no mesmo instante em que é consumida.",
+   "style": "Diga baixinho e devagar, como quem conta um segredo importante:",
+   "events": {
+    "segredo": "segredo",
+    "instante": "instante"
+   }
+  },
+  {
+   "text": "Quer aprender elétrica do zero? Manda ELÉTRICA no direct!",
+   "style": "Diga animado e sorrindo, como um convite descontraído:"
+  }
+ ],
+ "cards": [],
+ "fx": {},
+ "end_line": 7,
+ "scene_opts": {}
+}

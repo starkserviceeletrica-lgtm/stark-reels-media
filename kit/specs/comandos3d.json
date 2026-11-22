@@ -1,0 +1,64 @@
+{
+ "title": "Comandos #1: força x comando",
+ "voice": "Puck",
+ "model": "gemini-3.1-flash-tts-preview",
+ "pause_between_requests": 8,
+ "scene": "comandos3d",
+ "pill": "Manda COMANDOS no direct",
+ "lines": [
+  {
+   "text": "Todo motor tem dois circuitos. Você sabe a diferença?",
+   "style": "Diga com curiosidade, como quem lança um desafio:"
+  },
+  {
+   "text": "O circuito de força leva a energia pesada até o motor.",
+   "style": "Diga de forma clara e firme:",
+   "events": {
+    "forca": "força"
+   }
+  },
+  {
+   "text": "O circuito de comando é o que liga e desliga, e usa corrente bem menor.",
+   "style": "Diga de forma clara e didática:",
+   "events": {
+    "comando": "comando"
+   }
+  },
+  {
+   "text": "É por isso que um botãozinho consegue ligar um motor enorme.",
+   "style": "Diga com surpresa e bom humor:",
+   "events": {
+    "botao": "botãozinho"
+   }
+  },
+  {
+   "text": "O contator é a ponte entre os dois.",
+   "style": "Diga de forma clara, destacando a peça:",
+   "events": {
+    "ponte": "ponte"
+   }
+  },
+  {
+   "text": "Alerta: os dois circuitos têm riscos diferentes, e os dois exigem cuidado.",
+   "style": "Diga com tom de alerta forte e enfático:",
+   "events": {
+    "alerta": "Alerta"
+   }
+  },
+  {
+   "text": "E o segredo? Quem entende essa separação entende todo o resto dos comandos.",
+   "style": "Diga baixinho e devagar, como quem conta um segredo importante:",
+   "events": {
+    "segredo": "segredo"
+   }
+  },
+  {
+   "text": "Manda COMANDOS no direct para entrar na lista de interessados!",
+   "style": "Diga animado e sorrindo, como um convite descontraído:"
+  }
+ ],
+ "cards": [],
+ "fx": {},
+ "end_line": 7,
+ "scene_opts": {}
+}

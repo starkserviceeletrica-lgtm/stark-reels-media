@@ -1,0 +1,70 @@
+{
+ "title": "Automação #1: o que dá para automatizar",
+ "voice": "Puck",
+ "model": "gemini-3.8-flash-tts",
+ "trim_instruction": true,
+ "pause_between_requests": 8,
+ "scene": "automacao3d",
+ "pill": "Manda AUTOMAÇÃO no direct",
+ "lines": [
+  {
+   "text": "Sua casa pode ligar a luz sozinha. Você sabe o que dá para automatizar?",
+   "style": "Diga com curiosidade e energia, como quem lança uma pergunta:"
+  },
+  {
+   "text": "Iluminação: ligar, desligar e regular pelo celular ou por voz.",
+   "style": "Diga de forma clara e animada:",
+   "events": {
+    "ilum": "Iluminação"
+   }
+  },
+  {
+   "text": "Tomadas: ligar um aparelho por horário.",
+   "style": "Diga de forma clara e didática:",
+   "events": {
+    "tomadas": "Tomadas",
+    "horario": "horário"
+   }
+  },
+  {
+   "text": "Sensores: acender a luz quando alguém entra no cômodo.",
+   "style": "Diga de forma clara, com ritmo:",
+   "events": {
+    "sensor": "Sensores",
+    "entra": "entra"
+   }
+  },
+  {
+   "text": "Cortinas, portão e ar-condicionado também entram.",
+   "style": "Diga de forma ritmada, enumerando:",
+   "events": {
+    "cortinas": "Cortinas",
+    "portao": "portão",
+    "ar": "ar-condicionado"
+   }
+  },
+  {
+   "text": "Alerta: tudo isso depende de uma instalação elétrica bem feita.",
+   "style": "Diga com tom de alerta forte e enfático:",
+   "events": {
+    "alerta": "Alerta"
+   }
+  },
+  {
+   "text": "E o segredo? Comece por um cômodo só e vá ampliando.",
+   "style": "Diga baixinho e devagar, como quem conta um segredo importante:",
+   "events": {
+    "segredo": "segredo",
+    "comodo": "cômodo"
+   }
+  },
+  {
+   "text": "Manda AUTOMAÇÃO no direct e conheça o curso!",
+   "style": "Diga animado e sorrindo, como um convite descontraído:"
+  }
+ ],
+ "cards": [],
+ "fx": {},
+ "end_line": 7,
+ "scene_opts": {}
+}
