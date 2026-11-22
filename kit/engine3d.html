@@ -1,0 +1,69 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Stark Reel Engine 3D</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#0b0f1a;overflow:hidden;font-family:Inter,Arial,sans-serif;width:1080px;height:1920px}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden}
+canvas{position:absolute;left:0;top:0;width:1080px;height:1920px}
+#cap{position:absolute;left:40px;width:1000px;top:1210px;height:200px;display:flex;align-items:center;justify-content:center;text-align:center;z-index:8;font-weight:900;font-size:128px;line-height:1;color:#fff;text-transform:uppercase;letter-spacing:2px;-webkit-text-stroke:14px #0b0f1a;paint-order:stroke fill;text-shadow:0 8px 0 #0b0f1a}
+#labels{position:absolute;inset:0;z-index:6;pointer-events:none}
+.lb{position:absolute;transform:translate(-50%,-50%);font-weight:900;color:#0b0f1a;background:#fff;border-radius:40px;padding:14px 34px;font-size:48px;white-space:nowrap;box-shadow:0 8px 0 rgba(0,0,0,.35);opacity:0}
+#mini{position:absolute;left:0;width:1080px;top:250px;text-align:center;z-index:7;opacity:0}
+#title{position:absolute;left:0;width:1080px;top:262px;text-align:center;z-index:7;font-weight:900;font-style:italic;font-size:78px;color:#fff;letter-spacing:2px;-webkit-text-stroke:10px #0b0f1a;paint-order:stroke fill;text-shadow:0 6px 0 #0b0f1a;opacity:0}
+#wm{position:absolute;left:44px;top:1346px;z-index:7;opacity:0}
+#vig{position:absolute;inset:0;z-index:5;pointer-events:none}
+#flash{position:absolute;inset:0;z-index:9;pointer-events:none;opacity:0;background:#fff}
+#endbg{position:absolute;inset:0;z-index:10;background:radial-gradient(1000px 800px at 50% 45%,#16203a,#0b0f1a);opacity:0}
+#endlogo{position:absolute;z-index:11;opacity:0}
+#pill{position:absolute;z-index:11;background:#ffc400;color:#0b0f1a;font-weight:900;border-radius:60px;text-align:center;text-transform:uppercase;opacity:0;left:110px;width:860px;top:1010px;font-size:48px;padding:26px 0}
+</style></head><body><div id="stage">
+<canvas id="c" width="1080" height="1920"></canvas>
+<div id="labels"></div><div id="title"></div><div id="wm"></div><div id="vig"></div><div id="mini"></div><div id="cap"></div><div id="flash"></div>
+<div id="endbg"></div><div id="endlogo"></div><div id="pill"></div></div>
+<script src="vendor/three.min.js"></script>
+<script src="timeline.js"></script>
+<script>
+const Q=location.search,HAS=Q.includes('logo'),TL=window.TL,$=id=>document.getElementById(id);
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)),ease=x=>x*x*(3-2*x),seg=(t,a,b)=>ease(clamp((t-a)/(b-a)));
+const eob=x=>{x=clamp(x)-1;return 1+2.70158*x*x*x+1.70158*x*x};
+const R=new THREE.WebGLRenderer({canvas:$('c'),antialias:true,preserveDrawingBuffer:true});R.setPixelRatio(1);R.setSize(1080,1920,false);
+const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(42,1080/1920,0.05,100);
+const NB=TL.N,E=TL.EV,tEnd=NB[TL.END];
+// rótulos HTML presos a pontos 3D
+const labs={};
+function label(id,txt,pos3,{bg='#fff',fg='#0b0f1a',a=1,s=1,dx=0,dy=0}={}){let d=labs[id];if(!d){d=labs[id]=document.createElement('div');d.className='lb';$('labels').appendChild(d)}
+ d.textContent=txt;d.style.background=bg;d.style.color=fg;
+ if(a<=0.001){d.style.opacity=0;return}
+ const v=pos3.clone().project(camera);const X=Math.min(830,Math.max(250,(v.x*0.5+0.5)*1080+dx)),Y=Math.min(1000,Math.max(410,(-v.y*0.5+0.5)*1920+dy));d.style.left=X+'px';d.style.top=Y+'px';d.style.opacity=a;d.style.transform=`translate(-50%,-50%) scale(${s})`}
+const ctx={THREE,scene,camera,renderer:R,TL,N:NB,E,clamp,ease,seg,eob,label,flash:[],vig:0,shake:0,tn:0};
+ctx.doFlash=(t0,amp,du,col)=>ctx.flash.push([t0,amp,du,col||'#fff']);
+if(HAS){$('mini').innerHTML='<img src="assets/logo.png" style="height:84px">';$('endlogo').innerHTML='<img src="assets/logo.png" style="width:774px;display:block">';Object.assign($('endlogo').style,{left:'153px',top:'600px'})}
+$('pill').textContent=TL.PILL||'';
+const SC=window.SCENE;SC.init(ctx);const BR=SC.brand||'full';if(HAS&&BR!=='none'){$('wm').innerHTML=BR==='s'?'<img src="assets/logo_s.png" style="height:96px;display:block">':'<img src="assets/logo.png" style="width:300px;display:block">'}if(SC.title)$('title').textContent=SC.title;
+const KEYS=(SC.keywords||[]).map(w=>w.toLowerCase());
+const norm=w=>w.toLowerCase().replace(/[^a-zà-ú0-9]/gi,'');
+function render(tn){
+ ctx.tn=tn;ctx.vig=0;ctx.shake=0;ctx.flash=[];
+ SC.render(ctx);
+ // tremor
+ if(ctx.shake>0){camera.position.x+=Math.sin(tn*90)*0.01*ctx.shake;camera.position.y+=Math.cos(tn*77)*0.01*ctx.shake}
+ R.render(scene,camera);
+ // legenda: uma palavra por vez
+ let li=0;while(li<TL.SUBS.length-1&&tn>=NB[li+1])li++;
+ const words=TL.SUBS[li].split(' '),kw=TL.KW[li];let k=0;while(k<words.length-1&&tn>=kw[k+1])k++;
+ const w=words[k],key=KEYS.includes(norm(w)),since=tn-kw[k];
+ const cap=$('cap');cap.textContent=w;cap.style.color=key?'#ffc400':'#fff';
+ const on=tn>=0.05&&tn<tEnd-0.05;cap.style.opacity=on?1:0;cap.style.transform=`scale(${0.82+0.18*eob(since/0.16)})`;
+ $('title').style.opacity=SC.title?(seg(tn,0.1,0.5)*(1-seg(tn,tEnd-0.4,tEnd-0.05))):0;
+ $('wm').style.opacity=(HAS&&BR!=='none')?0.9*Math.min(seg(tn,0.3,0.8),1-seg(tn,tEnd-0.4,tEnd-0.05)):0;
+ // marca no topo
+ $('mini').style.opacity=0;
+ // vinheta e flash
+ $('vig').style.background=`radial-gradient(ellipse at center, rgba(0,0,0,0) 35%, rgba(0,0,0,${ctx.vig}) 100%)`;
+ let fa=0,fc='#fff';ctx.flash.forEach(([t0,amp,du,col])=>{if(tn>=t0&&tn<t0+du){const a=amp*(1-(tn-t0)/du);if(a>fa){fa=a;fc=col}}});$('flash').style.background=fc;$('flash').style.opacity=fa;
+ // fechamento
+ $('endbg').style.opacity=seg(tn,tEnd-0.1,tEnd+0.25);
+ $('endlogo').style.opacity=(HAS&&tn>=tEnd)?seg(tn,tEnd+0.1,tEnd+0.5):0;
+ $('pill').style.opacity=seg(tn,tEnd+0.9,tEnd+1.4);$('pill').style.transform=`scale(${0.9+0.1*seg(tn,tEnd+0.9,tEnd+1.4)})`;
+}
+window.render=render;
+</script></body></html>

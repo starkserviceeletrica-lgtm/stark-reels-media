@@ -1,0 +1,71 @@
+{
+ "title": "Tomada 3D (teste de gancho)",
+ "voice": "Puck",
+ "model": "gemini-3.1-flash-tts-preview",
+ "pause_between_requests": 8,
+ "scene": "tomada3d",
+ "pill": "Mande ELÉTRICA no direct",
+ "lines": [
+  {
+   "text": "Essa tomada pode pegar fogo na sua casa, e a culpa é de um parafuso!",
+   "style": "Diga com tom de alerta forte e curiosidade, como quem vai revelar um perigo:",
+   "events": {
+    "parafuso": "parafuso"
+   }
+  },
+  {
+   "text": "Mas calma: instalar com segurança é fácil. Primeiro, desligue o disjuntor.",
+   "style": "Diga de forma calma e confiante, depois com firmeza no passo:",
+   "events": {
+    "disjuntor": "disjuntor"
+   }
+  },
+  {
+   "text": "Depois, confirme com o detector de tensão.",
+   "style": "Diga de forma clara e didática:",
+   "events": {
+    "detector": "detector"
+   }
+  },
+  {
+   "text": "O fio terra vai no borne do símbolo de terra. Fase e neutro, nos outros dois.",
+   "style": "Diga de forma clara, destacando cada fio:",
+   "events": {
+    "terra": [
+     "terra",
+     0
+    ],
+    "fase": "Fase",
+    "neutro": "neutro"
+   }
+  },
+  {
+   "text": "E o segredo? Aperte bem os parafusos.",
+   "style": "Diga baixinho e devagar, como quem conta um segredo importante:",
+   "events": {
+    "segredo": "segredo",
+    "aperte": "Aperte"
+   }
+  },
+  {
+   "text": "Conexão frouxa esquenta e pode causar incêndio.",
+   "style": "Diga com tom de alerta forte e enfático:",
+   "events": {
+    "frouxa": "frouxa",
+    "esquenta": "esquenta",
+    "incendio": "incêndio"
+   }
+  },
+  {
+   "text": "Conheça o curso de Elétrica Predial da Stark Service! Mande elétrica no direct e receba as informações.",
+   "style": "Diga animado e sorrindo, como um convite, com ênfase em: mande elétrica no direct:",
+   "events": {
+    "mande": "Mande"
+   }
+  }
+ ],
+ "cards": [],
+ "fx": {},
+ "end_line": 6,
+ "scene_opts": {}
+}

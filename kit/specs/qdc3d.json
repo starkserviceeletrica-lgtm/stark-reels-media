@@ -1,0 +1,83 @@
+{
+ "title": "QDC monofásico 3D (bancada)",
+ "voice": "Puck",
+ "model": "gemini-3.1-flash-tts-preview",
+ "pause_between_requests": 8,
+ "scene": "qdc3d",
+ "pill": "Mande ELÉTRICA no direct",
+ "lines": [
+  {
+   "text": "Todo eletricista precisa saber montar isso: o quadro de distribuição monofásico!",
+   "style": "Diga com energia e firmeza, como quem lança um desafio:",
+   "events": {
+    "quadro": "quadro"
+   }
+  },
+  {
+   "text": "Primeiro, o trilho DIN, onde todas as peças se encaixam.",
+   "style": "Diga de forma clara e didática:",
+   "events": {
+    "trilho": "trilho"
+   }
+  },
+  {
+   "text": "No topo, o disjuntor geral, que liga e desliga tudo.",
+   "style": "Diga de forma clara, destacando a peça:",
+   "events": {
+    "geral": "geral"
+   }
+  },
+  {
+   "text": "Depois o DR, que protege contra choque, e o DPS, que protege contra surtos.",
+   "style": "Diga de forma clara, destacando cada peça:",
+   "events": {
+    "dr": "DR",
+    "dps": "DPS"
+   }
+  },
+  {
+   "text": "Em seguida, os disjuntores de cada circuito: iluminação, tomadas, cozinha, ar-condicionado e chuveiro.",
+   "style": "Diga de forma ritmada, enumerando:",
+   "events": {
+    "circuitos": "circuito",
+    "il": "iluminação",
+    "tom": "tomadas",
+    "coz": "cozinha",
+    "ar": "ar-condicionado",
+    "chu": "chuveiro"
+   }
+  },
+  {
+   "text": "Os barramentos: neutro em azul e terra em verde.",
+   "style": "Diga de forma clara e didática:",
+   "events": {
+    "neutro": "neutro",
+    "terra": "terra"
+   }
+  },
+  {
+   "text": "Na alimentação, usamos como referência cabos de dezesseis milímetros: fase, neutro e terra.",
+   "style": "Diga de forma clara e firme:",
+   "events": {
+    "cabos": "cabos",
+    "dezesseis": "dezesseis"
+   }
+  },
+  {
+   "text": "E o segredo: aperte bem cada borne e identifique cada circuito.",
+   "style": "Diga baixinho e devagar, como quem conta um segredo importante:",
+   "events": {
+    "aperte": "aperte",
+    "identifique": "identifique"
+   }
+  },
+  {
+   "text": "Quer aprender a montar na prática? Conheça o curso de Elétrica Predial da Stark Service! Mande elétrica no direct.",
+   "style": "Diga animado e sorrindo, como um convite descontraído:"
+  }
+ ],
+ "cards": [],
+ "fx": {},
+ "end_line": 8,
+ "scene_opts": {}
+}

@@ -1,0 +1,71 @@
+{
+ "title": "Ar-condicionado pingando 3D",
+ "voice": "Puck",
+ "model": "gemini-3.1-flash-tts-preview",
+ "pause_between_requests": 8,
+ "scene": "refri3d",
+ "pill": "Curso de Refrigeração",
+ "lines": [
+  {
+   "text": "Seu ar-condicionado está pingando água dentro de casa? Antes de culpar o gás, olha isso!",
+   "style": "Diga com curiosidade e surpresa, como quem vai desfazer um mito:",
+   "events": {
+    "pingando": "pingando"
+   }
+  },
+  {
+   "text": "Quando o filtro está sujo, passa pouco ar pela serpentina.",
+   "style": "Diga de forma clara e didática:",
+   "events": {
+    "filtro": "filtro",
+    "sujo": "sujo",
+    "serpentina": "serpentina"
+   }
+  },
+  {
+   "text": "Ela esfria demais e cria gelo. Quando o gelo derrete, a bandeja transborda.",
+   "style": "Diga de forma explicativa, acelerando no final:",
+   "events": {
+    "gelo": [
+     "gelo",
+     0
+    ],
+    "derrete": "derrete",
+    "transborda": "transborda"
+   }
+  },
+  {
+   "text": "A solução: deixe o aparelho só no ventilar para derreter o gelo, e lave o filtro com água e sabão neutro.",
+   "style": "Diga de forma confiante e prática, como quem ensina o passo a passo:",
+   "events": {
+    "ventilar": "ventilar",
+    "lave": "lave",
+    "sabao": "sabão"
+   }
+  },
+  {
+   "text": "Dreno entupido também faz pingar, mesmo com o filtro limpo.",
+   "style": "Diga com tom de alerta e curiosidade:",
+   "events": {
+    "dreno": "Dreno",
+    "limpo": "limpo"
+   }
+  },
+  {
+   "text": "Se voltar a congelar mesmo limpo, pode ser falta de gás. Aí é com técnico.",
+   "style": "Diga baixinho e devagar, como quem conta um segredo importante:",
+   "events": {
+    "gas": "gás",
+    "tecnico": "técnico"
+   }
+  },
+  {
+   "text": "Quer aprender refrigeração na prática? Conheça o curso da Stark Service!",
+   "style": "Diga animado e sorrindo, como um convite descontraído:"
+  }
+ ],
+ "cards": [],
+ "fx": {},
+ "end_line": 6,
+ "scene_opts": {}
+}

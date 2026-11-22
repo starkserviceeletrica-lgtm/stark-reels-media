@@ -1,0 +1,398 @@
+{
+ "inicio": "2026-11-23",
+ "observacao": "Um tema por semana, por curso, na ordem. Roteiros revisados ficam em roteiros/. Só posta o que o dono aprovou.",
+ "cursos": {
+  "Elétrica Predial": {
+   "dia": "segunda",
+   "palavra": "ELÉTRICA",
+   "temas": [
+    {
+     "n": 1,
+     "titulo": "De onde vem a energia? Geração: hidrelétrica, eólica, solar, térmica",
+     "status": "pendente"
+    },
+    {
+     "n": 2,
+     "titulo": "Do gerador até a sua casa: transmissão, transformador e distribuição",
+     "status": "pendente"
+    },
+    {
+     "n": 3,
+     "titulo": "Tensão, corrente e resistência: o que cada uma faz",
+     "status": "pendente"
+    },
+    {
+     "n": 4,
+     "titulo": "Lei de Ohm e potência (P = U × I) na prática",
+     "status": "pendente"
+    },
+    {
+     "n": 5,
+     "titulo": "Corrente contínua e alternada; 127 V e 220 V; fase e neutro",
+     "status": "pendente"
+    },
+    {
+     "n": 6,
+     "titulo": "Circuito em série e em paralelo (lâmpadas e tomadas)",
+     "status": "pendente"
+    },
+    {
+     "n": 7,
+     "titulo": "Fios e bitolas: como escolher o cabo certo e as cores",
+     "status": "pendente"
+    },
+    {
+     "n": 8,
+     "titulo": "Disjuntor, DR e DPS: o que cada proteção faz",
+     "status": "pendente"
+    },
+    {
+     "n": 9,
+     "titulo": "Como instalar uma tomada com segurança (feito)",
+     "status": "feito"
+    },
+    {
+     "n": 10,
+     "titulo": "Interruptor simples, paralelo (three-way) e intermediário",
+     "status": "pendente"
+    },
+    {
+     "n": 11,
+     "titulo": "Aterramento: para que serve e como é feito",
+     "status": "pendente"
+    },
+    {
+     "n": 12,
+     "titulo": "Quadro de distribuição monofásico (feito)",
+     "status": "feito"
+    },
+    {
+     "n": 13,
+     "titulo": "Dimensionando circuitos: iluminação, tomadas, chuveiro",
+     "status": "pendente"
+    }
+   ]
+  },
+  "Comandos Elétricos": {
+   "dia": "terça",
+   "palavra": "COMANDOS",
+   "temas": [
+    {
+     "n": 1,
+     "titulo": "Circuito de força x circuito de comando",
+     "status": "pendente"
+    },
+    {
+     "n": 2,
+     "titulo": "Simbologia e numeração dos componentes",
+     "status": "pendente"
+    },
+    {
+     "n": 3,
+     "titulo": "Botoeiras e sinaleiros",
+     "status": "pendente"
+    },
+    {
+     "n": 4,
+     "titulo": "Contator por dentro: bobina e contatos",
+     "status": "pendente"
+    },
+    {
+     "n": 5,
+     "titulo": "Relé térmico: protegendo o motor",
+     "status": "pendente"
+    },
+    {
+     "n": 6,
+     "titulo": "Partida direta e o contato de selo",
+     "status": "pendente"
+    },
+    {
+     "n": 7,
+     "titulo": "Intertravamento e inversão de rotação",
+     "status": "pendente"
+    },
+    {
+     "n": 8,
+     "titulo": "Relé temporizador e partida estrela-triângulo",
+     "status": "pendente"
+    },
+    {
+     "n": 9,
+     "titulo": "Dimensionando fusível, contator e relé térmico",
+     "status": "pendente"
+    }
+   ]
+  },
+  "Automação Residencial": {
+   "dia": "quarta",
+   "palavra": "AUTOMAÇÃO",
+   "temas": [
+    {
+     "n": 1,
+     "titulo": "O que é automação residencial e o que dá para automatizar",
+     "status": "pendente"
+    },
+    {
+     "n": 2,
+     "titulo": "Protocolos e módulos: Wi-Fi, Zigbee e os outros",
+     "status": "pendente"
+    },
+    {
+     "n": 3,
+     "titulo": "Interruptor inteligente e a falta de neutro",
+     "status": "pendente"
+    },
+    {
+     "n": 4,
+     "titulo": "Tomada inteligente e a carga máxima",
+     "status": "pendente"
+    },
+    {
+     "n": 5,
+     "titulo": "Sensores: presença e abertura de porta",
+     "status": "pendente"
+    },
+    {
+     "n": 6,
+     "titulo": "Cenas e rotinas",
+     "status": "pendente"
+    },
+    {
+     "n": 7,
+     "titulo": "Assistente de voz",
+     "status": "pendente"
+    },
+    {
+     "n": 8,
+     "titulo": "Cortinas e fechaduras inteligentes",
+     "status": "pendente"
+    },
+    {
+     "n": 9,
+     "titulo": "Planejando a infraestrutura: caixas e eletrodutos",
+     "status": "pendente"
+    }
+   ]
+  },
+  "Segurança Eletrônica": {
+   "dia": "quinta",
+   "palavra": "SEGURANÇA",
+   "temas": [
+    {
+     "n": 1,
+     "titulo": "Os sistemas: alarme, CFTV, cerca elétrica e interfone",
+     "status": "pendente"
+    },
+    {
+     "n": 2,
+     "titulo": "CFTV: câmera analógica x câmera IP",
+     "status": "pendente"
+    },
+    {
+     "n": 3,
+     "titulo": "A fonte: câmera sem imagem",
+     "status": "pendente"
+    },
+    {
+     "n": 4,
+     "titulo": "Cabos e conectores: coaxial, UTP e balun",
+     "status": "pendente"
+    },
+    {
+     "n": 5,
+     "titulo": "DVR, NVR e o HD de gravação",
+     "status": "pendente"
+    },
+    {
+     "n": 6,
+     "titulo": "Alarme: central e sensores",
+     "status": "pendente"
+    },
+    {
+     "n": 7,
+     "titulo": "Cerca elétrica: eletrificador e aterramento",
+     "status": "pendente"
+    },
+    {
+     "n": 8,
+     "titulo": "Interfone e controle de acesso",
+     "status": "pendente"
+    },
+    {
+     "n": 9,
+     "titulo": "Acesso remoto pelo celular com segurança",
+     "status": "pendente"
+    }
+   ]
+  },
+  "Refrigeração": {
+   "dia": "sexta",
+   "palavra": "REFRIGERAÇÃO",
+   "temas": [
+    {
+     "n": 1,
+     "titulo": "Calor e frio: como o calor é transferido",
+     "status": "pendente"
+    },
+    {
+     "n": 2,
+     "titulo": "O ciclo de refrigeração e seus 4 componentes",
+     "status": "pendente"
+    },
+    {
+     "n": 3,
+     "titulo": "Compressor",
+     "status": "pendente"
+    },
+    {
+     "n": 4,
+     "titulo": "Condensador e evaporador",
+     "status": "pendente"
+    },
+    {
+     "n": 5,
+     "titulo": "Fluido refrigerante e pressões",
+     "status": "pendente"
+    },
+    {
+     "n": 6,
+     "titulo": "Split: unidade interna, externa e instalação",
+     "status": "pendente"
+    },
+    {
+     "n": 7,
+     "titulo": "Vácuo e teste de estanqueidade",
+     "status": "pendente"
+    },
+    {
+     "n": 8,
+     "titulo": "Manutenção preventiva: filtro e dreno (feito: ar-condicionado pingando)",
+     "status": "feito"
+    },
+    {
+     "n": 9,
+     "titulo": "Defeitos comuns: o aparelho não gela",
+     "status": "pendente"
+    },
+    {
+     "n": 10,
+     "titulo": "Inverter: o que muda",
+     "status": "pendente"
+    }
+   ]
+  },
+  "NR-10 (+SEP)": {
+   "dia": "sábado",
+   "palavra": "NR10",
+   "temas": [
+    {
+     "n": 1,
+     "titulo": "Por que existe a NR-10",
+     "status": "pendente"
+    },
+    {
+     "n": 2,
+     "titulo": "Riscos: choque, arco elétrico e incêndio",
+     "status": "pendente"
+    },
+    {
+     "n": 3,
+     "titulo": "Efeitos da corrente elétrica no corpo",
+     "status": "pendente"
+    },
+    {
+     "n": 4,
+     "titulo": "Zonas de risco e distâncias de segurança",
+     "status": "pendente"
+    },
+    {
+     "n": 5,
+     "titulo": "Análise de risco e permissão de trabalho",
+     "status": "pendente"
+    },
+    {
+     "n": 6,
+     "titulo": "Desenergização: os passos",
+     "status": "pendente"
+    },
+    {
+     "n": 7,
+     "titulo": "EPI e EPC",
+     "status": "pendente"
+    },
+    {
+     "n": 8,
+     "titulo": "Primeiros socorros em acidente elétrico",
+     "status": "pendente"
+    },
+    {
+     "n": 9,
+     "titulo": "SEP: o que muda no sistema elétrico de potência",
+     "status": "pendente"
+    },
+    {
+     "n": 10,
+     "titulo": "Documentação e prontuário",
+     "status": "pendente"
+    }
+   ]
+  },
+  "NR-35": {
+   "dia": "domingo",
+   "palavra": "NR35",
+   "temas": [
+    {
+     "n": 1,
+     "titulo": "Trabalho em altura: a partir de 2 metros",
+     "status": "pendente"
+    },
+    {
+     "n": 2,
+     "titulo": "Responsabilidades: empresa e trabalhador",
+     "status": "pendente"
+    },
+    {
+     "n": 3,
+     "titulo": "Análise de risco e permissão de trabalho",
+     "status": "pendente"
+    },
+    {
+     "n": 4,
+     "titulo": "Condições impeditivas",
+     "status": "pendente"
+    },
+    {
+     "n": 5,
+     "titulo": "EPI: cinto tipo paraquedista e talabarte",
+     "status": "pendente"
+    },
+    {
+     "n": 6,
+     "titulo": "Ancoragem",
+     "status": "pendente"
+    },
+    {
+     "n": 7,
+     "titulo": "Inspeção do equipamento",
+     "status": "pendente"
+    },
+    {
+     "n": 8,
+     "titulo": "Queda: absorvedor e fator de queda",
+     "status": "pendente"
+    },
+    {
+     "n": 9,
+     "titulo": "Emergência e plano de resgate",
+     "status": "pendente"
+    },
+    {
+     "n": 10,
+     "titulo": "Acidentes típicos",
+     "status": "pendente"
+    }
+   ]
+  }
+ }
+}
