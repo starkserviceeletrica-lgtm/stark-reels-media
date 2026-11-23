@@ -117,10 +117,6 @@ p{margin:0}
 .parts b{font-weight:700}
 .parts span{color:var(--muted);font-size:.9375rem}
 .note{color:var(--muted);margin:-.25rem 0 1rem}
-.bonus{background:var(--navy);color:#fff;border-radius:18px;padding:1.5rem;display:grid;gap:.6rem;margin-top:2rem}
-.bonus small{color:var(--yellow);font-weight:700;font-size:.9375rem}
-.bonus h3{font:780 1.375rem/1.15 var(--font);font-stretch:110%;margin:0}
-.bonus p{color:var(--soft)}
 .for{list-style:none;margin:0;padding:0;display:grid;gap:.75rem}
 .for li{display:flex;gap:.7rem;align-items:flex-start;background:var(--paper);border-radius:12px;padding:.9rem 1rem}
 .for li::before{content:"";flex:none;width:22px;height:22px;margin-top:1px;border-radius:50%;background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4L18 8'/%3E%3C/svg%3E") center/14px no-repeat}
@@ -306,10 +302,10 @@ function render(k, push) {
   }
 
   document.getElementById('parts').innerHTML = `
-    <h2 id="tParts">${a.soon ? 'O que o curso cobre.' : 'O que tem dentro.'}</h2>
-    ${a.soon ? `<p class="note">A apostila de ${esc(a.curto)} está em produção e vai seguir o conteúdo do curso.</p>` : ''}
+    <h2 id="tParts">${a.soon ? 'O que a apostila vai cobrir.' : 'O que tem dentro.'}</h2>
+    ${a.soon ? `<p class="note">A apostila de ${esc(a.curto)} está em produção.</p>` : ''}
     <ol class="parts${a.plus ? ' plus' : ''}">${a.partes.map(([t, d]) => `<li><b>${esc(t)}</b><span>${esc(d)}</span></li>`).join('')}</ol>
-    ${a.soon ? '' : `<div class="bonus"><small>Junto com a apostila</small><h3>Acesso a uma parte do curso de ${esc(a.curto)}</h3><p>Enquanto o curso online completo não chega, você já estuda com parte das aulas da Stark, na área de alunos da Kiwify.</p></div>`}`;
+`;
 
   document.getElementById('for').innerHTML = `<h2 id="tFor">Para quem é.</h2><ul class="for">${a.para.map((p) => `<li>${esc(p)}</li>`).join('')}</ul>`;
 
@@ -317,7 +313,7 @@ function render(k, push) {
     ? `<h2>Enquanto ${esc(a.curto)} não sai</h2><p>Comece com as apostilas que já estão prontas.</p><a class="buy" href="?apostila=${ORDER.find((x) => !AP[x].soon)}">Ver apostila disponível</a>`
     : `<h2>Comece hoje com o material da Stark.</h2><p>${esc(a.sub)}</p><a class="buy" href="${buyHref(a)}" target="_blank" rel="noopener">${buyLabel(a)}</a>`;
 
-  document.getElementById('dockP').innerHTML = `<b>${a.preco && !a.soon ? esc(a.preco) + ' · ' : ''}${esc(a.curto)}</b>${a.soon ? 'Em breve' : 'Apostila + parte do curso'}`;
+  document.getElementById('dockP').innerHTML = `<b>${a.preco && !a.soon ? esc(a.preco) + ' · ' : ''}${esc(a.curto)}</b>${a.soon ? 'Em breve' : 'Apostila em PDF'}`;
   const db = document.getElementById('dockBuy'); db.href = buyHref(a); db.textContent = a.soon ? 'Avise-me' : 'Comprar';
 
   if (push) {

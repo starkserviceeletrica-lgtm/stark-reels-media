@@ -26,18 +26,18 @@ A loja repassa esses dados para o checkout da Kiwify.
 1. **Conta:** complete o cadastro e a conta bancária. Sem isso a Kiwify não libera saque.
 2. **Um produto por apostila** (Elétrica Predial e Refrigeração agora; NR-10 e NR-35 quando ficarem prontas):
    - Crie o produto e suba o **PDF da apostila**.
-   - Na **área de membros** do produto, crie um módulo com as aulas do bônus ("parte do curso").
+   - Na **área de membros** do produto, deixe um módulo só ("Sua apostila") com um conteúdo onde o PDF fica para baixar.
    - Defina o preço e a **garantia de 7 dias**.
    - Formas de pagamento: Pix, cartão (com parcelas) e boleto.
    - Personalize o checkout com a logo da Stark.
-3. **O combo de 3 apostilas:** crie **mais um produto** chamado "Combo 3 apostilas", coloque nele os 3 PDFs e as aulas, e dê o preço do combo. Ele terá o próprio link de checkout.
+3. **O combo de 3 apostilas:** crie **mais um produto** chamado "Combo 3 apostilas", coloque nele os 3 PDFs e dê o preço do combo. Ele terá o próprio link de checkout.
    - Opcional: use o **order bump** da Kiwify no checkout de uma apostila para oferecer outra com desconto.
 4. **Recuperação:** se a Kiwify mostrar a opção de lembrete para Pix/boleto não pago, deixe ligada.
 5. **Me mande, para cada produto:** o link de checkout (começa com `https://pay.kiwify.com.br/`) e o preço.
    Eu coloco em `site/vendas/gerar.py` e rodo `python3 site/vendas/gerar.py`.
    Enquanto o link estiver vazio, o botão abre o WhatsApp.
 
-A liberação é automática: pagamento aprovado → a Kiwify manda o e-mail com o acesso ao PDF e às aulas.
+A liberação é automática: pagamento aprovado → a Kiwify manda o e-mail com o acesso ao PDF.
 
 ## 3. Pôr o site no ar (Netlify, grátis)
 
