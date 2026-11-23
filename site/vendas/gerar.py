@@ -43,7 +43,7 @@ APOSTILAS = {
         "para": ["Quem nunca mexeu com elétrica e quer começar do jeito certo",
                  "Quem quer trabalhar como eletricista residencial",
                  "Quem já faz serviço e quer uma consulta rápida com fichas de defeito"],
-        "checkout": "", "preco": "", "de": "", "soon": False,
+        "checkout": "https://pay.kiwify.com.br/cHyqB5j", "preco": "", "de": "", "soon": False,
     },
     "refrigeracao": {
         "titulo": "Apostila Completa de Refrigeração", "curto": "Refrigeração",
