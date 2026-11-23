@@ -129,6 +129,55 @@ section{padding-block:clamp(4rem,9vw,7.5rem)}
 .hero-media figcaption{position:absolute;left:16px;bottom:14px;right:16px;color:#fff;font-size:.875rem;text-shadow:0 1px 8px rgba(0,0,0,.5)}
 @media (max-width:640px){.hero-media{aspect-ratio:4/5}}
 
+/* Apostilas: printed booklets you can buy online */
+.shop{background:var(--band);color:var(--band-fg)}
+.shop .lead{color:var(--band-muted)}
+.shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:900px){.shop-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.shop-grid{grid-template-columns:1fr}}
+.book{display:grid;grid-template-rows:auto 1fr;gap:1.1rem;min-width:0}
+.cover{position:relative;aspect-ratio:1/1.414;max-width:100%;border-radius:4px 10px 10px 4px;overflow:hidden;background:linear-gradient(160deg,#16255a,#0b1430 70%);box-shadow:inset 10px 0 12px -8px rgba(0,0,0,.6),0 24px 40px -18px rgba(0,0,0,.8);padding:0 10% 17% 14%;display:flex;flex-direction:column;color:#fff}
+.cover::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6%;background:linear-gradient(90deg,rgba(255,255,255,.08),rgba(0,0,0,.25))}
+.cover .label{margin:0 -11.5% auto -16%;background:#fff;padding:9% 10% 7% 14%}
+.cover .label img{width:78%;max-width:220px}
+.cover .kind{font:600 .875rem/1.2 var(--font);color:#ffb35c}
+.cover h3{font:800 clamp(1.4rem,2.6vw,1.9rem)/1.02 var(--font-display);font-stretch:115%;margin:.3rem 0 0;letter-spacing:-.02em}
+.cover .stripe{position:absolute;left:14%;right:10%;bottom:7%;height:4px;background:var(--orange);border-radius:2px}
+.book.soon .cover{filter:saturate(.35) brightness(.8)}
+@media (max-width:560px){.book{grid-template-columns:42% 1fr;grid-template-rows:auto;gap:1rem;align-items:start}.cover h3{font-size:1.05rem}.cover .kind{font-size:.75rem}}
+.book-info{display:grid;gap:.6rem;align-content:start}
+.book-info ul{list-style:none;margin:0;padding:0;display:grid;gap:.35rem;color:var(--band-muted);font-size:.9688rem}
+.book-info li{display:flex;gap:.5rem}
+.book-info li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--orange);margin-top:.55rem}
+.price{display:flex;align-items:baseline;gap:.5rem;font-variant-numeric:tabular-nums}
+.price b{font:800 1.5rem/1 var(--font-display);font-stretch:110%}
+.price span{color:var(--band-muted);font-size:.875rem}
+.book .btn{justify-self:start}
+.btn-buy{background:var(--orange);color:#1b1205}
+.btn-buy:hover{filter:brightness(1.06)}
+.btn-soft{background:rgba(255,255,255,.1);color:#fff}
+.shop-note{margin:2rem 0 0;color:var(--band-muted);font-size:.9375rem;max-width:62ch}
+
+/* História em fotos: one photo at a time, stories-style progress */
+.story{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:16/9;max-width:100%;background:#000;margin-top:.5rem}
+@media (max-width:640px){.story{aspect-ratio:4/5}}
+.story .slide{position:absolute;inset:0;margin:0;opacity:0;transition:opacity 700ms ease}
+.story .slide.active{opacity:1}
+.story img{width:100%;height:100%;object-fit:cover}
+.story figcaption{position:absolute;left:0;right:0;bottom:0;padding:3.5rem clamp(16px,3vw,32px) clamp(16px,2.5vw,28px);background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff;font-size:clamp(1rem,1.8vw,1.25rem);font-weight:600}
+.story figcaption span{display:block;font-size:.875rem;font-weight:500;opacity:.8;margin-bottom:.15rem}
+.bars{position:absolute;z-index:2;top:14px;left:clamp(16px,3vw,32px);right:clamp(16px,3vw,32px);display:flex;gap:4px}
+.bars i{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.35);overflow:hidden}
+.bars i::after{content:"";display:block;height:100%;width:0;background:#fff}
+.bars i.done::after{width:100%}
+.bars i.now::after{animation:fill var(--dur,5s) linear forwards}
+.story.paused .bars i.now::after{animation-play-state:paused}
+@keyframes fill{to{width:100%}}
+.tap{position:absolute;z-index:1;top:0;bottom:0;width:35%;border:0;background:transparent;cursor:pointer}
+.tap.prev{left:0}.tap.next{right:0}
+.story-ctl{position:absolute;z-index:2;top:28px;right:clamp(16px,3vw,32px);width:36px;height:36px;border-radius:50%;border:0;background:rgba(0,0,0,.35);color:#fff;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.story-ctl svg{width:14px;height:14px}
+
 /* Diferenciais */
 .diff{background:var(--surface)}
 .diff-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.5rem,3vw,2.5rem)}
@@ -284,7 +333,7 @@ footer nav a:hover{color:var(--fg)}
 /* Accessibility: gentler equivalents */
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
-  .btn,.breaker,.round,.fab,.channel,.lever{transition:none}
+  .btn,.breaker,.round,.fab,.channel,.lever,.story .slide{transition:none}
   .btn:active,.breaker:active,.round:active,.fab:active{transform:none;opacity:.8}
 }
 @media (prefers-reduced-transparency: reduce){
@@ -302,6 +351,7 @@ footer nav a:hover{color:var(--fg)}
   <div class="wrap">
     <a class="logo" href="#top" aria-label="Stark Service, início"><img src="img/stark-logo.png" alt="Stark Service — Cursos e Treinamentos" width="640" height="205"></a>
     <ul class="nav-links">
+      <li><a href="#apostilas">Apostilas</a></li>
       <li><a href="#cursos">Cursos</a></li>
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#historia">História</a></li>
@@ -314,6 +364,7 @@ footer nav a:hover{color:var(--fg)}
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
     </button>
     <nav class="menu" id="menu" hidden aria-label="Menu">
+      <a href="#apostilas">Apostilas</a>
       <a href="#cursos">Cursos</a>
       <a href="#sobre">Sobre</a>
       <a href="#historia">História</a>
@@ -334,7 +385,7 @@ footer nav a:hover{color:var(--fg)}
         <p class="lead">Cursos e treinamentos em Elétrica, Automação, Energia Solar, NRs e mais. Turmas reduzidas, instrutores qualificados e laboratório equipado para você sair pronto para atuar.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#contato">Quero me matricular</a>
-          <a class="btn btn-ghost" href="#cursos">Ver todos os cursos</a>
+          <a class="btn btn-ghost" href="#apostilas">Comprar apostilas online</a>
         </div>
         <ul class="hero-facts" aria-label="A escola em números">
           <li><b>+15</b> cursos disponíveis</li>
@@ -346,6 +397,17 @@ footer nav a:hover{color:var(--fg)}
         <img src="img/hero-lab.jpg" alt="Instrutor e alunos em aula prática" width="1600" height="1067" fetchpriority="high">
         <figcaption>Aula prática no laboratório da Stark Service</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="shop" id="apostilas">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="h2">Estude em casa com as apostilas da Stark.</h2>
+        <p class="lead">O mesmo material que usamos em sala, para comprar online. Enquanto o curso online não chega, cada apostila dá acesso a uma parte do curso.</p>
+      </div>
+      <div class="shop-grid" id="shopGrid"></div>
+      <p class="shop-note">O pagamento é feito na plataforma de checkout, com cartão, Pix ou boleto. Depois da compra, o acesso chega no seu e-mail. Dúvidas? Fale com a gente no WhatsApp (81) 98374-7177.</p>
     </div>
   </section>
 
@@ -451,25 +513,17 @@ footer nav a:hover{color:var(--fg)}
 
   <section class="gallery" aria-labelledby="galTitle">
     <div class="wrap">
-      <div class="sec-head split">
-        <div style="display:grid;gap:1rem">
-                    <h2 class="h2" id="galTitle">Momentos que marcaram a nossa trajetória.</h2>
-          <p class="lead">Fotos reais de turmas, aulas práticas e formaturas ao longo dos anos: a prova de que aqui a formação acontece de verdade.</p>
-        </div>
-        <div class="rail-ctl">
-          <button class="round" id="railPrev" aria-label="Fotos anteriores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
-          <button class="round" id="railNext" aria-label="Próximas fotos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
-        </div>
+      <div class="sec-head">
+        <h2 class="h2" id="galTitle">Nossa história em fotos.</h2>
+        <p class="lead">Turmas, aulas práticas e formaturas ao longo dos anos: a prova de que aqui a formação acontece de verdade.</p>
       </div>
-    </div>
-    <div class="rail" id="rail" tabindex="0" aria-label="Galeria de fotos">
-      <figure class="shot"><div class="ph"><img src="img/historia-2018-bancada.jpg" alt="Aula prática de instalações elétricas em 2018" loading="lazy" width="1600" height="1200"></div><figcaption><span>2018</span>Aulas práticas de elétrica</figcaption></figure>
-      <figure class="shot"><div class="ph"><img src="img/historia-2018-turma-bombeiro.jpg" alt="Turma de NR 35 em Vitória de Santo Antão" loading="lazy" width="1600" height="1200"></div><figcaption><span>2018</span>Turma de NR 35</figcaption></figure>
-      <figure class="shot"><div class="ph"><img src="img/historia-formatura-certificados.jpg" alt="Formatura de turma com certificados" loading="lazy" width="1024" height="768"></div><figcaption><span>Formatura</span>Formatura com certificados em mãos</figcaption></figure>
-      <figure class="shot"><div class="ph"><img src="img/historia-2025-instrutor-aluno.jpg" alt="Instrutor acompanhando aluno em bancada" loading="lazy" width="960" height="1280"></div><figcaption><span>Em aula</span>Acompanhamento próximo do instrutor</figcaption></figure>
-      <figure class="shot"><div class="ph"><img src="img/historia-2025-painel-comando.jpg" alt="Alunos em prática de comandos elétricos" loading="lazy" width="960" height="1280"></div><figcaption><span>Em aula</span>Prática em painéis de comando</figcaption></figure>
-      <figure class="shot"><div class="ph"><img src="img/historia-2025-bancada-dupla.jpg" alt="Alunos com EPI em bancada de elétrica predial" loading="lazy" width="960" height="1280"></div><figcaption><span>Em aula</span>Bancadas de elétrica predial</figcaption></figure>
-      <figure class="shot"><div class="ph"><img src="img/historia-2025-trio-epi.jpg" alt="Trio de alunos uniformizados após aula prática" loading="lazy" width="1200" height="1600"></div><figcaption><span>Em aula</span>Uniforme, EPI e prática real</figcaption></figure>
+      <div class="story" id="story" role="region" aria-roledescription="carrossel" aria-label="Nossa história em fotos">
+        <div class="bars" id="bars" aria-hidden="true"></div>
+        <button class="story-ctl" id="storyPause" aria-label="Pausar fotos"><svg viewBox="0 0 14 14" fill="currentColor"><rect x="2" y="1" width="3.5" height="12" rx="1"/><rect x="8.5" y="1" width="3.5" height="12" rx="1"/></svg></button>
+        <div id="slides"></div>
+        <button class="tap prev" id="storyPrev" aria-label="Foto anterior"></button>
+        <button class="tap next" id="storyNext" aria-label="Próxima foto"></button>
+      </div>
     </div>
   </section>
 
@@ -810,13 +864,73 @@ grab.addEventListener('pointercancel', endDrag);
 const deep = location.hash.match(/^#curso-(.+)$/);
 if (deep) openSheet(deep[1], false);
 
-/* ---------- Gallery rail ---------- */
-const rail = document.getElementById('rail'), prev = document.getElementById('railPrev'), next = document.getElementById('railNext');
-const step = () => (rail.querySelector('.shot').offsetWidth + 16) * (innerWidth < 700 ? 1 : 2);
-const updRail = () => { prev.disabled = rail.scrollLeft < 8; next.disabled = rail.scrollLeft + rail.clientWidth > rail.scrollWidth - 8; };
-prev.addEventListener('click', () => rail.scrollBy({ left: -step(), behavior: reduceMotion.matches ? 'auto' : 'smooth' }));
-next.addEventListener('click', () => rail.scrollBy({ left: step(), behavior: reduceMotion.matches ? 'auto' : 'smooth' }));
-rail.addEventListener('scroll', updRail, { passive: true }); addEventListener('resize', updRail); updRail();
+/* ---------- Apostilas ----------
+   Para ativar a venda: cole o link de checkout (Hotmart, Kiwify, Cakto...) em "checkout" e o preço em "price".
+   Sem link, o botão leva para o WhatsApp. "soon: true" mostra a apostila como "em breve". */
+const APOSTILAS = [
+  { slug:'refrigeracao', title:'Refrigeração e Climatização', price:'', checkout:'',
+    items:['Cerca de 50 a 60 páginas ilustradas, direto ao ponto','Fichas de defeito e exercícios','Acesso a uma parte do curso de Refrigeração'] },
+  { slug:'eletrica-predial', title:'Elétrica Predial', price:'', checkout:'', soon:true,
+    items:['Instalações residenciais do básico ao avançado','Acesso a uma parte do curso de Elétrica Predial'] },
+  { slug:'nr-10', title:'NR-10', price:'', checkout:'', soon:true,
+    items:['Segurança em instalações e serviços com eletricidade','Acesso a uma parte do curso de NR-10'] },
+];
+document.getElementById('shopGrid').innerHTML = APOSTILAS.map((a) => {
+  const live = !a.soon && a.checkout;
+  const href = live ? a.checkout : wa(a.soon ? `Olá! Quero entrar na lista da apostila de ${a.title}.` : `Olá! Quero comprar a apostila de ${a.title}.`);
+  const label = a.soon ? 'Avise-me quando sair' : 'Comprar apostila';
+  return `<article class="book${a.soon ? ' soon' : ''}" id="apostila-${a.slug}">
+    <div class="cover" aria-hidden="true"><div class="label"><img src="img/stark-logo.png" alt=""></div><span class="kind">Apostila</span><h3>${esc(a.title)}</h3><span class="stripe"></span></div>
+    <div class="book-info">
+      <h3 class="h3">Apostila de ${esc(a.title)}</h3>
+      <ul>${a.items.map((i) => `<li>${esc(i)}</li>`).join('')}</ul>
+      <p class="price">${a.soon ? '<span>Em breve</span>' : a.price ? `<b>${esc(a.price)}</b><span>à vista ou parcelado</span>` : '<span>Preço sob consulta</span>'}</p>
+      <a class="btn ${a.soon ? 'btn-soft' : 'btn-buy'}" href="${href}" target="_blank" rel="noopener">${label}</a>
+    </div></article>`;
+}).join('');
+
+/* ---------- História em fotos ---------- */
+const STORY = [
+  ['historia-2018-bancada.jpg','2018','Aulas práticas de elétrica'],
+  ['historia-2018-turma-bombeiro.jpg','2018','Turma de NR 35'],
+  ['historia-formatura-certificados.jpg','Formatura','Certificados em mãos'],
+  ['nr35-grupo.jpg','NR-35','Treinamento prático de trabalho em altura'],
+  ['aula-eletrica.jpg','Elétrica Predial','Aula prática na bancada'],
+  ['turma-sala.jpg','Elétrica Predial','Turma em sala com bancadas'],
+  ['historia-2025-instrutor-aluno.jpg','Em aula','Acompanhamento próximo do instrutor'],
+  ['historia-2025-painel-comando.jpg','Comandos Elétricos','Prática em painéis de comando'],
+  ['historia-2025-bancada-dupla.jpg','Em aula','Bancadas de elétrica predial'],
+  ['nr10-altura.jpg','NR-10','Prática próxima ao transformador'],
+  ['historia-2025-trio-epi.jpg','Em aula','Uniforme, EPI e prática real'],
+];
+const slidesEl = document.getElementById('slides'), bars = document.getElementById('bars'), story = document.getElementById('story');
+slidesEl.innerHTML = STORY.map(([f, t, c], i) => `<figure class="slide${i ? '' : ' active'}" aria-hidden="${i ? 'true' : 'false'}"><img src="img/${f}" alt="${esc(c)}" ${i > 1 ? 'loading="lazy"' : ''}><figcaption><span>${esc(t)}</span>${esc(c)}</figcaption></figure>`).join('');
+bars.innerHTML = STORY.map(() => '<i></i>').join('');
+const slides = [...slidesEl.children], barEls = [...bars.children];
+let cur = 0, timer = 0, paused = reduceMotion.matches;
+const DUR = 5000;
+function show(n) {
+  cur = (n + slides.length) % slides.length;
+  slides.forEach((el, i) => { el.classList.toggle('active', i === cur); el.setAttribute('aria-hidden', i !== cur); });
+  barEls.forEach((b, i) => { b.className = i < cur ? 'done' : ''; });
+  void bars.offsetWidth; barEls[cur].className = 'now';
+  const nxt = slides[(cur + 1) % slides.length].querySelector('img'); nxt.loading = 'eager';
+  clearTimeout(timer); if (!paused) timer = setTimeout(() => show(cur + 1), DUR);
+}
+function setPaused(p) {
+  paused = p; story.classList.toggle('paused', p);
+  const btn = document.getElementById('storyPause');
+  btn.setAttribute('aria-label', p ? 'Continuar fotos' : 'Pausar fotos');
+  btn.innerHTML = p ? '<svg viewBox="0 0 14 14" fill="currentColor"><path d="M3 1.5v11l9.5-5.5z"/></svg>' : '<svg viewBox="0 0 14 14" fill="currentColor"><rect x="2" y="1" width="3.5" height="12" rx="1"/><rect x="8.5" y="1" width="3.5" height="12" rx="1"/></svg>';
+  clearTimeout(timer); if (!p) timer = setTimeout(() => show(cur + 1), DUR);
+}
+document.getElementById('storyPrev').addEventListener('click', () => show(cur - 1));
+document.getElementById('storyNext').addEventListener('click', () => show(cur + 1));
+document.getElementById('storyPause').addEventListener('click', () => setPaused(!paused));
+story.addEventListener('keydown', (e) => { if (e.key === 'ArrowLeft') show(cur - 1); if (e.key === 'ArrowRight') show(cur + 1); });
+new IntersectionObserver(([en]) => { if (!en.isIntersecting) { clearTimeout(timer); } else if (!paused) show(cur); }, { threshold: .3 }).observe(story);
+document.documentElement.style.setProperty('--dur', DUR + 'ms');
+setPaused(paused); show(0);
 
 /* ---------- Lead form → WhatsApp, validated inline ---------- */
 const form = document.getElementById('leadForm'), status = document.getElementById('formStatus');
