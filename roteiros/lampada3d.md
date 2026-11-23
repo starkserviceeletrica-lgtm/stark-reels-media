@@ -1,6 +1,6 @@
 # Elétrica Predial (extra): instalando uma lâmpada no teto
 
-Status: AGUARDANDO APROVAÇÃO DO DONO
+Status: APROVADO pelo dono em 23/11
 Estilo: 3D liso (render suave), caixa octogonal amarela, eletrodutos corrugados, fundo azul degradê; abertura com planta da casa em corte.
 Palavra: ELÉTRICA
 
