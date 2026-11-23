@@ -132,7 +132,7 @@ section{padding-block:clamp(4rem,9vw,7.5rem)}
 /* Apostilas: printed booklets you can buy online */
 .shop{background:var(--band);color:var(--band-fg)}
 .shop .lead{color:var(--band-muted)}
-.shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.shop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 @media (max-width:900px){.shop-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.shop-grid{grid-template-columns:1fr}}
 .book{display:grid;grid-template-rows:auto 1fr;gap:1.1rem;min-width:0}
@@ -143,6 +143,7 @@ section{padding-block:clamp(4rem,9vw,7.5rem)}
 .cover .kind{font:600 .875rem/1.2 var(--font);color:#ffb35c}
 .cover h3{font:800 clamp(1.4rem,2.6vw,1.9rem)/1.02 var(--font-display);font-stretch:115%;margin:.3rem 0 0;letter-spacing:-.02em}
 .cover .stripe{position:absolute;left:14%;right:10%;bottom:7%;height:4px;background:var(--orange);border-radius:2px}
+.cover-img{aspect-ratio:1/1.414;width:100%;object-fit:cover;border-radius:4px 10px 10px 4px;box-shadow:inset 10px 0 12px -8px rgba(0,0,0,.6),0 24px 40px -18px rgba(0,0,0,.8)}
 .book.soon .cover{filter:saturate(.35) brightness(.8)}
 @media (max-width:560px){.book{grid-template-columns:42% 1fr;grid-template-rows:auto;gap:1rem;align-items:start}.cover h3{font-size:1.05rem}.cover .kind{font-size:.75rem}}
 .book-info{display:grid;gap:.6rem;align-content:start}
@@ -407,7 +408,7 @@ footer nav a:hover{color:var(--fg)}
         <p class="lead">O mesmo material que usamos em sala, para comprar online. Enquanto o curso online não chega, cada apostila dá acesso a uma parte do curso.</p>
       </div>
       <div class="shop-grid" id="shopGrid"></div>
-      <p class="shop-note">O pagamento é feito na plataforma de checkout, com cartão, Pix ou boleto. Depois da compra, o acesso chega no seu e-mail. Dúvidas? Fale com a gente no WhatsApp (81) 98374-7177.</p>
+      <p class="shop-note">Leve 3 apostilas no combo e pague menos. O pagamento é feito pela Kiwify, com cartão, Pix ou boleto. Depois da compra, o acesso chega no seu e-mail. Dúvidas? Fale com a gente no WhatsApp (81) 98374-7177.</p>
     </div>
   </section>
 
@@ -868,24 +869,21 @@ if (deep) openSheet(deep[1], false);
    Para ativar a venda: cole o link de checkout (Hotmart, Kiwify, Cakto...) em "checkout" e o preço em "price".
    Sem link, o botão leva para o WhatsApp. "soon: true" mostra a apostila como "em breve". */
 const APOSTILAS = [
-  { slug:'refrigeracao', title:'Refrigeração e Climatização', price:'', checkout:'',
-    items:['Cerca de 50 a 60 páginas ilustradas, direto ao ponto','Fichas de defeito e exercícios','Acesso a uma parte do curso de Refrigeração'] },
-  { slug:'eletrica-predial', title:'Elétrica Predial', price:'', checkout:'', soon:true,
-    items:['Instalações residenciais do básico ao avançado','Acesso a uma parte do curso de Elétrica Predial'] },
-  { slug:'nr-10', title:'NR-10', price:'', checkout:'', soon:true,
-    items:['Segurança em instalações e serviços com eletricidade','Acesso a uma parte do curso de NR-10'] },
+  { slug:'eletrica', capa:'eletrica-capa.jpg', title:'Elétrica Predial', items:['60 páginas ilustradas, com fichas de defeito','Acesso a uma parte do curso de Elétrica Predial'] },
+  { slug:'refrigeracao', capa:'refrigeracao-capa.jpg', title:'Refrigeração e Climatização', items:['Geladeira e split em 60 páginas ilustradas','Acesso a uma parte do curso de Refrigeração'] },
+  { slug:'nr-10', title:'NR-10', soon:true, items:['Segurança em instalações e serviços com eletricidade'] },
+  { slug:'nr-35', title:'NR-35', soon:true, items:['Trabalho em altura, EPI, ancoragem e resgate'] },
 ];
 document.getElementById('shopGrid').innerHTML = APOSTILAS.map((a) => {
-  const live = !a.soon && a.checkout;
-  const href = live ? a.checkout : wa(a.soon ? `Olá! Quero entrar na lista da apostila de ${a.title}.` : `Olá! Quero comprar a apostila de ${a.title}.`);
-  const label = a.soon ? 'Avise-me quando sair' : 'Comprar apostila';
+  const href = `apostilas.html?apostila=${a.slug}`;
+  const label = a.soon ? 'Ver e entrar na lista' : 'Ver apostila e comprar';
   return `<article class="book${a.soon ? ' soon' : ''}" id="apostila-${a.slug}">
-    <div class="cover" aria-hidden="true"><div class="label"><img src="img/stark-logo.png" alt=""></div><span class="kind">Apostila</span><h3>${esc(a.title)}</h3><span class="stripe"></span></div>
+    ${a.capa ? `<img class="cover-img" src="img/previa/${a.capa}" alt="Capa da apostila de ${esc(a.title)}" loading="lazy">` : `<div class="cover" aria-hidden="true"><div class="label"><img src="img/stark-logo.png" alt=""></div><span class="kind">Apostila</span><h3>${esc(a.title)}</h3><span class="stripe"></span></div>`}
     <div class="book-info">
       <h3 class="h3">Apostila de ${esc(a.title)}</h3>
       <ul>${a.items.map((i) => `<li>${esc(i)}</li>`).join('')}</ul>
-      <p class="price">${a.soon ? '<span>Em breve</span>' : a.price ? `<b>${esc(a.price)}</b><span>à vista ou parcelado</span>` : '<span>Preço sob consulta</span>'}</p>
-      <a class="btn ${a.soon ? 'btn-soft' : 'btn-buy'}" href="${href}" target="_blank" rel="noopener">${label}</a>
+      <p class="price">${a.soon ? '<span>Em breve</span>' : '<span>Com prévia de 3 páginas</span>'}</p>
+      <a class="btn ${a.soon ? 'btn-soft' : 'btn-buy'}" href="${href}">${label}</a>
     </div></article>`;
 }).join('');
 
