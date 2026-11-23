@@ -136,12 +136,12 @@ function render(c){
  Lb('q2','ALARME',V(0.9,4.0,-0.9),'#ff4d4d','#fff',E.q_alarme,N[1]-0.1);
  Lb('q3','CERCA ELÉTRICA',V(4.0,3.3,1.0),'#ffd400','#10151f',E.q_cerca,N[1]-0.1);
  Lb('q4','INTERFONE',V(1.4,0.6,1.2),'#2ecc71','#10151f',E.q_inter,N[1]-0.1);
- Lb('cam','CÂMERA · GRAVA E MOSTRA',V(-0.9,4.8,1.7),'#4db8ff','#10151f',E.cam,N[2]-0.1);
+ Lb('cam','CÂMERA · GRAVA E MOSTRA',V(-1.5,4.8,1.7),'#4db8ff','#10151f',E.cam,N[2]-0.1);
  Lb('sen','SENSOR',V(-0.9,4.0,-0.9),'#ffffff','#10151f',E.sensor,N[3]-0.1);
  Lb('sir','SIRENE',V(0.9,4.0,-0.9),'#ff4d4d','#fff',E.acionado,N[3]-0.1);
  Lb('cer','CERCA ELÉTRICA',V(3.6,3.0,1.0),'#ffd400','#10151f',E.cerca,N[4]-0.1);
  Lb('int','INTERFONE',V(1.36,1.9,1.2),'#2ecc71','#10151f',E.inter,N[5]-0.1);
- Lb('ale','INSTALAÇÃO CORRETA',V(3.6,1.62,1.2),'#e53935','#fff',E.alerta,N[6]-0.1);
+ Lb('ale','INSTALAÇÃO CORRETA',V(3.45,1.62,1.2),'#e53935','#fff',E.alerta,N[6]-0.1);
  Lb('sin','+ SINALIZAÇÃO',V(3.6,0.72,1.2),'#ffd400','#10151f',E.sinal,N[6]-0.1);
  Lb('jun','TUDO INTEGRADO',V(0,4.8,-0.5),'#ffc400','#10151f',E.juntos,N[7]-0.3);
 }

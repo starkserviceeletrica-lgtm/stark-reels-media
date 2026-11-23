@@ -66,6 +66,13 @@
    "legenda": "legendas/automacao3d.txt",
    "aprovado": true,
    "status": "agendado: qua 25/11 12h (Recife); vídeo ainda será produzido (voz amanhã 5h)"
+  },
+  {
+   "nome": "seguranca-1-os-sistemas",
+   "arquivo": "videos/seguranca3d.mp4",
+   "legenda": "legendas/seguranca3d.txt",
+   "aprovado": true,
+   "status": "agendado: qui 26/11 12h (Recife); vídeo em renderização, postagem pela sessão principal"
   }
  ]
 }
