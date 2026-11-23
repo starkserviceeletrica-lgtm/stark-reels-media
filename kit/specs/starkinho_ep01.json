@@ -1,8 +1,8 @@
 {
  "title": "Starkinho EP 01 – O chuveiro que derruba o disjuntor",
  "voice": "Puck",
- "model": "gemini-3.1-flash-tts-preview",
- "pause_between_requests": 8,
+ "model": "gemini-2.5-flash-preview-tts",
+ "pause_between_requests": 4,
  "scene": "starkinho01",
  "pill": "Manda ELÉTRICA no direct",
  "lines": [
