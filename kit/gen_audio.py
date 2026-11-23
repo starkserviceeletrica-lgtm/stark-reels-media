@@ -63,7 +63,7 @@ lines=[load(i) for i in range(len(L))]
 rms=np.array([np.sqrt(np.mean(x**2)) for x in lines]);tgt=np.exp(np.mean(np.log(rms)));lines=[x*(tgt/r)**0.6 for x,r in zip(lines,rms)]
 DU=[len(x)/SR for x in lines];N=[0.0];ST=[]
 for i,d in enumerate(DU):
-    lead=0.3 if i==0 else 0.03;ST.append(N[-1]+lead);N.append(N[-1]+lead+d+0.12+(1.8 if i==len(DU)-1 else 0))
+    lead=0.3 if i==0 else 0.03;ST.append(N[-1]+lead);N.append(N[-1]+lead+d+0.12+L[i].get('pause_after',0)+(1.8 if i==len(DU)-1 else 0))
 buf=np.zeros(int(N[-1]*SR)+SR,np.float32)
 for s,x in zip(ST,lines): j=int(s*SR);buf[j:j+len(x)]+=x
 buf=buf[:int(N[-1]*SR)];buf=buf/np.abs(buf).max()*0.9;sf.write(out+'/raw.wav',buf,SR)

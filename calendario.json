@@ -72,7 +72,14 @@
    "arquivo": "videos/starkinho_ep01.mp4",
    "legenda": "legendas/starkinho_ep01.txt",
    "aprovado": false,
-   "status": "vídeo pronto em 23/11 (voz com gemini-2.5-flash-preview-tts, autorizado pelo dono). Aguardando revisão do dono; NÃO postar até aprovado=true."
+   "status": "SUBSTITUÍDO pela v2 (dono achou a v1 rasa). Não postar."
+  },
+  {
+   "nome": "starkinho-ep01-v2-historia",
+   "arquivo": "videos/starkinho_ep01_v2.mp4",
+   "legenda": "legendas/starkinho_ep01_v2.txt",
+   "aprovado": false,
+   "status": "em produção: roteiro v2 aprovado em 23/11; cena, trilha e efeitos prontos; voz 6/11 (gemini-3.8-flash-tts; cota volta 24/11 ~5h Recife). NÃO postar até o dono aprovar o vídeo pronto."
   }
  ]
 }

@@ -1,0 +1,223 @@
+{
+ "title": "Starkinho EP 01 v2 – O chuveiro da dona Maria (história)",
+ "voice": "Puck",
+ "model": "gemini-3.8-flash-tts",
+ "pause_between_requests": 6,
+ "scene": "starkinho01b",
+ "pill": "Manda ELÉTRICA no direct",
+ "lines": [
+  {
+   "text": "Meu primeiro serviço sozinho… e o chuveiro da dona Maria quase acabou comigo. Toda noite, a mesma coisa.",
+   "voice": "Puck",
+   "style": "Você é um jovem eletricista contando uma história de suspense em primeira pessoa, voz baixa e tensa, com pausas dramáticas, como quem conta um segredo. Diga:",
+   "events": {
+    "primeiro": "primeiro",
+    "acabou": "acabou",
+    "toda": "Toda"
+   },
+   "pause_after": 0.2
+  },
+  {
+   "text": "Liguei o chuveiro e… PÁ! Caiu de novo!",
+   "voice": "Gacrux",
+   "style": "Você é uma senhora brava e exasperada, reclamando alto, com uma pausa antes do PÁ e gritando o PÁ. Diga:",
+   "events": {
+    "liguei": "Liguei",
+    "pa": "PÁ"
+   },
+   "pause_after": 0.3
+  },
+  {
+   "text": "Três eletricistas já tinham passado por lá. Todos fizeram a mesma coisa: religaram, cobraram… e sumiram.",
+   "voice": "Puck",
+   "style": "Você é um jovem contando uma história de mistério, voz grave e desconfiada, ritmado, com pausa longa antes de 'e sumiram'. Diga:",
+   "events": {
+    "tres": "Três",
+    "religaram": "religaram",
+    "cobraram": "cobraram",
+    "sumiram": "sumiram"
+   },
+   "pause_after": 0.3
+  },
+  {
+   "text": "No meu primeiro dia, o Seu Fabiano me disse uma coisa que eu não entendi.",
+   "voice": "Puck",
+   "style": "Você é um jovem relembrando o passado, voz nostálgica e misteriosa, devagar. Diga:",
+   "events": {
+    "fabiano": "Fabiano"
+   }
+  },
+  {
+   "text": "Disjuntor que cai não é o problema, menino. É um aviso.",
+   "voice": "Charon",
+   "style": "Você é um eletricista experiente e sábio, voz grave, calma e firme, devagar, com uma pausa antes de 'É um aviso'. Diga:",
+   "events": {
+    "aviso": "aviso"
+   },
+   "pause_after": 0.4
+  },
+  {
+   "text": "Abri o quadro. Lá estava ele: o disjuntor do chuveiro, desarmado. Religuei… dois segundos… e caiu de novo.",
+   "voice": "Puck",
+   "style": "Você é um jovem contando uma cena de suspense, sussurrando e tenso, com pausas longas, e surpreso no final. Diga:",
+   "events": {
+    "abri": "Abri",
+    "desarmado": "desarmado",
+    "religuei": "Religuei",
+    "dois": "dois",
+    "caiu": "caiu"
+   },
+   "pause_after": 0.2
+  },
+  {
+   "text": "Meu filho, o último moço disse que era só botar um disjuntor maior. Eu até já comprei!",
+   "voice": "Gacrux",
+   "style": "Você é uma senhora simpática e esperançosa, orgulhosa de ter resolvido, mostrando uma caixinha. Diga:",
+   "events": {
+    "filho": "filho",
+    "maior": "maior",
+    "comprei": "comprei"
+   },
+   "pause_after": 0.2
+  },
+  {
+   "text": "Era só trocar. Cinco minutos. Eu ia embora como herói… Mas aquela frase não saía da minha cabeça: é um aviso.",
+   "voice": "Puck",
+   "style": "Você é um jovem tentado e em dúvida, falando baixinho consigo mesmo, quase sussurrando, com pausas, e mais tenso no final. Diga:",
+   "events": {
+    "trocar": "trocar",
+    "heroi": "herói",
+    "frase": "frase",
+    "aviso2": "aviso"
+   },
+   "pause_after": 0.3
+  },
+  {
+   "text": "Opção A: eu boto o disjuntor maior e resolvo hoje. Opção B: eu desligo tudo, abro o chuveiro e descubro o que ele tá escondendo.",
+   "voice": "Puck",
+   "style": "Você é um jovem diante de uma escolha difícil, voz tensa e pausada, apresentando as duas opções com clareza. Diga:",
+   "events": {
+    "A": "Opção",
+    "B": [
+     "Opção",
+     1
+    ]
+   }
+  },
+  {
+   "text": "Eu tô com a mão no quadro. Comenta A ou B. Quem ganhar, o Starkinho faz!",
+   "voice": "Puck",
+   "style": "Você é um jovem eletricista falando direto com o público, primeiro tenso e depois animado, como um desafio. Diga:",
+   "events": {
+    "mao": "mão",
+    "comenta": "Comenta"
+   }
+  },
+  {
+   "text": "Quer aprender elétrica de verdade? Manda elétrica no direct.",
+   "voice": "Puck",
+   "style": "Diga animado e sorrindo, como um convite descontraído:"
+  }
+ ],
+ "cards": [],
+ "fx": {},
+ "end_line": 10,
+ "scene_opts": {},
+ "sfx": [
+  {
+   "at": "liguei",
+   "type": "water",
+   "to": "N2",
+   "off": -0.1,
+   "gain": 0.8
+  },
+  {
+   "at": "pa",
+   "type": "clack",
+   "off": -0.08
+  },
+  {
+   "at": "pa",
+   "type": "boom",
+   "off": -0.05
+  },
+  {
+   "at": "N2",
+   "type": "whoosh",
+   "off": -0.35
+  },
+  {
+   "at": "cobraram",
+   "type": "coins"
+  },
+  {
+   "at": "sumiram",
+   "type": "poof"
+  },
+  {
+   "at": "N3",
+   "type": "whoosh",
+   "off": -0.35,
+   "gain": 1.2
+  },
+  {
+   "at": "N5",
+   "type": "whoosh",
+   "off": -0.3
+  },
+  {
+   "at": "abri",
+   "type": "creak"
+  },
+  {
+   "at": "religuei",
+   "type": "click",
+   "off": 0.15
+  },
+  {
+   "at": "caiu",
+   "type": "clack",
+   "off": -0.05
+  },
+  {
+   "at": "caiu",
+   "type": "boom",
+   "off": -0.03,
+   "gain": 0.8
+  },
+  {
+   "at": "aviso2",
+   "type": "whoosh",
+   "off": -1.05
+  },
+  {
+   "at": "aviso2",
+   "type": "whoosh",
+   "off": 0.3
+  },
+  {
+   "at": "A",
+   "type": "pop"
+  },
+  {
+   "at": "B",
+   "type": "pop"
+  },
+  {
+   "at": "comenta",
+   "type": "pop"
+  }
+ ],
+ "music": {
+  "style": "suspense",
+  "tense_from": "N5",
+  "rise_from": "N8",
+  "dark_ranges": [
+   [
+    "N3",
+    "N5"
+   ]
+  ]
+ },
+ "trim_instruction": true
+}
