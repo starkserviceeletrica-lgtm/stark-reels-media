@@ -72,7 +72,7 @@
    "arquivo": "videos/starkinho_ep01.mp4",
    "legenda": "legendas/starkinho_ep01.txt",
    "aprovado": false,
-   "status": "em produção: cena 3D e spec prontas; voz parou na fala 3/8 (cota diária do Gemini esgotada em 23/11). Falta: voz, render e revisão do dono. NÃO postar até o dono aprovar o vídeo pronto."
+   "status": "em produção: cena 3D e spec prontas; voz em 3/8 (falas salvas em kit/builds/starkinho_ep01/lines). Cota diária do Gemini esgotou de novo em 23/11 5h15; libera ~24/11 5h (Recife). Falta: 5 falas, render e revisão do dono. NÃO postar até o dono aprovar o vídeo pronto."
   }
  ]
 }
