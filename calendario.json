@@ -8,7 +8,8 @@
   "reels": "share_to_feed = false (so na aba de Reels). Artes/imagens saem com create_image_post.",
   "autorizacao": "Postar somente itens com aprovado = true. Vídeo novo nunca entra aqui sem o dono aprovar.",
   "url_do_video": "https://raw.githubusercontent.com/starkserviceeletrica-lgtm/stark-reels-media/<SHA_DO_COMMIT>/videos/<arquivo>  (usar o SHA, o link 'main' demora a atualizar)",
-  "legenda": "Texto exato do arquivo em legendas/<nome>.txt"
+  "legenda": "Texto exato do arquivo em legendas/<nome>.txt",
+  "cadencia": "2 vídeos por dia (12h e 19h, Recife) a partir de 24/11"
  },
  "itens": [
   {
@@ -58,21 +59,28 @@
    "arquivo": "videos/comandos3d.mp4",
    "legenda": "legendas/comandos3d.txt",
    "aprovado": true,
-   "status": "agendado: ter 24/11 12h (Recife); vídeo ainda será produzido (voz amanhã 5h)"
+   "status": "adiado por decisão do dono (23/11); não postar até nova ordem"
   },
   {
    "nome": "automacao-1-o-que-automatizar",
    "arquivo": "videos/automacao3d.mp4",
    "legenda": "legendas/automacao3d.txt",
    "aprovado": true,
-   "status": "agendado: qua 25/11 12h (Recife); vídeo ainda será produzido (voz amanhã 5h)"
+   "status": "agendado: ter 24/11 12h (Recife)"
   },
   {
    "nome": "seguranca-1-os-sistemas",
    "arquivo": "videos/seguranca3d.mp4",
    "legenda": "legendas/seguranca3d.txt",
    "aprovado": true,
-   "status": "agendado: qui 26/11 12h (Recife); vídeo produzido, postagem pela sessão principal"
+   "status": "postar em 23/11 (dono pediu para antecipar)"
+  },
+  {
+   "nome": "tomada-3d",
+   "arquivo": "videos/tomada3d.mp4",
+   "legenda": "legendas/tomada3d.txt",
+   "aprovado": true,
+   "status": "postar em 23/11 (dono pediu)"
   }
  ]
 }
