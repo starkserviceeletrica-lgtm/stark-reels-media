@@ -66,6 +66,13 @@
    "legenda": "legendas/automacao3d.txt",
    "aprovado": true,
    "status": "agendado: qua 25/11 12h (Recife); vídeo ainda será produzido (voz amanhã 5h)"
+  },
+  {
+   "nome": "starkinho-ep01-chuveiro",
+   "arquivo": "videos/starkinho_ep01.mp4",
+   "legenda": "legendas/starkinho_ep01.txt",
+   "aprovado": false,
+   "status": "em produção: cena 3D e spec prontas; voz parou na fala 3/8 (cota diária do Gemini esgotada em 23/11). Falta: voz, render e revisão do dono. NÃO postar até o dono aprovar o vídeo pronto."
   }
  ]
 }

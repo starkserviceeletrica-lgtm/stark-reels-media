@@ -1,0 +1,79 @@
+{
+ "title": "Starkinho EP 01 – O chuveiro que derruba o disjuntor",
+ "voice": "Puck",
+ "model": "gemini-3.1-flash-tts-preview",
+ "pause_between_requests": 8,
+ "scene": "starkinho01",
+ "pill": "Manda ELÉTRICA no direct",
+ "lines": [
+  {
+   "text": "Toda vez que eu ligo o chuveiro, a luz cai!",
+   "voice": "Gacrux",
+   "style": "Você é uma senhora simpática, irritada e exasperada, falando alto e rápido. Diga:",
+   "events": {
+    "ligo": "ligo",
+    "cai": "cai"
+   }
+  },
+  {
+   "text": "Deixa comigo, dona Maria!",
+   "voice": "Puck",
+   "style": "Você é um jovem eletricista animado e confiante. Diga sorrindo:",
+   "events": {
+    "deixa": "Deixa"
+   }
+  },
+  {
+   "text": "Olha aí: o disjuntor do chuveiro desarmou. Vou religar.",
+   "voice": "Puck",
+   "style": "Você é um jovem eletricista curioso. Diga apontando, de forma clara:",
+   "events": {
+    "olha": "Olha",
+    "disjuntor": "disjuntor",
+    "religar": "religar"
+   }
+  },
+  {
+   "text": "Desarmou de novo! Hmm… tem alguma coisa errada.",
+   "voice": "Puck",
+   "style": "Você é um jovem eletricista surpreso e depois pensativo. Diga:",
+   "events": {
+    "denovo": "Desarmou",
+    "errada": "errada"
+   }
+  },
+  {
+   "text": "Ideia A: trocar por um disjuntor maior pra ele parar de desarmar.",
+   "voice": "Puck",
+   "style": "Você é um jovem eletricista pensando alto, meio empolgado. Diga:",
+   "events": {
+    "A": "Ideia"
+   }
+  },
+  {
+   "text": "Ideia B: desligar tudo, abrir o chuveiro e conferir a ligação.",
+   "voice": "Puck",
+   "style": "Você é um jovem eletricista pensando alto, com calma. Diga:",
+   "events": {
+    "B": "Ideia"
+   }
+  },
+  {
+   "text": "E aí, o que eu faço? Comenta A ou B. Quem ganhar, o Starkinho faz!",
+   "voice": "Puck",
+   "style": "Você é um jovem eletricista falando direto com o público, animado, como um desafio divertido. Diga:",
+   "events": {
+    "comenta": "Comenta"
+   }
+  },
+  {
+   "text": "Quer aprender elétrica de verdade? Manda elétrica no direct.",
+   "voice": "Puck",
+   "style": "Diga animado e sorrindo, como um convite descontraído:"
+  }
+ ],
+ "cards": [],
+ "fx": {},
+ "end_line": 7,
+ "scene_opts": {}
+}

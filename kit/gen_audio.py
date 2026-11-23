@@ -7,8 +7,8 @@ import numpy as np,soundfile as sf,librosa
 spec=json.load(open(sys.argv[1]));out=sys.argv[2];os.makedirs(out+'/lines',exist_ok=True)
 MODEL=spec.get('model','gemini-3.1-flash-tts-preview');VOICE=spec.get('voice','Puck');SR=24000;L=spec['lines']
 def norm(w): return re.sub(r'[^a-z0-9]','',unicodedata.normalize('NFD',w.lower()).encode('ascii','ignore').decode())
-def tts(text,style,path):
-    body={"contents":[{"parts":[{"text":f"{style} {text}"}]}],"generationConfig":{"responseModalities":["AUDIO"],"speechConfig":{"voiceConfig":{"prebuiltVoiceConfig":{"voiceName":VOICE}}}}}
+def tts(text,style,path,voice=None):
+    body={"contents":[{"parts":[{"text":f"{style} {text}"}]}],"generationConfig":{"responseModalities":["AUDIO"],"speechConfig":{"voiceConfig":{"prebuiltVoiceConfig":{"voiceName":voice or VOICE}}}}}
     open(out+'/req.json','w').write(json.dumps(body))
     for k in range(8):
         r=subprocess.run(['curl','-sS','-m','120','-X','POST',f'https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent','-H','Content-Type: application/json','-d','@'+out+'/req.json'],capture_output=True,text=True)
@@ -50,7 +50,7 @@ for i,l in enumerate(L):
     if os.path.exists(p):
         if os.environ.get('TRIM_EXISTING'): trim_instruction(p,l.get('spoken',l['text']),l['style'])
         continue
-    print('voz',i+1,'/',len(L),l['text'][:40],flush=True);tts(l.get('spoken',l['text']),l['style'],p)
+    print('voz',i+1,'/',len(L),l['text'][:40],flush=True);tts(l.get('spoken',l['text']),l['style'],p,l.get('voice'))
     if spec.get('trim_instruction'): trim_instruction(p,l.get('spoken',l['text']),l['style'])
     time.sleep(PAUSE)
 def load(i):
