@@ -162,7 +162,7 @@ Escritos por IA a partir de conhecimento geral. **Revise cada frase como profess
 7. E o segredo? Frio é a ausência de calor, e o aparelho só move calor de lugar.
 8. Manda REFRIGERAÇÃO no direct e conheça o curso!
 
-### Sábado 28/11 · NR-10 #1: por que existe
+### Sábado 28/11 · NR-10 #1: por que existe (aprovado pelo dono; vídeo nr103d.mp4, antecipado para qua 25/11 12h)
 1. Um choque elétrico pode matar, e a NR-10 existe para evitar isso. Você conhece a norma?
 2. A NR-10 é a norma de segurança em instalações e serviços com eletricidade.
 3. Ela vale para quem projeta, instala, opera e faz manutenção.

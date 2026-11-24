@@ -88,6 +88,13 @@
    "legenda": "legendas/qdc2_3d.txt",
    "aprovado": false,
    "status": "em produção (24/11): cena 3D e spec prontos; roteiro aguardando aprovação/revisão técnica (roteiros/qdc2.md). Sem voz e sem vídeo ainda. NÃO postar."
+  },
+  {
+   "nome": "nr10-1-por-que-existe",
+   "arquivo": "videos/nr103d.mp4",
+   "legenda": "legendas/nr103d.txt",
+   "aprovado": true,
+   "status": "agendado: qua 25/11 12h (Recife)"
   }
  ]
 }
