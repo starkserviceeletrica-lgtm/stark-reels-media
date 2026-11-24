@@ -104,6 +104,10 @@ if __name__ == "__main__":
     html = (AQUI / "loja.html").read_text(encoding="utf-8").replace("[[dados]]", dados)
     (SITE / "apostilas.html").write_text(html, encoding="utf-8")
     print("gerado: site/apostilas.html")
+    teste = AQUI / "loja-teste.html"   # versão de teste com animações (não substitui a loja)
+    if teste.exists():
+        (SITE / "apostilas-teste.html").write_text(teste.read_text(encoding="utf-8").replace("[[dados]]", dados), encoding="utf-8")
+        print("gerado: site/apostilas-teste.html")
     # endereços antigos continuam funcionando
     for slug in ("eletrica", "refrigeracao"):
         (SITE / f"apostila-{slug}.html").write_text(
