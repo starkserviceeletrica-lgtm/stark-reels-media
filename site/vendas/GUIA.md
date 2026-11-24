@@ -59,6 +59,12 @@ Depois que o endereço existir, me passe para eu trocar `SEU-SITE` nos links e n
 
 Alternativa: o Cloudflare Pages funciona igual (Connect to Git → pasta de saída `site`).
 
+## 3b. Publicar no Vercel (o GitHub e o Netlify não abrem na rede da Stark)
+
+O token do Vercel está salvo no ambiente do Claude. Para publicar ou atualizar a loja, peça ao Claude:
+"publica a loja no Vercel". Ele roda `bash site/vendas/publicar-vercel.sh`.
+Endereço: `https://starkservice.vercel.app/loja` (ou o nome que o Vercel der, se esse já existir).
+
 ## 4. O direct (MyChatBot)
 
 O assistente já responde comentário e manda DM, mas a conta está **sem respostas de IA**. Com o plano reativado e o site no ar, eu atualizo as instruções com a tabela da seção 1. A mudança aparece num cartão para você aprovar.
