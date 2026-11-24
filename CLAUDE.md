@@ -32,3 +32,6 @@ Nunca invente dado da escola, preço ou norma. Conteúdo técnico incerto: peça
 
 ## Regra de estilo e conteúdo (24/11/2026, decisão do dono)
 Leia `kit/ESTILO-QDC.md` ANTES de criar qualquer cena ou roteiro. Os vídeos em desenho simples (low poly) e os que só "mostram" (sem ensinar) foram reprovados pelo dono e pelos números. Todo vídeo novo: realismo do QDC (sombras, peças arredondadas e texturas, bancada) e conteúdo de TUTORIAL passo a passo. Nada é postado sem o dono ver o vídeo e aprovar o roteiro.
+
+## Voz fixa
+Todo vídeo novo usa a voz Orus (modelo gemini-3.1-flash-tts-preview), escolhida pelo dono em 24/11/2026. Detalhes em `.claude/skills/video-estilo-qdc/SKILL.md`.

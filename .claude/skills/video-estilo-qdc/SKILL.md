@@ -29,9 +29,10 @@ Modelo de referência: `kit/scenes3d/qdc3d.js` + `kit/specs/qdc3d.json` (vídeo 
 ## 5. Legenda do post (padrão que converteu)
 1ª linha de gancho forte (começa com "Todo ... precisa saber") + lista curta dos passos + "O segredo: ..." + UM pedido só ("Manda <PALAVRA> no direct pra saber do curso de <Curso> da Stark Service.") + "Vídeo criado por @rhaylook, da Stark Service." + 5 hashtags do nicho (sem genéricas).
 
-## Voz
-- Público da Stark é masculino: usar voz masculina grave e firme. Candidatas do Gemini TTS a testar: Charon, Orus, Algenib. O dono escolhe uma ouvindo amostras e fixa ("a voz da Stark"); use a mesma em todos os vídeos e no mesmo modelo, para o timbre não variar entre vídeos.
-- Modelos: `gemini-3.1-flash-tts-preview` (fala só o texto) ou `gemini-3.8-flash-tts` (use `"trim_instruction": true`) ou `gemini-2.5-flash-preview-tts`. Não troque de modelo no meio do vídeo.
+## Voz (DECIDIDO pelo dono em 24/11/2026)
+- **Voz fixa da Stark: Orus** (masculina, grave e firme), modelo `gemini-3.1-flash-tts-preview`, estilo de direção em português ("Diga com voz grave, firme e confiante, como um instrutor experiente:"). Use SEMPRE essa voz e esse modelo em todos os vídeos novos.
+- Cota grátis: ~10 falas por dia por modelo; um vídeo usa 7 a 9. Sem plano pago de voz, sai 1 vídeo por dia com a voz fixa. Não troque de modelo/voz para "caber" mais vídeos sem avisar o dono.
+- Os vídeos antigos (Puck, Kore etc.) ficam como estão; não reaproveite a voz deles em vídeo novo.
 
 ## O que NÃO fazer (reprovado pelos números)
 Desenho low poly "quadradão", paisagem/sala de brinquedo, vídeo que só mostra "o que é", três posts seguidos em poucos minutos, repostar o mesmo vídeo.
