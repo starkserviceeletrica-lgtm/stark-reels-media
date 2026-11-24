@@ -5,4 +5,4 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 python3 vendas/gerar.py
-npx --yes vercel@latest deploy . --prod --yes --name starkservice --token proxy-injected
+npx --yes vercel@latest deploy . --prod --yes --name starkservice --token proxyinjected
