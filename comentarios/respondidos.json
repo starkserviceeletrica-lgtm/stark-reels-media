@@ -1,0 +1,13 @@
+{
+  "observacao": "comment_id de comentarios (nao respostas) que ja receberam resposta publica. Nao responder de novo.",
+  "respondidos": [
+    "17895492444616807",
+    "17905591776375791",
+    "18141741442716096",
+    "18116558131872825"
+  ],
+  "para_o_dono": {
+    "criticas": ["17956630800337511", "18081288002435190"],
+    "tecnica_para_revisar": ["18108773299998902", "18079625735726970"]
+  }
+}
