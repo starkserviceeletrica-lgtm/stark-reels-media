@@ -29,3 +29,6 @@ Passo a passo de cada dia:
 6. Suba o vídeo em `videos/`, a legenda em `legendas/` (1 linha forte, 2 blocos curtos, uma chamada, 3 a 5 hashtags, "Vídeo criado por @rhaylook, da Stark Service."), atualize `calendario.json` e `cronograma.json` e faça o commit (git config user.name Claude, user.email noreply@anthropic.com).
 7. Poste conforme a seção "Como postar" acima (checar duplicata, timeout não é falha) e avise o dono com o link.
 Nunca invente dado da escola, preço ou norma. Conteúdo técnico incerto: peça revisão ao dono.
+
+## Regra de estilo e conteúdo (24/11/2026, decisão do dono)
+Leia `kit/ESTILO-QDC.md` ANTES de criar qualquer cena ou roteiro. Os vídeos em desenho simples (low poly) e os que só "mostram" (sem ensinar) foram reprovados pelo dono e pelos números. Todo vídeo novo: realismo do QDC (sombras, peças arredondadas e texturas, bancada) e conteúdo de TUTORIAL passo a passo. Nada é postado sem o dono ver o vídeo e aprovar o roteiro.
