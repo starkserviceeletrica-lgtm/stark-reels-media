@@ -194,7 +194,7 @@ function render(c){
  L('fri','FRIO',V(-0.8,BENCH+0.75,1.6),'#2f8fe0','#fff',E.frio1,N[2]-0.1);
  L('den','DENTRO',V(-0.35,2.05,0),'#2f8fe0','#fff',E.dentro,N[3]-0.1);
  L('for','FORA',V(0.7,-1.05,0.4),HOT,'#fff',E.fora,N[3]-0.1);
- L('flu','FLUIDO REFRIGERANTE',V(0.6,0.75,0),'#fff','#10151f',E.fluido,N[4]-0.1);
+ L('flu','FLUIDO REFRIGERANTE',V(1.05,0.75,0),'#fff','#10151f',E.fluido,N[4]-0.1);
  L('esq','ESQUENTA',V(0.7,-1.05,0.4),HOT,'#fff',E.esquenta,N[5]-0.1);
  L('esf','ESFRIA',V(-0.35,2.05,0),'#2f8fe0','#fff',E.esfria,N[5]-0.1);
  L('ale','ALERTA',V(-1.35,0.2,-0.3),'#e03c3c','#fff',E.alerta,N[6]-0.1);
