@@ -81,6 +81,13 @@
    "legenda": "legendas/tomada3d.txt",
    "aprovado": true,
    "status": "postar em 23/11 (dono pediu)"
+  },
+  {
+   "nome": "qdc-2-dr-dps",
+   "arquivo": "videos/qdc2_3d.mp4",
+   "legenda": "legendas/qdc2_3d.txt",
+   "aprovado": false,
+   "status": "em produção (24/11): cena 3D e spec prontos; roteiro aguardando aprovação/revisão técnica (roteiros/qdc2.md). Sem voz e sem vídeo ainda. NÃO postar."
   }
  ]
 }

@@ -1,0 +1,54 @@
+{
+ "title": "QDC monofásico 3D · Parte 2: ligação do DR e do DPS",
+ "status_roteiro": "EM REVISÃO: não gerar voz até existir roteiros/qdc2-APROVADO.txt",
+ "voice": "Puck",
+ "model": "gemini-3.1-flash-tts-preview",
+ "pause_between_requests": 8,
+ "scene": "qdc2_3d",
+ "pill": "Mande ELÉTRICA no direct",
+ "lines": [
+  {
+   "text": "Você instalou o DR do jeito certo? Esse erro deixa a casa sem proteção contra choque.",
+   "style": "Diga com energia e firmeza, como quem lança um desafio:",
+   "events": {"gancho": "instalou", "erro": "erro"}
+  },
+  {
+   "text": "O DR protege contra choque: ele compara a corrente que vai com a que volta pelo neutro.",
+   "style": "Diga de forma clara e didática:",
+   "events": {"protege": "protege", "choque": "choque", "vai": "vai", "volta": "volta"}
+  },
+  {
+   "text": "Se parte da corrente foge, por exemplo por uma pessoa, ele desarma na hora.",
+   "style": "Diga com tensão, como quem mostra um perigo, e firme no final:",
+   "events": {"foge": "foge", "pessoa": "pessoa", "desarma": "desarma"}
+  },
+  {
+   "text": "Por isso o neutro dos circuitos protegidos tem que passar pelo DR, sem ligar o neutro de depois do DR ao neutro de antes nem ao terra.",
+   "style": "Diga de forma clara e firme, destacando a regra:",
+   "events": {"n_neutro": "neutro", "n_passa": "passar", "n_antes": "antes", "n_terra": "terra"}
+  },
+  {
+   "text": "O DPS liga entre fase e terra e entre neutro e terra, e desvia o surto para o terra.",
+   "style": "Diga de forma clara e didática:",
+   "events": {"dps": "DPS", "ft": "fase", "nt": "neutro", "surto": "surto"}
+  },
+  {
+   "text": "Alerta: o DPS depende de um bom aterramento.",
+   "style": "Diga sério, como um alerta importante:",
+   "events": {"alerta": "Alerta", "aterr": "aterramento"}
+  },
+  {
+   "text": "E o segredo? Aperte os bornes e aperte o botão de teste do DR todo mês.",
+   "style": "Diga baixinho e devagar, como quem conta um segredo importante:",
+   "events": {"segredo": "segredo", "bornes": "bornes", "teste": "teste", "mes": "mês"}
+  },
+  {
+   "text": "Manda ELÉTRICA no direct e aprenda a montar na prática!",
+   "style": "Diga animado e sorrindo, como um convite descontraído:"
+  }
+ ],
+ "cards": [],
+ "fx": {},
+ "end_line": 7,
+ "scene_opts": {}
+}

@@ -1,0 +1,11 @@
+Seu DR pode estar ligado errado, e aí ele não te protege do choque. 👇
+
+O DR compara a corrente que vai pela fase com a que volta pelo neutro. Se parte dela foge, por uma pessoa por exemplo, ele desarma na hora. Por isso o neutro dos circuitos protegidos passa pelo DR e não se junta ao neutro de antes nem ao terra.
+
+O DPS liga entre fase e terra e entre neutro e terra e manda o surto para o terra. Sem um bom aterramento, ele não funciona. E aperte o botão de teste do DR todo mês.
+
+Manda ELÉTRICA no direct pra saber do curso de Elétrica Predial da Stark Service.
+
+Vídeo criado por @rhaylook, da Stark Service.
+
+#quadrodedistribuicao #eletricista #cursodeeletrica #eletricapredial #disjuntordr
