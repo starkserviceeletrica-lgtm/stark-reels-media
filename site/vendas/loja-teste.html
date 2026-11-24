@@ -204,6 +204,34 @@ summary:hover{padding-left:6px;color:#b5640a}
   .tab-ind{transition:none}
 }
 
+/* ===== TESTE: livro de folhear (8 páginas, duas por vez) ===== */
+.hero .book.flipbook{width:94%;max-width:520px;margin:.25rem auto .5rem;cursor:default}
+.fbw{perspective:1800px;transform-style:preserve-3d;will-change:transform}
+.fb{position:relative;width:100%;aspect-ratio:2/1.414;transform-style:preserve-3d;transition:transform 700ms cubic-bezier(.2,.8,.25,1);cursor:pointer;touch-action:pan-y;outline-offset:6px}
+.fb.closed-front{transform:translateX(-25%)}
+.fb.closed-back{transform:translateX(25%)}
+.lf{position:absolute;left:50%;top:0;width:50%;height:100%;transform-origin:left center;transform-style:preserve-3d;transition:transform 900ms cubic-bezier(.25,.8,.25,1)}
+.lf.flipped{transform:rotateY(-180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;background:#fff;box-shadow:0 22px 34px -18px rgba(0,0,0,.85)}
+.face.front{border-radius:0 6px 6px 0}
+.face.back{transform:rotateY(180deg);border-radius:6px 0 0 6px}
+.face > img{width:100%;height:100%;object-fit:cover;display:block;border-radius:0!important;box-shadow:none!important}
+.face.front::after,.face.back::after{content:"";position:absolute;inset:0;pointer-events:none}
+.face.front::after{background:linear-gradient(90deg,rgba(0,0,0,.22),transparent 10%)}
+.face.back::after{background:linear-gradient(270deg,rgba(0,0,0,.22),transparent 10%)}
+.cover-face{background:transparent}
+.cover-face > img{border-radius:0 6px 6px 0!important}
+.cover-face::after{background:linear-gradient(90deg,rgba(255,255,255,.14),rgba(0,0,0,.35) 6%,transparent 9%)!important}
+.backcover{width:100%;height:100%;background:linear-gradient(160deg,#16255a,#0b1430);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;padding:12%;text-align:center;color:#c7cfe3;font-size:.75rem;line-height:1.3}
+.backcover img{width:70%}
+.fb-ui{display:flex;align-items:center;justify-content:center;gap:.75rem;margin-top:.9rem}
+.fb-count{min-width:13rem;text-align:center;font:600 .875rem/1.2 var(--font);color:var(--soft);font-variant-numeric:tabular-nums}
+.fb-btn{width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;font-size:1.375rem;line-height:1;cursor:pointer;transition:background-color 150ms,transform 110ms}
+.fb-btn:hover{background:rgba(255,255,255,.22)}
+.fb-btn:active{transform:scale(.92)}
+@media (prefers-reduced-motion: reduce){.fb,.lf{transition:none}}
+@media (min-width:760px){.hero .book.flipbook{width:100%}}
+
 /* Contents */
 .parts{list-style:none;margin:0;padding:0;counter-reset:p}
 .parts li{display:grid;grid-template-columns:2.25rem 1fr;column-gap:.5rem;padding:.8rem 0;border-bottom:1px solid var(--line);counter-increment:p}
@@ -482,37 +510,79 @@ function makeBook(a) {
   const book = document.querySelector('#hero .book'); if (!book) return;
   const coverHtml = book.innerHTML.replace(/<span class="soon-tag">.*?<\/span>/, '');
   const soonTag = a.soon ? '<span class="soon-tag" style="z-index:3">Em breve</span>' : '';
-  const inside = a.previa && a.previa.length ? `<img src="img/previa/${a.previa[0][0]}" alt="">` : '';
-  book.innerHTML = `<div class="${reduce ? '' : 'float'}"><div class="b3d"><div class="page">${inside}</div>
-    <div class="cover3d"><div class="front">${coverHtml}<span class="glare"></span></div><div class="back"></div></div></div></div>
-    ${soonTag}${inside ? '<span class="hint">Toque na apostila para abrir</span>' : ''}`;
-  book.setAttribute('role', 'button'); book.setAttribute('tabindex', '0');
-  book.setAttribute('aria-label', inside ? 'Abrir a apostila e ver o sumário' : 'Capa da apostila');
-  const b3d = book.querySelector('.b3d'), glare = book.querySelector('.glare');
+  const N = FLIP[cur] || 0;
+  const heroEl = document.querySelector('.hero');
+  if (!N) {   /* sem páginas para folhear: só a capa flutuando */
+    book.innerHTML = `<div class="${reduce ? '' : 'float'}"><div class="b3d"><div class="cover3d"><div class="front">${coverHtml}<span class="glare"></span></div></div></div></div>${soonTag}`;
+    tiltOn(book.querySelector('.b3d'), book.querySelector('.glare'), heroEl, 16);
+    return;
+  }
+  /* folhas: [capa|p1] [p2|p3] [p4|p5] [p6|p7] [p8|contracapa] */
+  const pg = (i) => `<img src="img/previa/${cur}-f${i}.jpg" alt="Página de amostra ${i} de ${N}" loading="lazy">`;
+  const faces = [[`${coverHtml}<span class="glare"></span>`, pg(1)]];
+  for (let i = 2; i < N; i += 2) faces.push([pg(i), pg(i + 1)]);
+  faces.push([pg(N), `<div class="backcover"><img src="img/logo-white.png" alt=""><span>Gostou? A apostila completa tem 60 páginas.</span></div>`]);
+  const L = faces.length;
+  book.classList.add('flipbook');
+  book.innerHTML = `<div class="${reduce ? '' : 'float'}"><div class="fbw"><div class="fb closed-front">
+      ${faces.map(([f, bk], i) => `<div class="lf" style="z-index:${L - i}"><div class="face front${i ? '' : ' cover-face'}">${f}</div><div class="face back">${bk}</div></div>`).join('')}
+    </div></div></div>${soonTag}
+    <div class="fb-ui"><button class="fb-btn" data-d="-1" aria-label="Página anterior">‹</button><span class="fb-count" aria-live="polite">Toque para abrir</span><button class="fb-btn" data-d="1" aria-label="Próxima página">›</button></div>`;
+  book.removeAttribute('role'); book.removeAttribute('tabindex'); book.removeAttribute('aria-label');
+  const fb = book.querySelector('.fb'), leaves = [...fb.children], count = book.querySelector('.fb-count');
+  let k = 0;
+  const label = () => k === 0 ? 'Toque para abrir' : k === L ? 'Fim da amostra · toque para fechar' : `Páginas ${2 * k - 1} e ${2 * k} de ${N}`;
+  function go(d) {
+    let nk = k + d;
+    if (nk > L) nk = 0;              /* depois da última, fecha e volta para a capa */
+    if (nk < 0) nk = 0;
+    if (nk === k) return;
+    const moving = nk > k ? leaves.slice(k, nk) : leaves.slice(nk, k);
+    moving.forEach((lf) => { lf.style.zIndex = 50; });
+    leaves.forEach((lf, i) => lf.classList.toggle('flipped', i < nk));
+    k = nk;
+    fb.classList.toggle('closed-front', k === 0); fb.classList.toggle('closed-back', k === L);
+    count.textContent = label();
+    try { navigator.vibrate && navigator.vibrate(8); } catch (e) {}
+    setTimeout(() => leaves.forEach((lf, i) => { lf.style.zIndex = i < k ? i + 1 : L - i; }), reduce ? 0 : 650);
+  }
+  /* toque: metade direita avança, metade esquerda volta; arrastar para o lado também vira */
+  let sx = null, sy = null;
+  fb.addEventListener('pointerdown', (e) => { sx = e.clientX; sy = e.clientY; });
+  fb.addEventListener('pointerup', (e) => {
+    if (sx === null) return;
+    const dx = e.clientX - sx, dy = e.clientY - sy; sx = null;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) { go(dx < 0 ? 1 : -1); return; }
+    if (Math.abs(dx) > 10 || Math.abs(dy) > 10) return;
+    const r = fb.getBoundingClientRect();
+    go(k === 0 || k === L || e.clientX > r.left + r.width / 2 ? 1 : -1);
+  });
+  book.querySelectorAll('.fb-btn').forEach((b) => b.addEventListener('click', () => go(+b.dataset.d)));
+  fb.tabIndex = 0; fb.setAttribute('role', 'button'); fb.setAttribute('aria-label', 'Folhear a amostra da apostila');
+  fb.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
+  });
+  tiltOn(book.querySelector('.fbw'), book.querySelector('.glare'), heroEl, 9);
+}
+function tiltOn(el, glare, area, max) {
+  if (reduce || !el) return;
   let tx = 0, ty = 0, rx = 0, ry = 0, raf = 0;
   const loop = () => {
     rx += (tx - rx) * 0.12; ry += (ty - ry) * 0.12;
-    b3d.style.transform = `rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg)`;
-    glare.style.setProperty('--gx', `${50 + ry * 3}%`); glare.style.setProperty('--gy', `${40 - rx * 3}%`);
+    el.style.transform = `rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg)`;
+    if (glare) { glare.style.setProperty('--gx', `${50 + ry * 3}%`); glare.style.setProperty('--gy', `${40 - rx * 3}%`); }
     raf = Math.abs(tx - rx) + Math.abs(ty - ry) > 0.05 ? requestAnimationFrame(loop) : 0;
   };
-  const aim = (x, y) => {
-    if (reduce) return;
-    const r = book.getBoundingClientRect();
-    ty = Math.max(-1, Math.min(1, (x - (r.left + r.width / 2)) / (r.width))) * 16;
-    tx = -Math.max(-1, Math.min(1, (y - (r.top + r.height / 2)) / (r.height))) * 12;
+  area.onpointermove = (e) => {
+    const r = el.getBoundingClientRect();
+    ty = Math.max(-1, Math.min(1, (e.clientX - (r.left + r.width / 2)) / r.width)) * max;
+    tx = -Math.max(-1, Math.min(1, (e.clientY - (r.top + r.height / 2)) / r.height)) * max * .75;
     if (!raf) raf = requestAnimationFrame(loop);
   };
-  const heroEl = document.querySelector('.hero');
-  heroEl.onpointermove = (e) => aim(e.clientX, e.clientY);
-  heroEl.onpointerleave = () => { tx = 0; ty = 0; if (!raf) raf = requestAnimationFrame(loop); };
-  if (!inside) return;
-  const set = (o) => book.classList.toggle('open', o);
-  book.onpointerenter = (e) => { if (e.pointerType === 'mouse') set(true); };
-  book.onpointerleave = (e) => { if (e.pointerType === 'mouse') set(false); };
-  book.onclick = () => set(!book.classList.contains('open'));
-  book.onkeydown = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); set(!book.classList.contains('open')); } };
+  area.onpointerleave = () => { tx = 0; ty = 0; if (!raf) raf = requestAnimationFrame(loop); };
 }
+const FLIP = { eletrica: 8, refrigeracao: 8 };
 
 /* ===== TESTE NÍVEL 2 ===== */
 const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
