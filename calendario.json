@@ -86,8 +86,8 @@
    "nome": "qdc-2-dr-dps",
    "arquivo": "videos/qdc2_3d.mp4",
    "legenda": "legendas/qdc2_3d.txt",
-   "aprovado": false,
-   "status": "em produção (24/11): cena 3D e spec prontos; roteiro aguardando aprovação/revisão técnica (roteiros/qdc2.md). Sem voz e sem vídeo ainda. NÃO postar."
+   "aprovado": true,
+   "status": "roteiro aprovado 24/11; voz Orus: 5 de 8 falas prontas (kit/audio_parcial/qdc2_3d), cota diária do Gemini esgotada. Vídeo será concluído na quarta 25/11 cedo. Agendado: qua 25/11 19h (Recife), só se o vídeo estiver em videos/qdc2_3d.mp4."
   },
   {
    "nome": "nr10-1-por-que-existe",

@@ -1,6 +1,6 @@
 # Elétrica Predial: QDC MONOFÁSICO · PARTE 2 (como ligar o DR e o DPS)
 
-Status: EM REVISÃO. Falta a aprovação do dono / revisão de professor.
+Status: APROVADO pelo dono em 24/11/2026 (roteiros/qdc2-APROVADO.txt). Voz: Orus.
 Para liberar a voz e o render, crie `roteiros/qdc2-APROVADO.txt` (com o texto final, se mudar algo).
 Continuação de https://www.instagram.com/reel/DgDNWzqjmrK/ (parte 1).
 Cena: `kit/scenes3d/qdc2_3d.js` · Spec: `kit/specs/qdc2_3d.json` · Voz: gemini-3.1-flash-tts-preview (Puck)
