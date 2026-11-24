@@ -147,6 +147,63 @@ p{margin:0}
 .dock .brk{width:24px;height:34px}.dock .lvr{height:14px}.dock .brk-btn.on .lvr{bottom:16px}
 @media (prefers-reduced-motion: reduce){.float,.brk-btn.on::after{animation:none}.cover3d,.lvr{transition:none}}
 
+/* ===== TESTE NÍVEL 2: movimento em tudo ===== */
+/* cursor-faísca (só com mouse) */
+.cur-ring,.cur-dot{position:fixed;left:0;top:0;z-index:200;pointer-events:none;border-radius:50%;opacity:0;transition:opacity 200ms}
+.cur-ring{width:34px;height:34px;margin:-17px 0 0 -17px;border:2px solid var(--yellow);box-shadow:0 0 14px rgba(245,183,0,.55);transition:opacity 200ms,width 200ms,height 200ms,margin 200ms,background-color 200ms}
+.cur-dot{width:6px;height:6px;margin:-3px 0 0 -3px;background:#fff;box-shadow:0 0 8px #ffd25a}
+.cur-on .cur-ring,.cur-on .cur-dot{opacity:1}
+.cur-big .cur-ring{width:62px;height:62px;margin:-31px 0 0 -31px;background:rgba(245,183,0,.12)}
+.sparks{position:fixed;inset:0;z-index:199;pointer-events:none}
+
+/* inclinação 3D */
+.tilt{transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(0) scale(var(--sc,1));transition:transform 400ms cubic-bezier(.2,.8,.2,1),box-shadow 300ms;will-change:transform}
+.tilt.hot{transition:transform 80ms linear,box-shadow 300ms;--sc:1.02;box-shadow:0 26px 40px -22px rgba(11,20,48,.55)}
+
+/* botões magnéticos */
+.mag{transition:transform 350ms cubic-bezier(.2,.8,.2,1)}
+.mag.hot{transition:transform 90ms linear}
+
+/* abas com pílula que desliza */
+.tabs .wrap{position:relative}
+.tab-ind{position:absolute;top:10px;height:calc(100% - 20px);left:0;border-radius:999px;background:#fff;z-index:0;transition:transform 450ms cubic-bezier(.3,1.3,.5,1),width 450ms cubic-bezier(.3,1.3,.5,1)}
+.tab{position:relative;z-index:1}
+.tab[aria-selected="true"]{background:transparent}
+.tab:hover{background:rgba(255,255,255,.18)}
+.tab[aria-selected="true"]:hover{background:transparent}
+
+/* lista de partes: desliza e o número acende */
+.parts li{transition:transform 250ms,background-color 250ms;border-radius:10px}
+.parts li:hover{transform:translateX(6px);background:rgba(242,140,18,.07)}
+.parts li::before{transition:transform 250ms,text-shadow 250ms}
+.parts li:hover::before{transform:scale(1.25);text-shadow:0 0 12px rgba(242,140,18,.8)}
+
+/* combo: capas abrem em leque */
+.covers{max-width:340px;margin:.75rem auto .25rem}
+.covers > *{transition:transform 500ms cubic-bezier(.3,1.4,.5,1)}
+.combo-card:hover .covers > *:nth-child(1){transform:rotate(-14deg) translate(-14px,4px)}
+.combo-card:hover .covers > *:nth-child(2){transform:translateY(-18px) scale(1.06)}
+.combo-card:hover .covers > *:nth-child(3){transform:rotate(14deg) translate(14px,4px)}
+
+/* fotos e selo */
+.strip img{transition:transform 400ms cubic-bezier(.2,.8,.2,1),filter 400ms}
+.strip img:hover{transform:scale(1.08) rotate(-1.5deg);filter:saturate(1.2)}
+.seal{transition:transform 600ms cubic-bezier(.3,1.5,.5,1)}
+.guarantee:hover .seal{transform:rotate(-12deg) scale(1.08)}
+summary{transition:padding-left 200ms,color 200ms}
+summary:hover{padding-left:6px;color:#b5640a}
+
+/* entrada ao rolar */
+.rv{opacity:0;transform:translateY(26px)}
+.rv.in{opacity:1;transform:none;transition:opacity 600ms ease,transform 700ms cubic-bezier(.2,.8,.2,1)}
+
+@media (prefers-reduced-motion: reduce){
+  .tilt,.mag{transform:none!important;transition:none}
+  .rv{opacity:1;transform:none}
+  .parts li:hover,.strip img:hover,.guarantee:hover .seal,.combo-card:hover .covers > *{transform:none}
+  .tab-ind{transition:none}
+}
+
 /* Contents */
 .parts{list-style:none;margin:0;padding:0;counter-reset:p}
 .parts li{display:grid;grid-template-columns:2.25rem 1fr;column-gap:.5rem;padding:.8rem 0;border-bottom:1px solid var(--line);counter-increment:p}
@@ -359,7 +416,7 @@ function render(k, push) {
     history.replaceState(null, '', `?${p.toString()}`);
   }
   watchDock();
-  upgradeButtons(); makeBook(a);
+  upgradeButtons(); makeBook(a); enhance();
 }
 
 /* Preview pager + viewer */
@@ -456,6 +513,98 @@ function makeBook(a) {
   book.onclick = () => set(!book.classList.contains('open'));
   book.onkeydown = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); set(!book.classList.contains('open')); } };
 }
+
+/* ===== TESTE NÍVEL 2 ===== */
+const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+const TILT = '.sheet .zoom, .combo-card, .for li, .strip img, .seal, .bonus';
+const MAG = '.brk-btn, .tab, .bar a';
+
+/* pílula das abas */
+const ind = document.createElement('span'); ind.className = 'tab-ind'; ind.setAttribute('aria-hidden', 'true');
+tabs.prepend(ind);
+function moveInd() {
+  const t = tabs.querySelector('[aria-selected="true"]'); if (!t) return;
+  ind.style.width = t.offsetWidth + 'px'; ind.style.transform = `translateX(${t.offsetLeft}px)`;
+}
+addEventListener('resize', moveInd);
+
+/* inclinação 3D + magnetismo, por delegação (funciona depois de trocar de aba) */
+let hotTilt = null, hotMag = null;
+function clearTilt() { if (hotTilt) { hotTilt.classList.remove('hot'); hotTilt.style.setProperty('--rx', '0deg'); hotTilt.style.setProperty('--ry', '0deg'); hotTilt = null; } }
+function clearMag() { if (hotMag) { hotMag.classList.remove('hot'); hotMag.style.transform = ''; hotMag = null; } }
+if (fine && !reduce) document.addEventListener('pointermove', (e) => {
+  const t = e.target.closest(TILT);
+  if (t !== hotTilt) { clearTilt(); if (t) { hotTilt = t; t.classList.add('tilt', 'hot'); } }
+  if (t) {
+    const r = t.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+    t.style.setProperty('--ry', `${x * 14}deg`); t.style.setProperty('--rx', `${-y * 12}deg`);
+  }
+  const m = e.target.closest(MAG);
+  if (m !== hotMag) { clearMag(); if (m) { hotMag = m; m.classList.add('mag', 'hot'); } }
+  if (m) {
+    const r = m.getBoundingClientRect(), dx = e.clientX - (r.left + r.width / 2), dy = e.clientY - (r.top + r.height / 2);
+    m.style.transform = `translate(${dx * .18}px, ${dy * .28}px)`;
+  }
+}, { passive: true });
+document.addEventListener('pointerleave', () => { clearTilt(); clearMag(); });
+
+/* cursor-faísca */
+if (fine && !reduce) {
+  const ring = document.createElement('div'), dot = document.createElement('div');
+  ring.className = 'cur-ring'; dot.className = 'cur-dot'; document.body.append(ring, dot);
+  let mx = -100, my = -100, rx2 = -100, ry2 = -100, run = false;
+  const step = () => {
+    rx2 += (mx - rx2) * .2; ry2 += (my - ry2) * .2;
+    ring.style.transform = `translate(${rx2}px,${ry2}px)`; dot.style.transform = `translate(${mx}px,${my}px)`;
+    run = Math.abs(mx - rx2) + Math.abs(my - ry2) > .3; if (run) requestAnimationFrame(step);
+  };
+  document.addEventListener('pointermove', (e) => {
+    if (e.pointerType !== 'mouse') return;
+    mx = e.clientX; my = e.clientY; document.body.classList.add('cur-on');
+    document.body.classList.toggle('cur-big', !!e.target.closest('a, button, .book, ' + TILT));
+    if (!run) { run = true; requestAnimationFrame(step); }
+  }, { passive: true });
+  document.addEventListener('mouseleave', () => document.body.classList.remove('cur-on'));
+}
+
+/* faíscas a cada toque ou clique */
+const cv = document.createElement('canvas'); cv.className = 'sparks'; document.body.append(cv);
+const cx = cv.getContext('2d'); let parts = [], sparking = false;
+const fit = () => { const d = Math.min(2, devicePixelRatio || 1); cv.width = innerWidth * d; cv.height = innerHeight * d; cx.setTransform(d, 0, 0, d, 0, 0); };
+fit(); addEventListener('resize', fit);
+function burst(x, y) {
+  for (let i = 0; i < 14; i++) {
+    const a = Math.random() * Math.PI * 2, v = 2 + Math.random() * 4.5;
+    parts.push({ x, y, vx: Math.cos(a) * v, vy: Math.sin(a) * v - 1, life: 1, c: Math.random() < .5 ? '#f5b700' : '#f28c12' });
+  }
+  if (!sparking) { sparking = true; requestAnimationFrame(drawSparks); }
+}
+function drawSparks() {
+  cx.clearRect(0, 0, innerWidth, innerHeight);
+  parts = parts.filter((p) => p.life > 0);
+  for (const p of parts) {
+    const px = p.x, py = p.y; p.x += p.vx; p.y += p.vy; p.vy += .18; p.vx *= .96; p.life -= .045;
+    cx.strokeStyle = p.c; cx.globalAlpha = Math.max(0, p.life); cx.lineWidth = 2; cx.lineCap = 'round';
+    cx.beginPath(); cx.moveTo(px, py); cx.lineTo(p.x, p.y); cx.stroke();
+  }
+  cx.globalAlpha = 1;
+  if (parts.length) requestAnimationFrame(drawSparks); else { sparking = false; cx.clearRect(0, 0, innerWidth, innerHeight); }
+}
+if (!reduce) document.addEventListener('pointerdown', (e) => { if (!e.target.closest('input, textarea, select')) burst(e.clientX, e.clientY); }, { passive: true });
+
+/* entrada ao rolar: só o que ainda está abaixo da tela; o resto já aparece pronto */
+const io = 'IntersectionObserver' in window && !reduce ? new IntersectionObserver((es) => es.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { rootMargin: '0px' }) : null;
+if (io) addEventListener('scroll', () => { if (innerHeight + scrollY >= document.body.scrollHeight - 4) document.querySelectorAll('.rv:not(.in)').forEach((el) => el.classList.add('in')); }, { passive: true });
+function reveal() {
+  if (!io) return;
+  document.querySelectorAll('.parts li, .for li, .sheet, .combo-card, .strip img, .guarantee, details, #final h2, #final .buy').forEach((el, i) => {
+    if (el.classList.contains('rv')) return;
+    if (el.getBoundingClientRect().top < innerHeight) return;
+    el.classList.add('rv'); el.style.transitionDelay = `${(i % 4) * 70}ms`; io.observe(el);
+  });
+}
+
+function enhance() { requestAnimationFrame(() => { moveInd(); reveal(); }); }
 
 /* Which apostila to open: ?apostila=eletrica (link do direct), or #eletrica, or the first one */
 const params = new URLSearchParams(location.search);
