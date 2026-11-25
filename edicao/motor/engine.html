@@ -1,0 +1,63 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+:root{--bg:#07070a;--card:#0e0e13;--line:#ffffff;--acc:#FFC21A}
+*{box-sizing:border-box;margin:0}
+html,body{width:1080px;height:1920px;background:var(--bg);overflow:hidden;font-family:"Inter","Inter Display",sans-serif;color:#fff}
+#stage{position:absolute;inset:0;overflow:hidden}
+#grid{position:absolute;inset:-200px;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:90px 90px}
+#world{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
+.card{position:absolute;border:2px solid rgba(255,255,255,.55);border-radius:44px;background:linear-gradient(160deg,#15151c,#0b0b10);box-shadow:0 0 90px rgba(255,194,26,.07),inset 0 0 60px rgba(255,255,255,.03)}
+.card .num{position:absolute;left:44px;top:34px;font-size:34px;font-weight:600;letter-spacing:.02em}
+.card .num b{color:var(--acc);margin-right:14px;font-weight:700}
+.card .ttl{position:absolute;left:0;right:0;text-align:center;font-weight:700}
+.row{position:absolute;display:flex;align-items:center;gap:22px;font-size:40px;font-weight:500}
+.ico{width:64px;height:64px;border:3px solid #fff;border-radius:14px;display:grid;place-items:center;font-size:34px}
+.pill{position:absolute;padding:18px 34px;border:2px solid rgba(255,255,255,.7);border-radius:999px;font-size:40px;font-weight:600;background:#101016}
+.pill.acc{border-color:var(--acc);color:var(--acc);box-shadow:0 0 40px rgba(255,194,26,.35)}
+.big{position:absolute;text-align:center;font-weight:800;line-height:1.05}
+svg#lines{position:absolute;left:0;top:0;overflow:visible}
+svg#lines path{fill:none;stroke:#fff;stroke-width:5;stroke-linecap:round;filter:drop-shadow(0 0 10px rgba(255,255,255,.8))}
+#cap{position:absolute;left:0;right:0;top:1200px;text-align:center;font-size:92px;font-weight:700;text-shadow:0 4px 30px #000,0 0 6px #000;letter-spacing:-.01em}
+#cap.key{color:var(--acc)}
+#head{position:absolute;left:90px;width:900px;height:620px;top:560px;border-radius:44px;overflow:hidden;border:2px solid rgba(255,255,255,.4);display:none;background:#000}
+#head img{width:100%;height:100%;object-fit:cover}
+#wm{position:absolute;left:44px;top:1460px;width:210px;opacity:.85}
+#end{position:absolute;inset:0;background:var(--bg);display:none;flex-direction:column;align-items:center;justify-content:center;gap:70px}
+#end img{width:620px}
+#end .cta{font-size:70px;font-weight:800;text-align:center;line-height:1.15}
+#end .cta span{color:var(--acc)}
+#end .sub{font-size:40px;opacity:.7}
+</style></head><body><div id="stage"><div id="grid"></div><div id="world"><svg id="lines" width="1" height="1"></svg></div>
+<div id="head"><img id="headimg"></div><div id="cap"></div><img id="wm" src="logo.png"></div><div id="end"><img src="logo.png"><div class="cta"></div><div class="sub"></div></div>
+<script>
+const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2, clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+let S,els=[],lines=[];
+function px(el,css){Object.assign(el.style,css)}
+window.init=function(spec){S=spec;const w=document.getElementById('world');
+ (S.cards||[]).forEach(c=>{const d=document.createElement('div');d.className='card';px(d,{left:c.x+'px',top:c.y+'px',width:c.w+'px',height:c.h+'px'});
+  if(c.num)d.insertAdjacentHTML('beforeend',`<div class="num"><b>${c.num}</b>${c.label||''}</div>`);
+  (c.items||[]).forEach(it=>{const e=document.createElement('div');
+   if(it.type==='big'){e.className='big';e.innerHTML=it.text;px(e,{left:it.x+'px',top:it.y+'px',width:it.w+'px',fontSize:(it.size||90)+'px'})}
+   else if(it.type==='pill'){e.className='pill'+(it.acc?' acc':'');e.textContent=it.text;px(e,{left:it.x+'px',top:it.y+'px'})}
+   else{e.className='row';e.innerHTML=`<div class="ico">${it.icon||'▸'}</div><div>${it.text}</div>`;px(e,{left:it.x+'px',top:it.y+'px'})}
+   d.appendChild(e);els.push({el:e,t:it.t,dx:it.dx||0,dy:it.dy??30,card:false})});
+  w.appendChild(d);els.push({el:d,t:c.t,dx:0,dy:60,card:true})});
+ const svg=document.getElementById('lines');
+ (S.lines||[]).forEach(l=>{const p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('d',l.d);svg.appendChild(p);const L=p.getTotalLength();p.style.strokeDasharray=L;lines.push({p,L,t:l.t,dur:l.dur||.8})});
+ if(S.end){const e=document.getElementById('end');e.querySelector('.cta').innerHTML=S.end.cta;e.querySelector('.sub').textContent=S.end.sub||''}
+ if(S.watermark===false)document.getElementById('wm').style.display='none';
+};
+function cam(t){const k=S.camera;if(t<=k[0].t)return k[0];for(let i=0;i<k.length-1;i++){if(t<k[i+1].t){const u=ease((t-k[i].t)/(k[i+1].t-k[i].t));return{x:k[i].x+(k[i+1].x-k[i].x)*u,y:k[i].y+(k[i+1].y-k[i].y)*u,s:k[i].s+(k[i+1].s-k[i].s)*u}}}return k[k.length-1]}
+window.setT=function(t){const c=cam(t);
+ document.getElementById('world').style.transform=`translate(${540-c.x*c.s}px,${760-c.y*c.s}px) scale(${c.s})`;
+ document.getElementById('grid').style.transform=`translate(${(-c.x*c.s*.3)%90}px,${(-c.y*c.s*.3)%90}px)`;
+ els.forEach(o=>{const u=ease(clamp((t-o.t)/.55));o.el.style.opacity=u;o.el.style.transform=`translate(${(1-u)*o.dx}px,${(1-u)*o.dy}px)`;});
+ lines.forEach(l=>{const u=ease(clamp((t-l.t)/l.dur));l.p.style.strokeDashoffset=l.L*(1-u);l.p.style.opacity=u>0?1:0});
+ // caption
+ const cp=document.getElementById('cap');let cur=null;(S.words||[]).forEach(w=>{if(t>=w.s&&t<w.e+.08)cur=w});
+ if(cur&&!(S.hideCaptionsAfter&&t>=S.hideCaptionsAfter)){cp.textContent=cur.w;cp.className=cur.key?'key':'';cp.style.display='block'}else cp.style.display='none';
+ // head
+ const h=document.getElementById('head');const hv=(S.head||[]).find(x=>t>=x.a&&t<x.b);
+ if(hv){h.style.display='block';h.style.top=(hv.top||560)+'px';const f=Math.floor((t-hv.a+(hv.off||0))*S.fps)+1;document.getElementById('headimg').src=`${hv.dir}/f${String(f).padStart(5,'0')}.jpg`}else h.style.display='none';
+ document.getElementById('end').style.display=(S.end&&t>=S.end.t)?'flex':'none';
+};
+</script></body></html>
