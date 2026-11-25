@@ -13,6 +13,13 @@
  },
  "itens": [
   {
+   "nome": "nr35-1-a-partir-de-2-metros",
+   "arquivo": "videos/nr353d.mp4",
+   "legenda": "legendas/nr353d.txt",
+   "aprovado": false,
+   "status": "em produção: falta gravar a fala final (cota de voz libera qui 26/11 ~05h); vídeo final será commitado até ~05h30; dono precisa ver o vídeo antes de postar (postagem prevista qui 26/11 12h pela sessão pai)"
+  },
+  {
    "nome": "apresentacao",
    "arquivo": "videos/apresentacao.mp4",
    "legenda": "legendas/apresentacao.txt",
