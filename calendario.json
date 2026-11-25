@@ -101,14 +101,14 @@
    "arquivo": "videos/nr103d.mp4",
    "legenda": "legendas/nr103d.txt",
    "aprovado": true,
-   "status": "agendado: qua 25/11 12h (Recife)"
+   "status": "enviado 25/11 com timeout: confirmar no perfil antes de repetir"
   },
   {
    "nome": "refrigeracao-1-calor-e-frio",
    "arquivo": "videos/refrigeracao3d.mp4",
    "legenda": "legendas/refrigeracao3d.txt",
    "aprovado": true,
-   "status": "agendado: ter 24/11 19h (Recife)"
+   "status": "publicado 25/11 (media 18129393334810097)"
   }
  ]
 }
