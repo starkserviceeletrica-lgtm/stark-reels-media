@@ -1,0 +1,80 @@
+{
+ "title": "NR-10 #1: por que existe",
+ "voice": "Orus",
+ "model": "gemini-3.8-flash-tts",
+ "pause_between_requests": 8,
+ "scene": "nr103d",
+ "pill": "Manda NR10 no direct",
+ "lines": [
+  {
+   "text": "Um choque elétrico pode matar, e a NR-10 existe para evitar isso. Você conhece a norma?",
+   "spoken": "Um choque elétrico pode matar, e a ene érre dez existe para evitar isso. Você conhece a norma?",
+   "style": "Diga com voz grave, firme e confiante, como um instrutor experiente:",
+   "events": {
+    "choque": "choque",
+    "matar": "matar",
+    "nr0": "erre",
+    "norma0": "norma"
+   }
+  },
+  {
+   "text": "A NR-10 é a norma de segurança em instalações e serviços com eletricidade.",
+   "spoken": "A ene érre dez é a norma de segurança em instalações e serviços com eletricidade.",
+   "style": "Diga com voz grave, firme e confiante, como um instrutor experiente:",
+   "events": {
+    "norma": "norma",
+    "seg": "segurança",
+    "eletric": "eletricidade"
+   }
+  },
+  {
+   "text": "Ela vale para quem projeta, instala, opera e faz manutenção.",
+   "style": "Diga com voz grave, firme e confiante, como um instrutor experiente:",
+   "events": {
+    "projeta": "projeta",
+    "instala": "instala",
+    "opera": "opera",
+    "manut": "manutenção"
+   }
+  },
+  {
+   "text": "Exige treinamento, procedimentos e proteção para o trabalhador.",
+   "style": "Diga com voz grave, firme e confiante, como um instrutor experiente:",
+   "events": {
+    "trein": "treinamento",
+    "proc": "procedimentos",
+    "prot": "proteção",
+    "trab": "trabalhador"
+   }
+  },
+  {
+   "text": "Alerta: só profissional treinado e autorizado trabalha com eletricidade.",
+   "style": "Diga com voz grave, firme e confiante, como um instrutor experiente:",
+   "events": {
+    "alerta": "Alerta",
+    "treinado": "treinado",
+    "autorizado": "autorizado"
+   }
+  },
+  {
+   "text": "E o segredo? Segurança com eletricidade começa antes de tocar no fio.",
+   "style": "Diga com voz grave, firme e confiante, como um instrutor experiente:",
+   "events": {
+    "segredo": "segredo",
+    "comeca": "começa",
+    "antes": "antes",
+    "fio": "fio"
+   }
+  },
+  {
+   "text": "Manda NR10 no direct e conheça o curso!",
+   "spoken": "Manda ene érre dez no direct e conheça o curso!",
+   "style": "Diga com voz grave, firme e confiante, como um instrutor experiente:"
+  }
+ ],
+ "cards": [],
+ "fx": {},
+ "end_line": 6,
+ "scene_opts": {},
+ "trim_instruction": true
+}
