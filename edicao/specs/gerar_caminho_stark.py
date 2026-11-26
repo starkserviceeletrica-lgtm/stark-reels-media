@@ -2,7 +2,8 @@
 import json, os, sys
 here = os.path.dirname(os.path.abspath(__file__))
 tr = json.load(open(sys.argv[1]))  # transcrição faster-whisper (medium) com tempo por palavra
-DESTINO = "Stark Service"      # trocar pela rua quando o dono confirmar
+DESTINO = "Stark Service"
+RUA_DESTINO = "R. Queiroz Pedroso – Bela Vista"  # endereço informado pelo dono em 26/11/2026
 CIDADE = "Vitória de Santo Antão – PE"
 KEYS = {"stark", "service", "caminho", "praça", "fórum", "vitória", "emoção", "chegar"}
 keep = [(0.0, 14.40), (15.9, 21.6), (22.5, 22.85), (23.8, 27.0), (60.0, 63.1)]
@@ -35,11 +36,13 @@ els = [
   '<g data-t="47.2"><circle cx="750" cy="90" r="20" fill="#FFC21A"/><circle cx="750" cy="90" r="8" fill="#000"/></g>'
   '<text x="30" y="300" fill="#fff" font-size="30" font-weight="700" text-anchor="start">Praça do Fórum</text>'
   f'<text data-t="47.2" x="790" y="42" fill="#FFC21A" font-size="34" font-weight="800" text-anchor="end">{DESTINO}</text>'
-  '</svg>'},
+  '</svg>'
+  f'<div class="sub" data-t="47.2" style="margin-top:4px">até a <span class="acc">{RUA_DESTINO}</span></div>'},
  {"a": 49.6, "b": 56.4, "y": 900, "cls": "card", "html":
   '<div class="num"><b>03</b>chegada</div>'
   f'<div class="ttl"><span>{DESTINO}</span></div>'
-  f'<div class="sub" data-t="50.4">{CIDADE}</div>'
+  f'<div class="row" data-t="50.3"><div class="ico acc">⌖</div><div>{RUA_DESTINO}</div></div>'
+  f'<div class="sub" data-t="50.8">{CIDADE}</div>'
   '<div class="row" data-t="51.2"><div class="ico acc">✓</div><div>chegamos!</div></div>'},
 ]
 spec = {"words": words, "els": els,

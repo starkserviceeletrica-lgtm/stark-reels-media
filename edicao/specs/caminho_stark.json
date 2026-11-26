@@ -369,14 +369,14 @@
    "b": 48.6,
    "y": 250,
    "cls": "card",
-   "html": "<div class=\"num\"><b>02</b>o trajeto</div><svg width=\"812\" height=\"330\" viewBox=\"0 0 812 330\"><path class=\"ghost\" d=\"M50 240 C 190 240, 210 90, 380 140 S 600 270, 750 90\"/><path id=\"r1\" class=\"route\" data-a=\"27.6\" data-b=\"47.4\" d=\"M50 240 C 190 240, 210 90, 380 140 S 600 270, 750 90\"/><circle cx=\"50\" cy=\"240\" r=\"16\" fill=\"#fff\"/><g data-follow=\"r1\"><circle r=\"24\" fill=\"#FFC21A\" opacity=\".35\"/><circle r=\"14\" fill=\"#FFC21A\"/></g><g data-t=\"47.2\"><circle cx=\"750\" cy=\"90\" r=\"20\" fill=\"#FFC21A\"/><circle cx=\"750\" cy=\"90\" r=\"8\" fill=\"#000\"/></g><text x=\"30\" y=\"300\" fill=\"#fff\" font-size=\"30\" font-weight=\"700\" text-anchor=\"start\">Praça do Fórum</text><text data-t=\"47.2\" x=\"790\" y=\"42\" fill=\"#FFC21A\" font-size=\"34\" font-weight=\"800\" text-anchor=\"end\">Stark Service</text></svg>"
+   "html": "<div class=\"num\"><b>02</b>o trajeto</div><svg width=\"812\" height=\"330\" viewBox=\"0 0 812 330\"><path class=\"ghost\" d=\"M50 240 C 190 240, 210 90, 380 140 S 600 270, 750 90\"/><path id=\"r1\" class=\"route\" data-a=\"27.6\" data-b=\"47.4\" d=\"M50 240 C 190 240, 210 90, 380 140 S 600 270, 750 90\"/><circle cx=\"50\" cy=\"240\" r=\"16\" fill=\"#fff\"/><g data-follow=\"r1\"><circle r=\"24\" fill=\"#FFC21A\" opacity=\".35\"/><circle r=\"14\" fill=\"#FFC21A\"/></g><g data-t=\"47.2\"><circle cx=\"750\" cy=\"90\" r=\"20\" fill=\"#FFC21A\"/><circle cx=\"750\" cy=\"90\" r=\"8\" fill=\"#000\"/></g><text x=\"30\" y=\"300\" fill=\"#fff\" font-size=\"30\" font-weight=\"700\" text-anchor=\"start\">Praça do Fórum</text><text data-t=\"47.2\" x=\"790\" y=\"42\" fill=\"#FFC21A\" font-size=\"34\" font-weight=\"800\" text-anchor=\"end\">Stark Service</text></svg><div class=\"sub\" data-t=\"47.2\" style=\"margin-top:4px\">até a <span class=\"acc\">R. Queiroz Pedroso – Bela Vista</span></div>"
   },
   {
    "a": 49.6,
    "b": 56.4,
    "y": 900,
    "cls": "card",
-   "html": "<div class=\"num\"><b>03</b>chegada</div><div class=\"ttl\"><span>Stark Service</span></div><div class=\"sub\" data-t=\"50.4\">Vitória de Santo Antão – PE</div><div class=\"row\" data-t=\"51.2\"><div class=\"ico acc\">✓</div><div>chegamos!</div></div>"
+   "html": "<div class=\"num\"><b>03</b>chegada</div><div class=\"ttl\"><span>Stark Service</span></div><div class=\"row\" data-t=\"50.3\"><div class=\"ico acc\">⌖</div><div>R. Queiroz Pedroso – Bela Vista</div></div><div class=\"sub\" data-t=\"50.8\">Vitória de Santo Antão – PE</div><div class=\"row\" data-t=\"51.2\"><div class=\"ico acc\">✓</div><div>chegamos!</div></div>"
   }
  ],
  "end": {
