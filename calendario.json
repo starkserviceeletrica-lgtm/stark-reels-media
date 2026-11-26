@@ -102,6 +102,13 @@
    "legenda": "legendas/refrigeracao3d.txt",
    "aprovado": true,
    "status": "agendado: ter 24/11 19h (Recife)"
+  },
+  {
+   "nome": "caminho-ate-a-stark",
+   "arquivo": "videos/caminho_stark.mp4",
+   "legenda": "legendas/caminho_stark.txt",
+   "aprovado": true,
+   "status": "aprovado pelo dono em 26/11 (vídeo gravado, editado); postar"
   }
  ]
 }
