@@ -132,7 +132,7 @@ section{padding-block:clamp(4rem,9vw,7.5rem)}
 /* Apostilas: printed booklets you can buy online */
 .shop{background:var(--band);color:var(--band-fg)}
 .shop .lead{color:var(--band-muted)}
-.shop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 @media (max-width:900px){.shop-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.shop-grid{grid-template-columns:1fr}}
 .book{display:grid;grid-template-rows:auto 1fr;gap:1.1rem;min-width:0}
@@ -871,8 +871,7 @@ if (deep) openSheet(deep[1], false);
 const APOSTILAS = [
   { slug:'eletrica', capa:'eletrica-capa.jpg', title:'Elétrica Predial', items:['60 páginas ilustradas, com fichas de defeito','PDF para ler no celular ou imprimir'] },
   { slug:'refrigeracao', capa:'refrigeracao-capa.jpg', title:'Refrigeração e Climatização', items:['Geladeira e split em 60 páginas ilustradas','PDF para ler no celular ou imprimir'] },
-  { slug:'nr-10', title:'NR-10', soon:true, items:['Segurança em instalações e serviços com eletricidade'] },
-  { slug:'nr-35', title:'NR-35', soon:true, items:['Trabalho em altura, EPI, ancoragem e resgate'] },
+  { slug:'pacote-nr', capa:'pacote-nr-capa.jpg', title:'NR-10 + NR-35', items:['As duas apostilas pelo preço de uma','PDF para ler no celular ou imprimir'] },
 ];
 document.getElementById('shopGrid').innerHTML = APOSTILAS.map((a) => {
   const href = `apostilas.html?apostila=${a.slug}`;

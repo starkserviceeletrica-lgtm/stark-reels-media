@@ -12,7 +12,7 @@ COMO ATIVAR A VENDA (Kiwify)
 
 LINKS PARA O DIRECT
   apostilas.html?apostila=eletrica      apostilas.html?apostila=refrigeracao
-  apostilas.html?apostila=nr-10         apostilas.html?apostila=nr-35
+  apostilas.html?apostila=pacote-nr     (nr10, nr35 e nr também abrem o pacote)
   (acrescente &utm_source=instagram&utm_campaign=<nome-do-reel> para saber qual Reel vendeu)
 """
 import json, pathlib
@@ -65,37 +65,34 @@ APOSTILAS = {
                  "Quem já faz o serviço e quer fichas de defeito para consultar"],
         "checkout": "", "preco": "", "de": "", "soon": False,
     },
-    "nr-10": {
-        "titulo": "Apostila de NR-10", "curto": "NR-10",
-        "sub": "Segurança em instalações e serviços com eletricidade, no jeito Stark: pouco texto e muito desenho.",
-        "capa": "", "plus": False, "previa": [],
-        "partes": [["Riscos em instalações e serviços com eletricidade", ""],
-                   ["Técnicas de análise de risco", ""],
-                   ["Medidas de controle e proteção coletiva e individual", ""],
-                   ["Procedimentos de trabalho e primeiros socorros", ""],
-                   ["Acidentes típicos e prevenção", ""]],
-        "para": ["Eletricistas e técnicos que trabalham com instalações elétricas",
-                 "Quem precisa da NR-10 para trabalhar e quer revisar o conteúdo"],
-        "checkout": "", "preco": "", "de": "", "soon": True,
-    },
-    "nr-35": {
-        "titulo": "Apostila de NR-35", "curto": "NR-35",
-        "sub": "Trabalho em altura: análise de risco, EPI, ancoragem e resgate, ilustrado do jeito Stark.",
-        "capa": "", "plus": False, "previa": [],
-        "partes": [["Normas e regulamentações aplicáveis", ""],
-                   ["Análise de risco e condições impeditivas", ""],
-                   ["Equipamentos de proteção individual e coletiva", ""],
-                   ["Sistemas de ancoragem e trava-quedas", ""],
-                   ["Procedimentos de resgate e emergência", ""]],
-        "para": ["Profissionais que executam atividades acima de 2 metros do nível inferior",
-                 "Quem precisa da NR-35 para trabalhar e quer revisar o conteúdo"],
-        "checkout": "", "preco": "", "de": "", "soon": True,
+    "pacote-nr": {
+        "titulo": "Pacote NR-10 + NR-35", "curto": "NR-10 + NR-35",
+        "sub": "As duas apostilas pelo preço de uma: NR-10 (24 páginas) e NR-35 (16 páginas), ilustradas do jeito Stark.",
+        "capa": "pacote-nr-capa.jpg", "plus": False,
+        "previa": [["pacote-nr-f1.jpg", "NR-10: sumário"],
+                   ["pacote-nr-f3.jpg", "NR-10, página 12: bloqueio e sinalização"],
+                   ["pacote-nr-f6.jpg", "NR-35, página 8: cinturão tipo paraquedista"]],
+        "partes": [["NR-10: a norma e você", "Para que serve a NR-10 e quem pode trabalhar com eletricidade"],
+                   ["NR-10: os perigos da eletricidade", "Tensões, choque elétrico, arco elétrico e acidentes"],
+                   ["NR-10: proteção coletiva", "Aterramento, DR, zonas de risco, bloqueio e sinalização"],
+                   ["NR-10: desenergizar e reenergizar", "O passo a passo seguro, com teste de ausência de tensão"],
+                   ["NR-10: EPI, ferramentas e organização do trabalho", ""],
+                   ["NR-10: emergências", "Socorro, RCP e incêndio"],
+                   ["NR-35: a norma e você", "O que é trabalho em altura e quem pode subir"],
+                   ["NR-35: planejar antes de subir", "Planejamento, análise de risco e proteção coletiva"],
+                   ["NR-35: equipamentos contra queda", "Cinturão, talabarte, ancoragem e inspeção"],
+                   ["NR-35: na prática", "Escadas, telhado e resgate"],
+                   ["Nas duas apostilas", "Exercícios, glossário, checklist e gabarito"]],
+        "para": ["Quem vai fazer o curso de NR-10 ou NR-35 e quer chegar sabendo",
+                 "Eletricista que trabalha em altura: escada, telhado, poste",
+                 "Quem já tem o certificado e quer revisar o conteúdo"],
+        "checkout": "", "preco": "", "de": "", "soon": False,
     },
 }
 
 COMBO = {
-    "titulo": "Elétrica, Refrigeração e NR-10",
-    "itens": ["eletrica", "refrigeracao", "nr-10"],
+    "titulo": "Elétrica, Refrigeração e Pacote NR",
+    "itens": ["eletrica", "refrigeracao", "pacote-nr"],
     "checkout": "", "preco": "", "de": "",
 }
 
