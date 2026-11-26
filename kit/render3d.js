@@ -6,6 +6,7 @@ const frames=process.argv[3]?process.argv[3].split(',').map(Number):null;const d
 (async()=>{
  const scene=JSON.parse(fs.readFileSync(build+'/timeline.js','utf8').replace('window.TL=','').replace(/;$/,'')).SCENE;
  let html=fs.readFileSync(kit+'/engine3d.html','utf8').replace('<script src="timeline.js"></script>',`<script src="file://${build}/timeline.js"></script><script src="file://${kit}/scenes3d/${scene}.js"></script>`);
+ if(process.env.END_IMG)html=html.replace('<script src="vendor/three.min.js"></script>',`<script>window.END_IMG=${JSON.stringify('file://'+path.resolve(process.env.END_IMG))};window.END_SUB=${JSON.stringify(process.env.END_SUB||'')}</script><script src="vendor/three.min.js"></script>`);
  html=html.split('vendor/three.min.js').join(`file://${kit}/vendor/three.min.js`).split('assets/logo.png').join(`file://${kit}/assets/logo.png`).split('assets/logo_s.png').join(`file://${kit}/assets/logo_s.png`);
  fs.writeFileSync(build+'/page3d.html',html);
  const url='file://'+build+'/page3d.html?v'+(process.env.NOLOGO?'':'&logo');

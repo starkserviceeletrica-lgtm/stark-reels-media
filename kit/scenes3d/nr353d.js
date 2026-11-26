@@ -178,7 +178,7 @@ function init(c){
  // halo de destaque
  W.ring=new T.Mesh(new T.RingGeometry(0.62,0.7,40),new T.MeshBasicMaterial({color:'#ffc400',transparent:true,opacity:0}));W.ring.rotation.x=-Math.PI/2;W.ring.position.set(0.85,BY+0.01,1.7);scene.add(W.ring);
 }
-const K=(c)=>{const {N,E}=c,tEnd=N[6];return [
+const K=(c)=>{const {N,E}=c,tEnd=N[8];return [
  [0,              [-0.2,0.4,13.6],[-0.2,-0.1,0]],
  [E.altura0-0.3,  [-0.4,0.2,12.6],[-0.4,-0.2,0]],
  [E.altura0+0.6,  [-1.6,-0.5,8.6],[-1.6,-0.9,0]],
@@ -189,23 +189,23 @@ const K=(c)=>{const {N,E}=c,tEnd=N[6];return [
  [E.acima-0.35,   [-1.6,-0.7,8.6],[-1.6,-1.0,0]],
  [E.nivel-0.3,    [-1.6,-1.5,7.8],[-1.6,-1.8,0.3]],
  [E.queda-0.4,    [-1.2,0.0,6.0],[-1.2,-0.2,0.2]],
- [N[2]-0.05,      [-1.2,0.0,6.1],[-1.2,-0.2,0.2]],
+ [N[4]-0.05,      [-1.2,0.0,6.1],[-1.2,-0.2,0.2]],
  [E.escada-0.25,  [-2.25,-1.4,5.6],[-2.25,-1.7,0.6]],
  [E.telhado-0.25, [-2.25,0.0,5.3],[-2.25,-0.4,0.2]],
  [E.andaime-0.25, [-1.25,-0.3,5.8],[-1.25,-0.6,0.2]],
  [E.poste-0.25,   [-0.5,0.0,5.4],[-0.5,-0.3,0.1]],
- [N[3]-0.05,      [-1.0,-0.4,8.6],[-1.2,-0.8,0]],
+ [N[5]-0.05,      [-1.0,-0.4,8.6],[-1.2,-0.8,0]],
  [E.trein-0.35,   [-0.95,2.2,5.2],[-0.95,2.2,-0.5]],
  [E.equip-0.4,    [1.65,1.3,7.6],[1.65,1.2,0]],
  [E.plan-0.3,     [1.45,1.2,7.0],[1.35,1.1,0]],
- [N[4]-0.05,      [1.45,1.15,7.2],[1.35,1.05,0]],
+ [N[6]-0.05,      [1.45,1.15,7.2],[1.35,1.05,0]],
  [E.alerta-0.1,   [-1.2,-0.3,8.4],[-1.3,-0.8,0.3]],
  [E.matar-0.7,    [-1.2,-0.6,7.6],[-1.3,-1.1,0.5]],
- [N[5]-0.05,      [-1.3,-0.8,7.8],[-1.4,-1.3,0.6]],
+ [N[7]-0.05,      [-1.3,-0.8,7.8],[-1.4,-1.3,0.6]],
  [E.segredo+0.1,  [-1.9,-0.6,7.6],[-2.1,-1.0,0.7]],
  [E.pequena+0.4,  [-1.9,-0.8,6.8],[-2.1,-1.2,0.8]],
- [N[6]-0.05,      [-1.8,-0.8,7.0],[-2.0,-1.2,0.8]],
- [N[6]+0.8,       [-0.2,0.3,13.2],[-0.2,-0.2,0]],
+ [N[8]-0.05,      [-1.8,-0.8,7.0],[-2.0,-1.2,0.8]],
+ [N[8]+0.8,       [-0.2,0.3,13.2],[-0.2,-0.2,0]],
  [tEnd,           [-0.2,0.4,13.6],[-0.2,-0.1,0]],
  [1e9,            [-0.2,0.4,13.6],[-0.2,-0.1,0]]]};
 function camPose(c){const k=K(c),t=c.tn;let i=0;while(i<k.length-2&&t>=k[i+1][0])i++;const a=k[i],b=k[i+1],dt=b[0]-a[0];const f=dt<0.02?(t>=b[0]?1:0):ease3(clamp01((t-a[0])/dt));return {p:a[1].map((v,j)=>lerp(v,b[1][j],f)),l:a[2].map((v,j)=>lerp(v,b[2][j],f))}}
@@ -216,13 +216,13 @@ function tag(c,id,txt,p3,a,bg='#fff',fg='#10151f'){let d=W.tags[id];if(!d){d=W.t
  d.textContent=txt;d.style.background=bg;d.style.color=fg;if(a<=0.001){d.style.opacity=0;return}
  const v=p3.clone().project(c.camera);const X=Math.min(960,Math.max(120,(v.x*0.5+0.5)*1080)),Y=Math.min(1170,Math.max(380,(-v.y*0.5+0.5)*1920));d.style.left=X+'px';d.style.top=Y+'px';d.style.opacity=a;d.style.transform=`translate(-50%,-50%) scale(${0.85+0.15*a})`}
 function render(c){
- const {THREE,N,E,seg,eob,tn:t,camera}=c,T=THREE,tEnd=N[6];
+ const {THREE,N,E,seg,eob,tn:t,camera}=c,T=THREE,tEnd=N[8];
  const cp=camPose(c);camera.position.set(...cp.p);camera.lookAt(...cp.l);
  // linha dos 2 m cresce no "metros" e fica; pulsa no alerta e no segredo
  W.line.scale.x=Math.max(0.001,seg(t,E.dois-0.1,E.dois+0.6));
  const lp=(t>=E.dois2&&t<E.dois2+0.8)||(t>=E.pequena&&t<E.pequena+0.8);W.line.scale.y=W.line.scale.z=lp?1.6+0.6*Math.sin(t*20):1;
  // zona acima de 2 m e nível inferior
- W.zone.material.opacity=0.16*seg(t,E.acima-0.1,E.acima+0.4)*(1-seg(t,N[2]+0.2,N[2]+0.7));
+ W.zone.material.opacity=0.16*seg(t,E.acima-0.1,E.acima+0.4)*(1-seg(t,N[4]+0.2,N[4]+0.7));
  W.floor.material.opacity=0.45*seg(t,E.nivel-0.1,E.nivel+0.3)*(1-seg(t,E.queda+0.2,E.queda+0.6));
  // risco de queda: boneco do andaime balança
  const wob=(t>=E.queda-0.1&&t<E.queda+0.9)?Math.sin((t-E.queda)*14)*0.06*(1-(t-E.queda+0.1)):0;
@@ -246,28 +246,29 @@ function render(c){
  W.checks.forEach((m,i)=>{const t0=E.plan+0.1+i*0.2;m.visible=t>=t0;m.scale.setScalar(Math.max(0.01,eob((t-t0)/0.25)))});
  pulse(W.clip,t,E.plan,0.07);
  // alerta: luz vermelha
- const al=t>=E.alerta&&t<N[5]-0.1;W.red.intensity=al?1.6*(0.55+0.45*Math.abs(Math.sin((t-E.alerta)*6))):0;
+ const al=t>=E.alerta&&t<N[7]-0.1;W.red.intensity=al?1.6*(0.55+0.45*Math.abs(Math.sin((t-E.alerta)*6))):0;
  // rótulos grandes (HTML) na hora da fala
  const Lb=(id,txt,pos,bg,fg,t0,t1,dy=0)=>c.label(id,txt,pos,{bg,fg,a:(t>=t0&&t<t1)?seg(t,t0,t0+0.3):0,s:eob((t-t0)/0.3),dy});
  Lb('alt','QUAL ALTURA?',new T.Vector3(-1.6,H2+1.6,0.5),'#fff','#10151f',E.altura0,E.dois-0.6);
+ Lb('regrasL','REGRAS MÍNIMAS DE SEGURANÇA',new T.Vector3(-1.9,1.75,0.2),'#ffc400','#10151f',E.regras,N[3]-0.1);
  Lb('dois','2 METROS',new T.Vector3(RX+0.55,H2+0.35,0.9),'#d61f2b','#fff',E.dois,N[1]-0.1);
  Lb('nr','TRABALHO EM ALTURA',new T.Vector3(-1.3,2.15-0.85,0),'#e8742a','#fff',E.norma,E.acima-0.4);
  Lb('acima','ACIMA DE 2 m',new T.Vector3(-1.6,H2+1.3,0.6),'#d61f2b','#fff',E.acima,E.queda-0.4);
  Lb('nivel','NÍVEL INFERIOR',new T.Vector3(-1.6,MB+0.25,1.1),'#2f7bff','#fff',E.nivel,E.queda-0.4,60);
- Lb('queda','RISCO DE QUEDA',new T.Vector3(SX,H2+2.2,0.3),'#ffc400','#10151f',E.queda,N[2]-0.1);
+ Lb('queda','RISCO DE QUEDA',new T.Vector3(SX,H2+2.2,0.3),'#ffc400','#10151f',E.queda,N[4]-0.1);
  Lb('esc','ESCADA',new T.Vector3(HX,MB+1.2,1.2),'#fff','#10151f',E.escada,E.telhado-0.15);
  Lb('tel','TELHADO',new T.Vector3(HX,H2+0.75,0.3),'#fff','#10151f',E.telhado,E.andaime-0.15);
  Lb('and','ANDAIME',new T.Vector3(SX,H2+1.4,0.3),'#fff','#10151f',E.andaime,E.poste-0.15);
- Lb('pos','POSTE',new T.Vector3(PX,MB+3.95,0.1),'#fff','#10151f',E.poste,N[3]-0.1);
+ Lb('pos','POSTE',new T.Vector3(PX,MB+3.95,0.1),'#fff','#10151f',E.poste,N[5]-0.1);
  Lb('trein','TREINAMENTO',new T.Vector3(-0.95,2.0-0.7,0),'#fff','#10151f',E.trein,E.equip-0.4);
  Lb('equip','EQUIPAMENTO',new T.Vector3(AX-0.35,AY+0.4,0),'#ffc400','#10151f',E.equip,E.plan-0.1);
- Lb('plan','PLANEJAMENTO',new T.Vector3(0.7,1.62,0),'#1fa85a','#fff',E.plan,N[4]-0.1);
- Lb('alerta','ALERTA',new T.Vector3(SX,H2+2.3,0.3),'#d61f2b','#fff',E.alerta,N[5]-0.1);
- Lb('d2m','2 METROS JÁ PODEM MATAR',new T.Vector3(-1.6,H2+0.45,0.9),'#ffc400','#10151f',E.dois2,N[5]-0.1,80);
+ Lb('plan','PLANEJAMENTO',new T.Vector3(0.7,1.62,0),'#1fa85a','#fff',E.plan,N[6]-0.1);
+ Lb('alerta','ALERTA',new T.Vector3(SX,H2+2.3,0.3),'#d61f2b','#fff',E.alerta,N[7]-0.1);
+ Lb('d2m','2 METROS JÁ PODEM MATAR',new T.Vector3(-1.6,H2+0.45,0.9),'#ffc400','#10151f',E.dois2,N[7]-0.1,80);
  Lb('comum','A QUEDA MAIS COMUM',new T.Vector3(HX+0.35,MB+2.4,1.0),'#fff','#10151f',E.comum,tEnd-0.1);
  Lb('peq','PARECE PEQUENA',new T.Vector3(HX+0.35,MB+2.4,1.0),'#d61f2b','#fff',E.pequena,tEnd-0.1,95);
  // etiquetas dos equipamentos (ficam de "equipamento" até o alerta)
- const ta=(t0)=>(t>=t0&&t<N[4]-0.1)?seg(t,t0,t0+0.25):0;const CB=AY-1.11-0.76;
+ const ta=(t0)=>(t>=t0&&t<N[6]-0.1)?seg(t,t0,t0+0.25):0;const CB=AY-1.11-0.76;
  tag(c,'anc','ANCORAGEM',new T.Vector3(AX+0.8,AY+0.1,-0.5),ta(eq+0.0));
  tag(c,'mq','MOSQUETÃO',new T.Vector3(AX+0.75,AY-0.32,-0.5),ta(eq+0.1));
  tag(c,'abs','ABSORVEDOR',new T.Vector3(AX+0.7,AY-0.9,-0.4),ta(eq+0.2),'#ffc400');

@@ -14,11 +14,13 @@ canvas{position:absolute;left:0;top:0;width:1080px;height:1920px}
 #flash{position:absolute;inset:0;z-index:9;pointer-events:none;opacity:0;background:#fff}
 #endbg{position:absolute;inset:0;z-index:10;background:radial-gradient(1000px 800px at 50% 45%,#16203a,#0b0f1a);opacity:0}
 #endlogo{position:absolute;z-index:11;opacity:0}
+#endimg{position:absolute;z-index:11;opacity:0;left:310px;top:540px;width:460px}
+#endsub{position:absolute;z-index:11;opacity:0;left:60px;width:960px;top:1205px;text-align:center;font-weight:900;font-size:46px;color:#fff;text-transform:uppercase;-webkit-text-stroke:8px #0b0f1a;paint-order:stroke fill}
 #pill{position:absolute;z-index:11;background:#ffc400;color:#0b0f1a;font-weight:900;border-radius:60px;text-align:center;text-transform:uppercase;opacity:0;left:110px;width:860px;top:1010px;font-size:48px;padding:26px 0}
 </style></head><body><div id="stage">
 <canvas id="c" width="1080" height="1920"></canvas>
 <div id="labels"></div><div id="title"></div><div id="wm"></div><div id="vig"></div><div id="mini"></div><div id="cap"></div><div id="flash"></div>
-<div id="endbg"></div><div id="endlogo"></div><div id="pill"></div></div>
+<div id="endbg"></div><div id="endimg"></div><div id="endsub"></div><div id="endlogo"></div><div id="pill"></div></div>
 <script src="vendor/three.min.js"></script>
 <script src="timeline.js"></script>
 <script>
@@ -38,6 +40,7 @@ const ctx={THREE,scene,camera,renderer:R,TL,N:NB,E,clamp,ease,seg,eob,label,flas
 ctx.doFlash=(t0,amp,du,col)=>ctx.flash.push([t0,amp,du,col||'#fff']);
 if(HAS){$('mini').innerHTML='<img src="assets/logo.png" style="height:84px">';$('endlogo').innerHTML='<img src="assets/logo.png" style="width:774px;display:block">';Object.assign($('endlogo').style,{left:'153px',top:'600px'})}
 $('pill').textContent=TL.PILL||'';
+if(window.END_IMG){$('endimg').innerHTML='<img src="'+window.END_IMG+'" style="width:100%;display:block;border-radius:6px;box-shadow:0 30px 60px rgba(0,0,0,.65)">';$('endsub').textContent=window.END_SUB||'';$('pill').style.top='1285px';if(HAS){$('endlogo').innerHTML='<img src="assets/logo.png" style="width:520px;display:block">';Object.assign($('endlogo').style,{left:'280px',top:'240px'})}}
 const SC=window.SCENE;SC.init(ctx);const BR=SC.brand||'full';if(HAS&&BR!=='none'){$('wm').innerHTML=BR==='s'?'<img src="assets/logo_s.png" style="height:96px;display:block">':'<img src="assets/logo.png" style="width:300px;display:block">'}if(SC.title)$('title').textContent=SC.title;
 const KEYS=(SC.keywords||[]).map(w=>w.toLowerCase());
 const norm=w=>w.toLowerCase().replace(/[^a-zà-ú0-9]/gi,'');
@@ -51,7 +54,7 @@ function render(tn){
  let li=0;while(li<TL.SUBS.length-1&&tn>=NB[li+1])li++;
  const words=TL.SUBS[li].split(' '),kw=TL.KW[li];let k=0;while(k<words.length-1&&tn>=kw[k+1])k++;
  const w=words[k],key=KEYS.includes(norm(w)),since=tn-kw[k];
- const cap=$('cap');cap.textContent=w;cap.style.color=key?'#ffc400':'#fff';
+ const cap=$('cap');cap.textContent=w;cap.style.fontSize=(w.length>10?Math.floor(128*10/w.length):128)+'px';cap.style.color=key?'#ffc400':'#fff';
  const on=tn>=0.05&&tn<tEnd-0.05;cap.style.opacity=on?1:0;cap.style.transform=`scale(${0.82+0.18*eob(since/0.16)})`;
  $('title').style.opacity=SC.title?(seg(tn,0.1,0.5)*(1-seg(tn,tEnd-0.4,tEnd-0.05))):0;
  $('wm').style.opacity=(HAS&&BR!=='none')?0.9*Math.min(seg(tn,0.3,0.8),1-seg(tn,tEnd-0.4,tEnd-0.05)):0;
@@ -63,6 +66,7 @@ function render(tn){
  // fechamento
  $('endbg').style.opacity=seg(tn,tEnd-0.1,tEnd+0.25);
  $('endlogo').style.opacity=(HAS&&tn>=tEnd)?seg(tn,tEnd+0.1,tEnd+0.5):0;
+ if(window.END_IMG){$('endimg').style.opacity=(tn>=tEnd)?seg(tn,tEnd+0.25,tEnd+0.7):0;$('endsub').style.opacity=(tn>=tEnd)?seg(tn,tEnd+0.6,tEnd+1.0):0}
  $('pill').style.opacity=seg(tn,tEnd+0.9,tEnd+1.4);$('pill').style.transform=`scale(${0.9+0.1*seg(tn,tEnd+0.9,tEnd+1.4)})`;
 }
 window.render=render;

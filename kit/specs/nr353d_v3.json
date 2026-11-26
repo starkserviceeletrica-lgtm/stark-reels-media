@@ -1,0 +1,93 @@
+{
+ "title": "NR-35 #1 v3: o que é a NR-35 + apostila",
+ "voice": "Orus",
+ "model": "gemini-3.1-flash-tts-preview",
+ "pause_between_requests": 8,
+ "scene": "nr353d",
+ "pill": "Digita NR35 no direct",
+ "lines": [
+  {
+   "text": "Você realmente sabe trabalhar acima de dois metros de altura?",
+   "style": "Diga com voz grave, firme e confiante, como um instrutor experiente:",
+   "events": {
+    "altura0": "Você",
+    "considerado": "realmente",
+    "dois": "metros"
+   }
+  },
+  {
+   "text": "A NR-35 é a Norma Regulamentadora número 35, do Ministério do Trabalho.",
+   "spoken": "A ene érre trinta e cinco é a Norma Regulamentadora número trinta e cinco, do Ministério do Trabalho.",
+   "style": "Diga com voz grave, firme e confiante, como um instrutor experiente:",
+   "events": {
+    "norma": "Norma"
+   }
+  },
+  {
+   "text": "Ela define as regras mínimas de segurança para o trabalho em altura: planejamento, organização e execução.",
+   "style": "Diga com voz grave, firme e confiante, como um instrutor experiente:",
+   "events": {
+    "regras": "regras"
+   }
+  },
+  {
+   "text": "E o que é trabalho em altura? Toda atividade acima de dois metros do nível inferior, com risco de queda.",
+   "style": "Diga com voz grave, firme e confiante, como um instrutor experiente:",
+   "events": {
+    "acima": "acima",
+    "nivel": "nível",
+    "queda": "risco"
+   }
+  },
+  {
+   "text": "Vale para escada, telhado, andaime e poste.",
+   "style": "Diga com voz grave, firme e confiante, como um instrutor experiente:",
+   "events": {
+    "escada": "escada",
+    "telhado": "telhado",
+    "andaime": "andaime",
+    "poste": "poste"
+   }
+  },
+  {
+   "text": "Exige treinamento, equipamento e planejamento.",
+   "style": "Diga com voz grave, firme e confiante, como um instrutor experiente:",
+   "events": {
+    "trein": "treinamento",
+    "equip": [
+     "equipamento",
+     1
+    ],
+    "plan": "planejamento"
+   }
+  },
+  {
+   "text": "Alerta: dois metros já podem matar numa queda.",
+   "style": "Diga com voz grave, firme e confiante, como um instrutor experiente:",
+   "events": {
+    "alerta": "Alerta",
+    "matar": "matar",
+    "queda2": "queda",
+    "dois2": "metros"
+   }
+  },
+  {
+   "text": "E o segredo? A queda mais comum é a que parece pequena.",
+   "style": "Diga com voz grave, firme e confiante, como um instrutor experiente:",
+   "events": {
+    "segredo": "segredo",
+    "comum": "comum",
+    "pequena": "pequena"
+   }
+  },
+  {
+   "text": "Digita NR35 no direct e adquira a apostila de NR-35.",
+   "spoken": "Digita ene érre trinta e cinco no direct e adquira a apostila de ene érre trinta e cinco.",
+   "style": "Diga com voz grave, firme e confiante, como um instrutor experiente:"
+  }
+ ],
+ "cards": [],
+ "fx": {},
+ "end_line": 8,
+ "scene_opts": {}
+}
