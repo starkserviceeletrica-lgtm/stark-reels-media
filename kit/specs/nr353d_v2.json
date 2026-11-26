@@ -1,0 +1,80 @@
+{
+ "title": "NR-35 #1: você sabe trabalhar acima de 2 metros?",
+ "voice": "Orus",
+ "model": "gemini-3.1-flash-tts-preview",
+ "pause_between_requests": 8,
+ "scene": "nr353d",
+ "pill": "Manda NR35 no direct",
+ "lines": [
+  {
+   "text": "Você realmente sabe trabalhar acima de dois metros de altura?",
+   "style": "Diga com voz grave, firme e confiante, como um instrutor experiente:",
+   "events": {
+    "altura0": "Você",
+    "considerado": "realmente",
+    "dois": "metros"
+   }
+  },
+  {
+   "text": "A NR-35 trata de toda atividade acima de dois metros do nível inferior com risco de queda.",
+   "spoken": "A ene érre trinta e cinco trata de toda atividade acima de dois metros do nível inferior com risco de queda.",
+   "style": "Diga com voz grave, firme e confiante, como um instrutor experiente:",
+   "events": {
+    "norma": "trata",
+    "acima": "acima",
+    "nivel": "nível",
+    "queda": "queda"
+   }
+  },
+  {
+   "text": "Vale para escada, telhado, andaime e poste.",
+   "style": "Diga com voz grave, firme e confiante, como um instrutor experiente:",
+   "events": {
+    "escada": "escada",
+    "telhado": "telhado",
+    "andaime": "andaime",
+    "poste": "poste"
+   }
+  },
+  {
+   "text": "Exige treinamento, equipamento e planejamento.",
+   "style": "Diga com voz grave, firme e confiante, como um instrutor experiente:",
+   "events": {
+    "trein": "treinamento",
+    "equip": [
+     "equipamento",
+     1
+    ],
+    "plan": "planejamento"
+   }
+  },
+  {
+   "text": "Alerta: dois metros já podem matar numa queda.",
+   "style": "Diga com voz grave, firme e confiante, como um instrutor experiente:",
+   "events": {
+    "alerta": "Alerta",
+    "matar": "matar",
+    "queda2": "queda",
+    "dois2": "metros"
+   }
+  },
+  {
+   "text": "E o segredo? A queda mais comum é a que parece pequena.",
+   "style": "Diga com voz grave, firme e confiante, como um instrutor experiente:",
+   "events": {
+    "segredo": "segredo",
+    "comum": "comum",
+    "pequena": "pequena"
+   }
+  },
+  {
+   "text": "Manda NR35 no direct e conheça o curso!",
+   "spoken": "Manda ene érre trinta e cinco no direct e conheça o curso!",
+   "style": "Diga com voz grave, firme e confiante, como um instrutor experiente:"
+  }
+ ],
+ "cards": [],
+ "fx": {},
+ "end_line": 6,
+ "scene_opts": {}
+}
