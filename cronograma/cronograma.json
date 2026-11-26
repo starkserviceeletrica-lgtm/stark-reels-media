@@ -345,7 +345,8 @@
     {
      "n": 1,
      "titulo": "Trabalho em altura: a partir de 2 metros",
-     "status": "pendente"
+     "status": "produzido",
+     "video": "videos/nr353d.mp4"
     },
     {
      "n": 2,
