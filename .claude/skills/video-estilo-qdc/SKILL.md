@@ -40,3 +40,5 @@ Desenho low poly "quadradão", paisagem/sala de brinquedo, vídeo que só mostra
 
 ## Gancho (decisão do dono, 26/11/2026)
 O gancho dos 3 primeiros segundos é uma dor/curiosidade do espectador em pergunta objetiva ("Seu ar-condicionado está pingando?") ou "Todo <profissional> precisa saber <tarefa>". Pergunta sem dor não basta. Priorizar NR-10, NR-35 e Elétrica Predial. Detalhes e números em kit/FORMULA-VIRAL-QDC.md.
+
+Antes de qualquer roteiro: escolher o gancho em `kit/BANCO-DE-GANCHOS.md` (texto grande na tela + fala, até 9 palavras, verdadeiro, resposta entregue no vídeo). Depois de 24 h da postagem, registrar as métricas em `kit/APRENDIZADO-GANCHOS.md`.
