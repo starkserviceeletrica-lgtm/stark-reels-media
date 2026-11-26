@@ -14,10 +14,10 @@
  "itens": [
   {
    "nome": "nr35-1-a-partir-de-2-metros",
-   "arquivo": "videos/nr353d.mp4",
-   "legenda": "legendas/nr353d.txt",
-   "aprovado": false,
-   "status": "pronto (41,5 s, voz Orus), aguardando o dono ver o vídeo e aprovar"
+   "arquivo": "videos/nr353d_v3.mp4",
+   "legenda": "legendas/nr353d_v3.txt",
+   "aprovado": true,
+   "status": "aprovado pelo dono 26/11; enviado ao Instagram com timeout: conferir no perfil antes de repetir"
   },
   {
    "nome": "apresentacao",
