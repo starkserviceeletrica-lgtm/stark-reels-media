@@ -32,7 +32,7 @@ if a.frames:  # prévia: quadros compostos em PNG
         b.close()
     os.remove(f'{a.out}/ov.png'); print('prévia em', a.out); sys.exit()
 
-fc = (f'[0:v]fps={a.fps},scale=1080:1920,setsar=1,tpad=stop_mode=clone:stop_duration={extra}[v];'
+fc = (f'[0:v]fps={a.fps},scale=1080:1920,setsar=1,format=yuv420p[b];color=c=0x07070a:s=1080x1920:r={a.fps}:d={max(extra,.04)},format=yuv420p[c];[b][c]concat=n=2:v=1:a=0[v];'
       f'[v][1:v]overlay=format=auto,format=yuv420p[o];'
       f'[0:a]loudnorm=I=-16:TP=-1.5:LRA=11,apad[a]')
 cmd = ['ffmpeg', '-v', 'error', '-y', '-i', a.video, '-f', 'image2pipe', '-framerate', str(a.fps), '-c:v', 'png', '-i', '-',
