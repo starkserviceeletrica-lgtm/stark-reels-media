@@ -43,7 +43,7 @@ els = [
   '<div class="row" data-t="51.2"><div class="ico acc">✓</div><div>chegamos!</div></div>'},
 ]
 spec = {"words": words, "els": els,
-        "end": {"t": 66.7, "extra": 3.0, "cta": "Manda <span>ELÉTRICA</span><br>no direct",
+        "end": {"t": 66.7, "extra": 3.0, "cta": "Fala com a gente<br>no <span>direct</span>",
                 "sub": f"Stark Service · {CIDADE}"}}
 json.dump(spec, open(os.path.join(here, "caminho_stark.json"), "w"), ensure_ascii=False, indent=1)
 print(len(words), "palavras")
