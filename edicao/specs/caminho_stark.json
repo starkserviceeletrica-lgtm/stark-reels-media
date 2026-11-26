@@ -1,0 +1,388 @@
+{
+ "words": [
+  {
+   "w": "Muita",
+   "s": 0.78,
+   "e": 1.66,
+   "key": false
+  },
+  {
+   "w": "gente",
+   "s": 1.66,
+   "e": 1.86,
+   "key": false
+  },
+  {
+   "w": "não",
+   "s": 1.86,
+   "e": 2.06,
+   "key": false
+  },
+  {
+   "w": "sabe",
+   "s": 2.06,
+   "e": 2.48,
+   "key": false
+  },
+  {
+   "w": "onde",
+   "s": 2.48,
+   "e": 4.54,
+   "key": false
+  },
+  {
+   "w": "é",
+   "s": 4.54,
+   "e": 5.42,
+   "key": false
+  },
+  {
+   "w": "a",
+   "s": 5.42,
+   "e": 5.76,
+   "key": false
+  },
+  {
+   "w": "Stark",
+   "s": 5.76,
+   "e": 6.12,
+   "key": true
+  },
+  {
+   "w": "Service",
+   "s": 6.12,
+   "e": 6.9,
+   "key": true
+  },
+  {
+   "w": "então",
+   "s": 7.1,
+   "e": 7.24,
+   "key": false
+  },
+  {
+   "w": "a",
+   "s": 7.24,
+   "e": 7.44,
+   "key": false
+  },
+  {
+   "w": "gente",
+   "s": 7.24,
+   "e": 7.54,
+   "key": false
+  },
+  {
+   "w": "vai",
+   "s": 7.54,
+   "e": 7.84,
+   "key": false
+  },
+  {
+   "w": "agora",
+   "s": 7.84,
+   "e": 8.2,
+   "key": false
+  },
+  {
+   "w": "mostrar",
+   "s": 8.2,
+   "e": 9.54,
+   "key": false
+  },
+  {
+   "w": "o",
+   "s": 9.54,
+   "e": 9.96,
+   "key": false
+  },
+  {
+   "w": "caminho",
+   "s": 9.96,
+   "e": 10.34,
+   "key": true
+  },
+  {
+   "w": "a",
+   "s": 10.34,
+   "e": 10.54,
+   "key": false
+  },
+  {
+   "w": "gente",
+   "s": 10.44,
+   "e": 10.64,
+   "key": false
+  },
+  {
+   "w": "está",
+   "s": 10.44,
+   "e": 10.56,
+   "key": false
+  },
+  {
+   "w": "aqui",
+   "s": 10.56,
+   "e": 10.68,
+   "key": false
+  },
+  {
+   "w": "na",
+   "s": 10.68,
+   "e": 10.88,
+   "key": false
+  },
+  {
+   "w": "Praça",
+   "s": 10.78,
+   "e": 10.96,
+   "key": true
+  },
+  {
+   "w": "do",
+   "s": 10.96,
+   "e": 11.22,
+   "key": false
+  },
+  {
+   "w": "Fórum",
+   "s": 11.22,
+   "e": 12.22,
+   "key": true
+  },
+  {
+   "w": "no",
+   "s": 13.28,
+   "e": 13.38,
+   "key": false
+  },
+  {
+   "w": "centro",
+   "s": 13.38,
+   "e": 13.52,
+   "key": false
+  },
+  {
+   "w": "de",
+   "s": 13.52,
+   "e": 13.76,
+   "key": false
+  },
+  {
+   "w": "Vitória",
+   "s": 13.76,
+   "e": 14.36,
+   "key": true
+  },
+  {
+   "w": "no",
+   "s": 14.36,
+   "e": 14.72,
+   "key": false
+  },
+  {
+   "w": "A",
+   "s": 16.0,
+   "e": 16.2,
+   "key": false
+  },
+  {
+   "w": "gente",
+   "s": 16.08,
+   "e": 16.22,
+   "key": false
+  },
+  {
+   "w": "vai",
+   "s": 16.22,
+   "e": 16.32,
+   "key": false
+  },
+  {
+   "w": "pegar",
+   "s": 16.32,
+   "e": 16.58,
+   "key": false
+  },
+  {
+   "w": "essa",
+   "s": 16.58,
+   "e": 16.86,
+   "key": false
+  },
+  {
+   "w": "caroninha",
+   "s": 16.86,
+   "e": 17.94,
+   "key": false
+  },
+  {
+   "w": "Com",
+   "s": 17.98,
+   "e": 18.12,
+   "key": false
+  },
+  {
+   "w": "emoção",
+   "s": 18.12,
+   "e": 18.52,
+   "key": true
+  },
+  {
+   "w": "ou",
+   "s": 18.52,
+   "e": 18.64,
+   "key": false
+  },
+  {
+   "w": "sem",
+   "s": 18.64,
+   "e": 18.78,
+   "key": false
+  },
+  {
+   "w": "emoção",
+   "s": 18.78,
+   "e": 19.26,
+   "key": true
+  },
+  {
+   "w": "Com",
+   "s": 19.4,
+   "e": 19.94,
+   "key": false
+  },
+  {
+   "w": "emoção",
+   "s": 19.94,
+   "e": 20.62,
+   "key": true
+  },
+  {
+   "w": "papai",
+   "s": 20.62,
+   "e": 20.98,
+   "key": false
+  },
+  {
+   "w": "cuida",
+   "s": 20.98,
+   "e": 21.66,
+   "key": false
+  },
+  {
+   "w": "Vamos",
+   "s": 22.6,
+   "e": 22.92,
+   "key": false
+  },
+  {
+   "w": "Ai",
+   "s": 23.9,
+   "e": 24.44,
+   "key": false
+  },
+  {
+   "w": "meu",
+   "s": 24.44,
+   "e": 24.6,
+   "key": false
+  },
+  {
+   "w": "Deus",
+   "s": 24.6,
+   "e": 24.98,
+   "key": false
+  },
+  {
+   "w": "Vamos",
+   "s": 26.3,
+   "e": 26.5,
+   "key": false
+  },
+  {
+   "w": "embora",
+   "s": 26.5,
+   "e": 26.96,
+   "key": false
+  },
+  {
+   "w": "É",
+   "s": 60.33,
+   "e": 60.85,
+   "key": false
+  },
+  {
+   "w": "isso",
+   "s": 60.85,
+   "e": 61.11,
+   "key": false
+  },
+  {
+   "w": "pessoal",
+   "s": 61.37,
+   "e": 61.59,
+   "key": false
+  },
+  {
+   "w": "Acabamos",
+   "s": 61.73,
+   "e": 61.95,
+   "key": false
+  },
+  {
+   "w": "de",
+   "s": 61.95,
+   "e": 62.23,
+   "key": false
+  },
+  {
+   "w": "chegar",
+   "s": 62.23,
+   "e": 62.43,
+   "key": true
+  },
+  {
+   "w": "aqui",
+   "s": 62.27,
+   "e": 63.15,
+   "key": false
+  }
+ ],
+ "els": [
+  {
+   "a": 0.3,
+   "b": 6.6,
+   "y": 250,
+   "cls": "card",
+   "html": "<div class=\"num\"><b>⌖</b>muita gente pergunta</div><div class=\"ttl\" style=\"font-size:76px\">Onde fica a<br><span>Stark Service</span>?</div>"
+  },
+  {
+   "a": 10.3,
+   "b": 16.4,
+   "y": 250,
+   "cls": "card",
+   "html": "<div class=\"num\"><b>01</b>ponto de partida</div><div class=\"row\" data-t=\"10.5\"><div class=\"ico acc\">⌖</div><div>Rua Joaquim Nabuco</div></div><div class=\"row\" data-t=\"11.0\"><div class=\"ico\">▦</div><div>em frente à Praça do Fórum</div></div><div class=\"row\" data-t=\"13.6\"><div class=\"ico\">◎</div><div>Vitória de Santo Antão – PE</div></div>"
+  },
+  {
+   "a": 27.2,
+   "b": 48.6,
+   "y": 250,
+   "cls": "card",
+   "html": "<div class=\"num\"><b>02</b>o trajeto</div><svg width=\"812\" height=\"330\" viewBox=\"0 0 812 330\"><path class=\"ghost\" d=\"M50 240 C 190 240, 210 90, 380 140 S 600 270, 750 90\"/><path id=\"r1\" class=\"route\" data-a=\"27.6\" data-b=\"47.4\" d=\"M50 240 C 190 240, 210 90, 380 140 S 600 270, 750 90\"/><circle cx=\"50\" cy=\"240\" r=\"16\" fill=\"#fff\"/><g data-follow=\"r1\"><circle r=\"24\" fill=\"#FFC21A\" opacity=\".35\"/><circle r=\"14\" fill=\"#FFC21A\"/></g><g data-t=\"47.2\"><circle cx=\"750\" cy=\"90\" r=\"20\" fill=\"#FFC21A\"/><circle cx=\"750\" cy=\"90\" r=\"8\" fill=\"#000\"/></g><text x=\"30\" y=\"300\" fill=\"#fff\" font-size=\"30\" font-weight=\"700\" text-anchor=\"start\">Praça do Fórum</text><text data-t=\"47.2\" x=\"790\" y=\"42\" fill=\"#FFC21A\" font-size=\"34\" font-weight=\"800\" text-anchor=\"end\">Stark Service</text></svg>"
+  },
+  {
+   "a": 49.6,
+   "b": 56.4,
+   "y": 900,
+   "cls": "card",
+   "html": "<div class=\"num\"><b>03</b>chegada</div><div class=\"ttl\"><span>Stark Service</span></div><div class=\"sub\" data-t=\"50.4\">Vitória de Santo Antão – PE</div><div class=\"row\" data-t=\"51.2\"><div class=\"ico acc\">✓</div><div>chegamos!</div></div>"
+  }
+ ],
+ "end": {
+  "t": 66.7,
+  "extra": 3.0,
+  "cta": "Manda <span>ELÉTRICA</span><br>no direct",
+  "sub": "Stark Service · Vitória de Santo Antão – PE"
+ }
+}
