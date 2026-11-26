@@ -1,1 +1,3 @@
 build/
+# versões em qualidade máxima (>100 MB, o GitHub recusa)
+edicao/saida/*_HQ.mp4
