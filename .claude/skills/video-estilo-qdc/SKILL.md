@@ -36,3 +36,7 @@ Modelo de referência: `kit/scenes3d/qdc3d.js` + `kit/specs/qdc3d.json` (vídeo 
 
 ## O que NÃO fazer (reprovado pelos números)
 Desenho low poly "quadradão", paisagem/sala de brinquedo, vídeo que só mostra "o que é", três posts seguidos em poucos minutos, repostar o mesmo vídeo.
+
+
+## Gancho (decisão do dono, 26/11/2026)
+O gancho dos 3 primeiros segundos é uma dor/curiosidade do espectador em pergunta objetiva ("Seu ar-condicionado está pingando?") ou "Todo <profissional> precisa saber <tarefa>". Pergunta sem dor não basta. Priorizar NR-10, NR-35 e Elétrica Predial. Detalhes e números em kit/FORMULA-VIRAL-QDC.md.

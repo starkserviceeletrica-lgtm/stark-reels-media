@@ -58,3 +58,20 @@ No dia 22/11, **98% do alcance veio de não seguidores** (15.111 de ~15.350): o 
 - Refrigeração (voz Orus, 25/11): 1.398 views, 8 salvamentos, 3 compartilhamentos, interação 6,3%.
 - NR-10 (voz Orus, 25/11): 665 views, 6 salvamentos, 4 compartilhamentos, interação 9,3%.
 Meta realista: primeiro bater 3.000 a 5.000 visualizações e 50 salvamentos; o QDC é o teto, não a média esperada.
+
+## 8. Regra do dono (26/11/2026): o gancho é uma dor ou curiosidade do espectador
+Observação do dono: "Todo eletricista precisa saber" prende porque a pessoa pensa "preciso saber o quê?". Para refrigeração, o gancho deve ser uma pergunta objetiva sobre um problema que o espectador tem agora, que prenda nos 3 primeiros segundos ("Quer saber por que seu ar-condicionado está pingando?").
+
+Checagem com os dados do perfil (14 dias, skip em 3 s; menor é melhor):
+- Gancho de **identidade/dever** ("Todo técnico de refrigeração precisa saber..."): Refrigeração 55% de skip, 1.398 views (melhor depois do QDC).
+- Pergunta **sem dor do espectador** ("Você sabe o que dá para automatizar?"): Automação 59% de skip, 224 views. Pergunta sozinha não bastou.
+- Conclusão: a pergunta funciona quando é um **problema que a pessoa tem ou um risco que ela teme**, com resposta prometida. É hipótese a testar nos próximos vídeos.
+
+Modelos de gancho (conteúdo técnico sempre revisado pelo dono):
+- Refrigeração: "Seu ar-condicionado está pingando? Veja por quê." / "Seu ar não gela como antes? Comece por aqui."
+- Elétrica predial: "Seu disjuntor desarma sozinho? Veja o que checar." / "Por que a tomada esquenta?"
+- NR-10: "Pode mexer na instalação sem desligar? A NR-10 responde."
+- NR-35: "A partir de que altura já é trabalho em altura?"
+
+## 9. Prioridade de temas (decisão do dono)
+Voltar muito para **NR-10, NR-35 e Elétrica Predial**, que têm público amplo. Temas muito específicos (Comandos Elétricos) tendem a subir menos: hipótese do dono, ainda sem dado (Comandos nunca foi postado). Testar com poucos vídeos antes de dedicar um dia por semana.
