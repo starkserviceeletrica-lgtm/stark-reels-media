@@ -328,7 +328,8 @@ footer{padding:2rem 0 calc(6rem + env(safe-area-inset-bottom,0px));color:var(--m
       <details><summary>Como recebo a apostila?</summary><p>Assim que o pagamento é aprovado, a Kiwify manda o acesso para o seu e-mail. Pix e cartão liberam na hora. Boleto libera depois que o banco confirma.</p></details>
       <details><summary>É impressa ou digital?</summary><p>Digital, em PDF. Abre no celular e no computador, e você pode imprimir se quiser.</p></details>
       <details><summary>Serve para quem nunca fez o curso?</summary><p>Serve. As apostilas têm pouco texto e muito desenho, com frases curtas, do jeito que a gente explica em sala.</p></details>
-      <details><summary>Como funciona o combo?</summary><p>Você leva três apostilas de uma vez por um valor menor do que comprando separado. O acesso às três chega junto, no mesmo e-mail.</p></details>
+      <details><summary>Como funciona o combo?</summary><p>Você leva Elétrica, Refrigeração e o Pacote NR (NR-10 + NR-35) de uma vez por um valor menor do que comprando separado. O acesso às três chega junto, no mesmo e-mail.</p></details>
+      <details><summary>As apostilas de NR dão certificado?</summary><p>Não. A apostila é material de estudo. O certificado de NR-10 ou NR-35 vem do curso presencial, e a autorização para trabalhar é dada pela empresa.</p></details>
       <details><summary>Ainda tenho dúvida. Com quem falo?</summary><p>Com a nossa equipe no WhatsApp (81) 98374-7177, de segunda a sexta, das 8h às 18h.</p></details>
     </div>
   </section>
@@ -369,7 +370,7 @@ function withTracking(url) {
     return u.toString();
   } catch (e) { return url; }
 }
-const buyHref = (a) => a.soon ? wa(`Olá! Quero entrar na lista da apostila de ${a.curto}.`) : withTracking(a.checkout || wa(`Olá! Quero comprar a ${a.titulo}.`));
+const buyHref = (a) => a.soon ? wa(`Olá! Quero entrar na lista da apostila de ${a.curto}.`) : withTracking(a.checkout || wa(`Olá! Quero comprar: ${a.titulo}.`));
 const buyLabel = (a) => a.soon ? 'Avise-me quando sair' : (a.preco || !a.checkout ? 'Quero a apostila' : 'Ver preço e comprar');
 const cover = (a, cls = '') => a.capa
   ? `<img class="${cls}" src="img/previa/${a.capa}" alt="Capa da ${esc(a.titulo)}" width="1000" height="1414">`
@@ -582,7 +583,7 @@ function tiltOn(el, glare, area, max) {
   };
   area.onpointerleave = () => { tx = 0; ty = 0; if (!raf) raf = requestAnimationFrame(loop); };
 }
-const FLIP = { eletrica: 8, refrigeracao: 8 };
+const FLIP = { eletrica: 8, refrigeracao: 8, 'pacote-nr': 8 };
 
 /* ===== TESTE NÍVEL 2 ===== */
 const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
@@ -678,7 +679,7 @@ function enhance() { requestAnimationFrame(() => { moveInd(); reveal(); }); }
 
 /* Which apostila to open: ?apostila=eletrica (link do direct), or #eletrica, or the first one */
 const params = new URLSearchParams(location.search);
-const alias = { eletrica: 'eletrica', 'eletrica-predial': 'eletrica', refri: 'refrigeracao', refrigeracao: 'refrigeracao', geladeira: 'refrigeracao', ar: 'refrigeracao', nr10: 'nr-10', 'nr-10': 'nr-10', nr35: 'nr-35', 'nr-35': 'nr-35' };
+const alias = { eletrica: 'eletrica', 'eletrica-predial': 'eletrica', refri: 'refrigeracao', refrigeracao: 'refrigeracao', geladeira: 'refrigeracao', ar: 'refrigeracao', nr10: 'pacote-nr', 'nr-10': 'pacote-nr', nr35: 'pacote-nr', 'nr-35': 'pacote-nr', nr: 'pacote-nr', pacote: 'pacote-nr' };
 const want = (params.get('apostila') || location.hash.slice(1) || '').toLowerCase();
 renderCombo(); upgradeButtons(document.getElementById('comboCard'));
 upgradeButtons(document.getElementById('dock'));
