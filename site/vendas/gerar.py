@@ -86,7 +86,7 @@ APOSTILAS = {
         "para": ["Quem vai fazer o curso de NR-10 ou NR-35 e quer chegar sabendo",
                  "Eletricista que trabalha em altura: escada, telhado, poste",
                  "Quem já tem o certificado e quer revisar o conteúdo"],
-        "checkout": "", "preco": "", "de": "", "soon": False,
+        "checkout": "https://pay.kiwify.com.br/KDzqC4r", "preco": "", "de": "", "soon": False,
     },
 }
 
