@@ -34,3 +34,29 @@ O sentimento de aprendizado vem de 3 coisas na ordem: (1) **reconhecer o problem
 - Loewenstein, 1994 (e revisão de Golman e Loewenstein): https://www.cmu.edu/dietrich/sds/docs/golman/golman_loewenstein_curiosity.pdf
 - Gruber, Gelman e Ranganath, 2014, Neuron: https://pmc.ncbi.nlm.nih.gov/articles/PMC4252494
 - Modelo LC4MP (Annie Lang): https://www.wikipedia.org/wiki/LC4MP (resumo; conferir Lang, 2000, Journal of Communication)
+
+---
+# Parte 2: o que os vídeos curtos fazem com as pessoas (pesquisa de 28/11/2026)
+Nível de evidência: conferido nos resumos e nas reportagens sobre os estudos, não nos textos completos. Quase tudo é correlacional (não prova causa).
+
+## Por que o feed prende
+1. **Recompensa variável.** O feed mistura vídeos fracos com alguns muito bons, e o imprevisível engaja mais do que o previsível (o mesmo princípio de máquinas caça-níquel). É um argumento teórico bem citado, não um resultado testado diretamente.
+2. **Sem ponto de parada.** A rolagem infinita tira os sinais naturais de "acabou". É o fator de design mais citado.
+3. **Esforço quase zero e ritmo rápido.** Um deslize troca o conteúdo. O formato que induz "fluxo" e dá a próxima recompensa na hora forma um hábito.
+4. **Circuito de recompensa.** Vídeo curto ativa o circuito de recompensa, mas a ativação não é equivalente à de uma droga (comentário sobre a evidência neurocientífica).
+
+## O que os estudos associam ao uso intenso
+- **Metanálise em Psychological Bulletin (2025), 71 estudos e 98.299 pessoas:** uso intenso se associou a pior desempenho cognitivo (r = −0,34), com atenção (−0,38) e controle de impulsos (−0,41) mais ligados. A ligação com saúde mental foi fraca (−0,21), com estresse (−0,34) e ansiedade (−0,33). Os efeitos maiores aparecem em quem tem uso do tipo "vício", não em quem só assiste pouco.
+- **Outra metanálise (JMIR, 2026), 58 estudos:** também associou o uso a piores resultados de saúde mental, com resultados menos consistentes para tempo de uso comum.
+- **Limites:** os estudos são transversais (não provam que o vídeo causa o efeito) e poucos separam o vídeo curto das redes sociais em geral.
+
+## O que isso significa para a Stark
+- A pessoa já chega com a atenção acostumada a trocar de vídeo em segundos. Quem não entende o valor nos 3 primeiros segundos desliza.
+- O vídeo que a prende **sem manipular** é o que entrega algo concreto (aprender, resolver um problema) e fecha o que abriu. É coerente com o objetivo do dono: a pessoa sair sabendo.
+- **Fora dos limites:** urgência falsa, medo exagerado, promessa que o vídeo não cumpre. Isso gera a retenção de curto prazo, mas destrói confiança, e confiança é o que vende apostila.
+
+## Fontes
+- Metanálise "Feeds, Feelings, and Focus", Psychological Bulletin (2025): https://ifp.nyu.edu/2025/journal-article-abstracts/bul0000498/ e cobertura em https://www.psypost.org/large-meta-analysis-links-tiktok-and-instagram-reels-to-poorer-cognitive-and-mental-health/
+- Metanálise JMIR (2026): https://www.jmir.org/2026/1/e82503
+- Análise do TikTok (Brown Public Health Journal): https://sites.brown.edu/publichealthjournal/2021/12/13/tiktok/
+- Revisão sobre vício em vídeo curto e rolagem infinita: https://pmc.ncbi.nlm.nih.gov/articles/PMC13402435/
