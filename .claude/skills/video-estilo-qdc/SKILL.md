@@ -42,3 +42,6 @@ Desenho low poly "quadradão", paisagem/sala de brinquedo, vídeo que só mostra
 O gancho dos 3 primeiros segundos é uma dor/curiosidade do espectador em pergunta objetiva ("Seu ar-condicionado está pingando?") ou "Todo <profissional> precisa saber <tarefa>". Pergunta sem dor não basta. Priorizar NR-10, NR-35 e Elétrica Predial. Detalhes e números em kit/FORMULA-VIRAL-QDC.md.
 
 Antes de qualquer roteiro: escolher o gancho em `kit/BANCO-DE-GANCHOS.md` (texto grande na tela + fala, até 9 palavras, verdadeiro, resposta entregue no vídeo). Depois de 24 h da postagem, registrar as métricas em `kit/APRENDIZADO-GANCHOS.md`.
+
+## Chamada final = apostila (decisão do dono, 28/11/2026)
+Não há curso online. A chamada final oferece a apostila: "Digita <PALAVRA> no direct e adquira a apostila de <tema>" (ELÉTRICA, REFRIGERAÇÃO, NR10, NR35, COMBO) com a capa da apostila no cartão final (kit/assets/apostila-nr35.png é o modelo; END_IMG e END_SUB no render3d.js). Nunca inventar preço, link ou prazo. Ver kit/FORMULA-VIRAL-QDC.md, seção 10.

@@ -75,3 +75,11 @@ Modelos de gancho (conteúdo técnico sempre revisado pelo dono):
 
 ## 9. Prioridade de temas (decisão do dono)
 Voltar muito para **NR-10, NR-35 e Elétrica Predial**, que têm público amplo. Temas muito específicos (Comandos Elétricos) tendem a subir menos: hipótese do dono, ainda sem dado (Comandos nunca foi postado). Testar com poucos vídeos antes de dedicar um dia por semana.
+
+## 10. Objetivo comercial (decisão do dono, 28/11/2026): vender as 3 apostilas
+Produtos à venda na loja (Kiwify): Apostila de Elétrica Predial, Apostila de Refrigeração e Pacote NR (NR-10 + NR-35), mais o combo. Não há curso online: o curso é presencial. Por isso a chamada final de todo vídeo oferece a apostila, nunca "conheça o curso".
+Palavra-chave por produto (um pedido por vídeo): ELÉTRICA, REFRIGERAÇÃO (ou GELADEIRA/AR), NR10, NR35; APOSTILA ou COMBO para o combo. Preço, link e condições: só os que o dono informar (nunca inventar).
+Dois tipos de vídeo:
+- **Atrair**: tarefa passo a passo com algo para salvar (molde QDC) e gancho de dor. Traz público novo.
+- **Vender**: o mesmo tutorial, ligando o problema à apostila no fim (imagem da capa + "Digita <PALAVRA> no direct e adquira a apostila").
+Antes de empurrar uma palavra-chave, conferir que o produto existe e o checkout funciona.
